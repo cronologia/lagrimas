@@ -1,0 +1,47 @@
+# lagrimas — Nossa Senhora das Lágrimas (Campinas, 1929–1930)
+
+An open, source-referenced chronology of the **reported apparitions of Our
+Lady of Tears (Nossa Senhora das Lágrimas)** to Sister Amália de Jesus
+Flagelado (born Amália Aguirre, 1901–1977) in Campinas, São Paulo, Brazil,
+and of the **Chaplet of Tears** devotion that grew from them.
+
+Published at **https://cronologia.github.io/lagrimas/** (en / es / pt), part
+of the [cronologia](https://github.com/cronologia) family of chronology
+projects.
+
+## Editorial stance
+
+Apparitions are **reported** events with Church judgments. This dataset
+records who reported what and when, and what Church authority has ruled and
+when, citing the ruling document — it never asserts the supernatural claims
+as fact. Two things are kept strictly separate:
+
+- the **devotion's publications** (devotional literature reports a 1931
+  authorization/imprimatur by Bishop Francisco de Campos Barreto — the
+  document itself has not been located), and
+- any **judgment on the apparitions themselves** — none has been located.
+
+The one primary Church document in the dataset is the Archdiocese of
+Campinas' decree of **16 June 2023** creating a study commission on Sister
+Amália's possible "odor of sanctity", toward the *possible* opening of a
+beatification cause. It makes no pronouncement on the apparitions.
+
+## Layout
+
+```
+data/chronology.json   SOURCE OF TRUTH (hand-edited, English)
+data/i18n/{es,pt}.json translation dictionaries (hand-authored, committed)
+build.js               zero-dependency compiler -> docs/{en,es,pt}/
+docs/                  compiled output, served by GitHub Pages (committed)
+```
+
+## Working on this repo
+
+Read `AGENTS.md` and `context.md` first. Every data edit goes through the
+gate:
+
+```
+node scripts/validate-data.js && node --test && node build.js
+```
+
+and commits the regenerated `docs/` together with the data.
