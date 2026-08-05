@@ -8,6 +8,55 @@
     "lastUpdated": "2026-08-05",
     "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents; the provenance notes on each reference say so. Corrections against primary sources are welcome."
   },
+  "approvalLadder": {
+    "note": "Each rung is a separate act by a separate authority, about a separate object. The page records what each one did and when, citing the act; it does not add them up, and there is no overall verdict to report. For Campinas the finding is an absence: no judgment by any Church authority on the apparitions themselves has been located, in devotional, institutional or academic sources. The one primary Church document in this dataset — the Archdiocese of Campinas decree of 16 June 2023 (Livro XXXII dos Atos de Governo, Prot. 106) — creates a commission to study Sister Amália's possible odor of sanctity with a view to the possible opening of a beatification cause. It concerns one person's cause, says nothing whatever about the reported apparitions, and is therefore not a rung on this ladder.",
+    "stages": [
+      {
+        "label": "Local inquiry in Campinas",
+        "when": "1928–1930",
+        "status": "not-found",
+        "who": "Diocese of Campinas under Bishop Francisco de Campos Barreto",
+        "outcome": "The 1917 Code of Canon Law provided for a diocesan tribunal to examine reported miracles, and required prudence, silence, and verification by suitable persons appointed by the ecclesiastical authority before anything was published. The bishop did enforce the silence — he closed access to Sister Amália and turned journalists away — but no canonically constituted commission, tribunal or appointed investigator appears in any source consulted. The investigations the newspapers called \"inquéritos\" were run by the press, by physicians and by clergy of several denominations, not by the diocese. Santos reads Barreto's own conduct as the reverse of the canonical path: rather than notify Rome and keep silent, he became a public promoter of the events.",
+        "noDocument": "Searched: the recitals of the 2023 archdiocesan decree, the Archdiocese of Campinas website, the congregation's own published history (which, as consulted on 5 August 2026, does not mention Sister Amália or the apparitions at all), the Centro de Memória da Unicamp account of the case, and Santos's 2025 study, which works from the contemporary São Paulo press. None names a diocesan body charged with judging the phenomena. Any such record would sit in the acts of government held at the archdiocesan archive in Campinas (Cúria Metropolitana), which was not consulted for this dataset.",
+        "sources": ["rbhr-santos-2025", "unicamp-cmu-amalia", "mjc-nossa-historia"]
+      },
+      {
+        "label": "The bishop's judgment on the apparitions",
+        "when": "reported 8 March 1931",
+        "status": "reported-undocumented",
+        "who": "Dom Francisco de Campos Barreto, bishop of Campinas 1920–1941",
+        "outcome": "Devotional literature, followed by the Portuguese and English Wikipedia articles, states that on 8 March 1931 Barreto recognized the veracity of Sister Amália's stigmata and apparitions. No source consulted reproduces that act, quotes it, or gives an archival reference for it, and the 2023 archdiocesan decree does not mention it. What is documented is different in kind: in November 1928 Barreto told the São Paulo press that the case was a true stigmatization and \"miraculous\". An opinion given to a newspaper — which Santos reads as out of step with the canonical norms then in force — is not a judgment on an apparition.",
+        "noDocument": "No text, protocol number or archival reference for an 8 March 1931 act was located in any source consulted, devotional, institutional or academic; the sources that carry the claim cite no document and repeat one another. It would be found, if it exists, among the acts of government of the then Diocese of Campinas, in the archdiocesan archive at the Cúria Metropolitana de Campinas, which was not consulted here.",
+        "sources": ["wikipedia-en-olt", "wikipedia-pt-nsl", "cancaonova-nsl", "rbhr-santos-2025"]
+      },
+      {
+        "label": "Permission to print the writings — not a verdict on the apparitions",
+        "when": "1933",
+        "status": "favourable",
+        "who": "Dom Francisco de Campos Barreto",
+        "outcome": "Barreto granted the imprimatur for Licções de Jesus Victima, the volume of messages attributed to \"Jesus Manietado\" published by the Institute in Campinas in 1933, and wrote its preface. This is the only episcopal act in the case for which a scholarly source supplies a bibliographic citation and a quotation. Its object is a book. An imprimatur is a permission to print, granted after censorship for faith and morals; it settles nothing about whether the reported apparitions were supernatural, and it is set out as its own rung precisely so that it cannot be read as the missing verdict on the rung before it.",
+        "sources": ["rbhr-santos-2025"]
+      },
+      {
+        "label": "Further reported acts on the devotion",
+        "when": "reported 1931, 20 February 1934, and abroad from 1935",
+        "status": "reported-undocumented",
+        "who": "Bishop Barreto; unnamed bishops in the United States, Germany and Hungary",
+        "outcome": "Devotional literature also reports an imprimatur of 8 March 1931 covering the chaplet prayers, an episcopal declaration of 20 February 1934 in which Barreto reinforced the importance of the devotion to Our Lady of Tears, and further imprimaturs for the chaplet granted by bishops abroad from 1935. Every one of these concerns the devotion and its printed texts rather than the apparitions, so even if all were produced tomorrow they would leave the rung above unanswered.",
+        "noDocument": "None of these texts was produced by any source consulted; the devotional sites and the encyclopedia articles that carry them cite no document and repeat one another. The Brazilian acts would be in the archdiocesan archive at the Cúria Metropolitana de Campinas; the foreign imprimaturs would be in the chanceries of the dioceses that granted them, which none of the sources names.",
+        "sources": ["wikipedia-en-olt", "cancaonova-nsl"]
+      },
+      {
+        "label": "A ruling by the Holy See",
+        "when": "1929 onwards",
+        "status": "not-found",
+        "who": "Roman Curia; apostolic nunciature to Brazil",
+        "outcome": "Rome was not absent from the case. In May 1929 the apostolic nuncio to Brazil, Benedetto Aloisi Masella, spent a week in Campinas following the celebrations and the reported manifestations at the Institute, with the São Paulo press covering each step and describing him as pleased with what he saw. But a visit is not an act: no decree, rescript, response or report of the Holy See or of any Roman dicastery on the Campinas apparitions has been located, and no source consulted refers to one.",
+        "noDocument": "This rung is \"no ruling found\", not \"the case never went to Rome\", and the distinction is the point. Recording it as \"did not reach\" would require positive evidence that the case was never referred, and there is none: the nuncio's 1929 visit shows Roman attention, while the claim that Barreto skipped the expected notification to the Holy See rests on a contemporary priest's criticism in the press and on Santos's reading of it, not on a document. Searched: every source in this dataset, the Archdiocese of Campinas website, Catholic media coverage of the 2023 commission, and open web searches for any Holy See or Doctrine of the Faith act on the Campinas case. The Acta Apostolicae Sedis of the 1930s and the nunciature's own files were not consulted, and either could still hold something.",
+        "sources": ["rbhr-santos-2025", "catholic-hierarchy-masella"]
+      }
+    ]
+  },
   "facts": [
     {
       "label": "What it is",
@@ -21,13 +70,13 @@
     },
     {
       "label": "Church ruling on the apparitions",
-      "value": "No judgment by Church authority on the apparitions themselves could be located online. Devotional literature states that Bishop Francisco de Campos Barreto of Campinas recognized the phenomena and granted an imprimatur for Sister Amália's writings and the chaplet prayers on 8 March 1931, but no copy or archival citation of that document was found, and the one located primary document — the archdiocesan decree of 16 June 2023 — makes no pronouncement on the apparitions.",
-      "sources": ["wikipedia-en-olt", "cancaonova-nsl", "decreto-comissao-2023"]
+      "value": "No judgment by Church authority on the apparitions themselves could be located. Devotional literature states that Bishop Francisco de Campos Barreto of Campinas recognized the phenomena and granted an imprimatur for Sister Amália's writings and the chaplet prayers on 8 March 1931, but no copy or archival citation of that document was found, and the one located primary document — the archdiocesan decree of 16 June 2023 — makes no pronouncement on the apparitions. The academic study of the 1928–1929 controversy records no canonically constituted diocesan inquiry either; the Holy See's nuncio to Brazil spent a week in Campinas in May 1929, but no Roman act arising from that visit was located.",
+      "sources": ["wikipedia-en-olt", "cancaonova-nsl", "decreto-comissao-2023", "rbhr-santos-2025"]
     },
     {
       "label": "Approval of the chaplet vs. approval of the apparitions",
-      "value": "These are distinct acts. An imprimatur or authorization to publish prayers permits a devotion; it is not a declaration that the apparitions were supernatural. The reported 1931 authorization concerns publication of the writings and prayers; this dataset records no located Church declaration of supernaturality for the Campinas apparitions.",
-      "sources": ["wikipedia-en-olt", "cancaonova-nsl"]
+      "value": "These are distinct acts. An imprimatur or authorization to publish prayers permits a devotion; it is not a declaration that the apparitions were supernatural. The reported 1931 authorization concerns publication of the writings and prayers. One imprimatur by Bishop Barreto is documented with a bibliographic citation — the one he granted for the 1933 volume \"Licções de Jesus Victima\", whose preface he also wrote — and that act too is a permission to print a book. This dataset records no located Church declaration of supernaturality for the Campinas apparitions.",
+      "sources": ["wikipedia-en-olt", "cancaonova-nsl", "rbhr-santos-2025"]
     },
     {
       "label": "Status of the visionary's cause",
@@ -74,6 +123,26 @@
       "title": "Reported stigmata become public; press controversy",
       "text": "Sister Amália's reported stigmata, said to have begun earlier in 1928, become publicly known and draw heavy press attention. The phenomena are immediately contested: physicians and rationalist commentators attribute them to psychological illness, and Dr. Sousa Ribeiro accuses Bishop Barreto of fabricating the case, while Dr. Arthur de Vasconcelos defends the events as genuine in his 1929 book \"Res Non Verba\". Media coverage diminishes after late 1928.",
       "sources": ["unicamp-cmu-amalia"]
+    },
+    {
+      "year": 1928,
+      "date": "1928-11-17",
+      "dateVerified": true,
+      "dateNote": "Date of the newspaper issue cited by Santos (2025): Diário Nacional, no. 422, São Paulo, 17 November 1928, p. 1; the interview it reports was given the previous day.",
+      "place": "Campinas, Brazil",
+      "title": "Bishop Barreto tells the press the case is genuine",
+      "text": "In an interview published by the São Paulo newspaper Diário Nacional, Bishop Francisco de Campos Barreto reaffirms his conviction that what is happening to Sister Amália is a true stigmatization — \"extraordinário, milagroso\" — and that she is not ill. Santos reads the statement as assertive and out of step with the canonical norms then in force, which required prudence and silence until the case had been verified by suitable persons appointed by the ecclesiastical authority. A view given to a newspaper is not a canonical judgment, and no such judgment has been located.",
+      "sources": ["rbhr-santos-2025"]
+    },
+    {
+      "year": 1929,
+      "date": "1929-05",
+      "dateVerified": false,
+      "dateNote": "Santos dates the nuncio's week in Campinas to May 1929 and cites the Correio Paulistano of 15 May 1929 (no. 23.557, p. 12) reporting the visit; the exact days were not established here.",
+      "place": "Campinas, Brazil",
+      "title": "The apostolic nuncio visits Campinas",
+      "text": "The Holy See's apostolic nuncio to Brazil — named by Santos as \"D. Aloisi Mansella\", that is Archbishop Benedetto Aloisi Masella, nuncio in Brazil from 1927 to 1946 — spends a week in Campinas following the celebrations and the reported manifestations at the house of the Missionárias de Jesus Crucificado. The São Paulo press covers each step and reports him as pleased with what he sees. No act, judgment or report of the Holy See arising from the visit has been located: the visit establishes Roman attention, not a Roman ruling.",
+      "sources": ["rbhr-santos-2025", "catholic-hierarchy-masella"]
     },
     {
       "year": 1929,
@@ -124,6 +193,16 @@
       "title": "Sister Amália makes perpetual vows",
       "text": "Sister Amália de Jesus Flagelado makes her perpetual vows in the Instituto das Missionárias de Jesus Crucificado.",
       "sources": ["acidigital-comissao-2023", "wikipedia-pt-nsl"]
+    },
+    {
+      "year": 1933,
+      "date": "1933",
+      "dateVerified": false,
+      "dateNote": "Year of publication as cited by Santos (2025): Barreto, \"Imprimatur\", in Licções de Jesus Victima, Campinas: Instituto das Missionárias de Jesus Crucificado, 1933, with the bishop's preface quoted from p. 3. The volume itself was not consulted here; no day or month is given.",
+      "place": "Campinas, Brazil",
+      "title": "Imprimatur for \"Licções de Jesus Victima\"",
+      "text": "Bishop Barreto grants the imprimatur for Licções de Jesus Victima, the volume of messages attributed to \"Jesus Manietado\" published by the Institute, and writes its preface. This is the only episcopal act in the case for which a scholarly source gives a bibliographic citation and a quotation. Its object is a book: an imprimatur is a permission to print, granted after censorship for faith and morals, and it decides nothing about whether the reported apparitions were supernatural.",
+      "sources": ["rbhr-santos-2025"]
     },
     {
       "year": 1934,
@@ -259,6 +338,22 @@
       "publisher": "Centro de Memória da Unicamp",
       "publisherNote": "Academic memory-center account drawing on its archival collections, including the 1928–1929 press controversy and medical skepticism — the main non-devotional treatment located.",
       "type": "academic"
+    },
+    {
+      "id": "rbhr-santos-2025",
+      "title": "\"A Santa de Campinas\": irmã Amalia de Jesus Flagelado e a experiência visionária no Brasil",
+      "url": "https://periodicoseletronicos.ufma.br/index.php/rbhr/article/view/27185",
+      "publisher": "Revista Brasileira de História das Religiões (UFMA)",
+      "publisherNote": "Peer-reviewed academic article by Magno Francisco de Jesus Santos (UFRN), v. 18, n. 53, p. 1–16, May–Aug 2025, DOI 10.18764/1983-2850v18n53e27185. Works from the 1928–1929 São Paulo press (Diário Nacional, Correio Paulistano, A Tribuna, A Manhã) and from the 1917 Code of Canon Law. The strongest independent source located: it records Bishop Barreto's 1928 press declarations, the apostolic nuncio's May 1929 visit, and — with a bibliographic citation and a quotation — Barreto's imprimatur for Licções de Jesus Victima (Campinas, 1933). It describes no canonical inquiry and no Roman act.",
+      "type": "academic"
+    },
+    {
+      "id": "catholic-hierarchy-masella",
+      "title": "Benedetto Cardinal Aloisi Masella",
+      "url": "https://www.catholic-hierarchy.org/bishop/baloisi.html",
+      "publisher": "Catholic-Hierarchy.org",
+      "publisherNote": "Reference database of Catholic bishops — used only to identify the apostolic nuncio to Brazil in May 1929 and to date his nunciature (1927–1946).",
+      "type": "database"
     },
     {
       "id": "mjc-nossa-historia",
