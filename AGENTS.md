@@ -146,7 +146,9 @@ byte-identical to a build without the feature. Shapes are shown in
   properties are load-bearing and any redesign must keep them — (1) no overall
   verdict is ever rendered for the case, only per-rung ones; (2) `not-found`
   ("we searched and found nothing"), `not-reached` ("the case positively did not
-  go here") and `negative` stay three different things; (3) every rung carries
+  go here"), `negative` and `adjacent` (core#68 — a real dated act about a
+  DIFFERENT object: an imprimatur, a feast, a person's cause) stay four
+  different things; (3) every rung carries
   `sources[]` or a `noDocument` note saying what was searched, or the build
   fails; (4) status is text + glyph + prose, never colour alone. `status` is a
   closed enum (`STATUS_GLYPH`) and is deliberately EXCLUDED from the
@@ -155,7 +157,9 @@ byte-identical to a build without the feature. Shapes are shown in
   repo the finding is an absence: no Church judgment on the Campinas apparitions
   themselves has been located, and the 16 June 2023 decree concerns Sister
   Amália's possible beatification cause, not the apparitions, so it appears only
-  in the ladder's intro prose saying exactly that — never as a rung.
+  in the ladder's intro prose saying exactly that — never as a rung. The two
+  imprimatur rungs (1933; 1932 and the 1935 foreign approvals) are `adjacent`
+  for the same reason: their object is a book, a chaplet and a medal.
 
 - **`meta.threads`** — the per-repo lane taxonomy (core#23) and, once declared,
   the **swimlanes** figure (`renderSwimlanes`): one row per lane, one column per
@@ -296,7 +300,9 @@ perspective) govern everything here. Subject-specific rules for THIS repo:
 4. **Dates from devotional literature stay `dateVerified: false`** with a
    `dateNote` saying exactly what attests them, until a primary or archival
    source is found. Record disagreements between sources in `dateNote`
-   instead of resolving them.
+   instead of resolving them. As of core#73 `dateNote` RENDERS, beneath the
+   event, and is translatable — it is reader-facing prose, so every one needs
+   an es and a pt entry in `data/i18n/`, not a private note to the next editor.
 5. **Check `KEYWORDS.md` before searching** (name variants pt/es/fr/la, OCR
    traps, the Syracuse-1953 disambiguation that pollutes every English
    search), and pair every reported zero with a positive control.
