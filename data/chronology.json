@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Nossa Senhora das Lágrimas — Cronologia",
-    "subtitle": "Chronology of the reported apparitions of Our Lady of Tears in Campinas, Brazil (1901–2023)",
+    "subtitle": "Chronology of the reported apparitions of Our Lady of Tears in Campinas, Brazil, and of what came before and after them (1908–2023)",
     "description": "An open, source-referenced chronology of the reported apparitions of Our Lady of Tears (Nossa Senhora das Lágrimas) to Sister Amália de Jesus Flagelado in Campinas, Brazil, and of the Chaplet of Tears devotion that grew from them.",
     "language": "en",
     "siteUrl": "https://cronologia.github.io/lagrimas/",
     "lastUpdated": "2026-08-05",
-    "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents; the provenance notes on each reference say so. Corrections against primary sources are welcome."
+    "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. The scope now runs wider than the reported events themselves, carrying the founding of the congregation and the state of the diocese before them and the congregation's growth, the spread of the devotion, the visionary's later life and the 2023 commission after them. Reported cures and wonders are recorded only as ACCOUNTS — that something was reported, by whom, and when first attested — never as events that happened, and they carry no rung on the approval ladder. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents, and the recent video commentary comes from a single speaker who also sits on the archdiocesan study commission; the provenance notes on each reference say so. Corrections against primary sources are welcome."
   },
   "approvalLadder": {
     "note": "Each rung is a separate act by a separate authority, about a separate object. The page records what each one did and when, citing the act; it does not add them up, and there is no overall verdict to report. For Campinas the finding is an absence: no judgment by any Church authority on the apparitions themselves has been located, in devotional, institutional or academic sources. The one primary Church document in this dataset — the Archdiocese of Campinas decree of 16 June 2023 (Livro XXXII dos Atos de Governo, Prot. 106) — creates a commission to study Sister Amália's possible odor of sanctity with a view to the possible opening of a beatification cause. It concerns one person's cause, says nothing whatever about the reported apparitions, and is therefore not a rung on this ladder.",
@@ -18,16 +18,27 @@
         "who": "Diocese of Campinas under Bishop Francisco de Campos Barreto",
         "outcome": "The 1917 Code of Canon Law provided for a diocesan tribunal to examine reported miracles, and required prudence, silence, and verification by suitable persons appointed by the ecclesiastical authority before anything was published. The bishop did enforce the silence — he closed access to Sister Amália and turned journalists away — but no canonically constituted commission, tribunal or appointed investigator appears in any source consulted. The investigations the newspapers called \"inquéritos\" were run by the press, by physicians and by clergy of several denominations, not by the diocese. Santos reads Barreto's own conduct as the reverse of the canonical path: rather than notify Rome and keep silent, he became a public promoter of the events.",
         "noDocument": "Searched: the recitals of the 2023 archdiocesan decree, the Archdiocese of Campinas website, the congregation's own published history (which, as consulted on 5 August 2026, does not mention Sister Amália or the apparitions at all), the Centro de Memória da Unicamp account of the case, and Santos's 2025 study, which works from the contemporary São Paulo press. None names a diocesan body charged with judging the phenomena. Any such record would sit in the acts of government held at the archdiocesan archive in Campinas (Cúria Metropolitana), which was not consulted for this dataset.",
-        "sources": ["rbhr-santos-2025", "unicamp-cmu-amalia", "mjc-nossa-historia"]
+        "sources": [
+          "rbhr-santos-2025",
+          "unicamp-cmu-amalia",
+          "mjc-nossa-historia"
+        ]
       },
       {
         "label": "The bishop's judgment on the apparitions",
         "when": "reported 8 March 1931",
         "status": "reported-undocumented",
         "who": "Dom Francisco de Campos Barreto, bishop of Campinas 1920–1941",
-        "outcome": "Devotional literature, followed by the Portuguese and English Wikipedia articles, states that on 8 March 1931 Barreto recognized the veracity of Sister Amália's stigmata and apparitions. No source consulted reproduces that act, quotes it, or gives an archival reference for it, and the 2023 archdiocesan decree does not mention it. What is documented is different in kind: in November 1928 Barreto told the São Paulo press that the case was a true stigmatization and \"miraculous\". An opinion given to a newspaper — which Santos reads as out of step with the canonical norms then in force — is not a judgment on an apparition.",
-        "noDocument": "No text, protocol number or archival reference for an 8 March 1931 act was located in any source consulted, devotional, institutional or academic; the sources that carry the claim cite no document and repeat one another. It would be found, if it exists, among the acts of government of the then Diocese of Campinas, in the archdiocesan archive at the Cúria Metropolitana de Campinas, which was not consulted here.",
-        "sources": ["wikipedia-en-olt", "wikipedia-pt-nsl", "cancaonova-nsl", "rbhr-santos-2025"]
+        "outcome": "Devotional literature, followed by the Portuguese and English Wikipedia articles, states that on 8 March 1931 Barreto recognized the veracity of Sister Amália's stigmata and apparitions. No source consulted reproduces that act, quotes it, or gives an archival reference for it, and the 2023 archdiocesan decree does not mention it. What is documented is different in kind: in November 1928 Barreto told the São Paulo press that the case was a true stigmatization and \"miraculous\". An opinion given to a newspaper — which Santos reads as out of step with the canonical norms then in force — is not a judgment on an apparition. Since this rung was written a second study by the same historian (Santos 2019) has been located. It dates Barreto's imprimatur for the chaplet and the medal to 8 March 1932 — the same day and month as the reported act, one year later — and records nothing at all for 8 March 1931. It does not describe any act of his recognising the apparitions, on that date or on any other.",
+        "noDocument": "No text, protocol number or archival reference for an 8 March 1931 act was located in any source consulted, devotional, institutional or academic; the sources that carry the claim cite no document and repeat one another. It would be found, if it exists, among the acts of government of the then Diocese of Campinas, in the archdiocesan archive at the Cúria Metropolitana de Campinas, which was not consulted here. That remains true after Santos (2019): he supplies a date for the act on the DEVOTION and none for an act on the APPARITIONS, and reproduces neither. Three devotional videos recorded in the 2020s by Raphael Tonon restate an episcopal approval and add that a report by a Vatican-appointed investigator on the case was found in the Vatican Apostolic Archive; no protocol number, date or text was given for it, and it is treated here as a lead for that archive rather than as evidence.",
+        "sources": [
+          "rde-santos-2019",
+          "wikipedia-en-olt",
+          "wikipedia-pt-nsl",
+          "cancaonova-nsl",
+          "rbhr-santos-2025",
+          "video-tonon-cdb-profecia"
+        ]
       },
       {
         "label": "Permission to print the writings — not a verdict on the apparitions",
@@ -35,25 +46,37 @@
         "status": "favourable",
         "who": "Dom Francisco de Campos Barreto",
         "outcome": "Barreto granted the imprimatur for Licções de Jesus Victima, the volume of messages attributed to \"Jesus Manietado\" published by the Institute in Campinas in 1933, and wrote its preface. This is the only episcopal act in the case for which a scholarly source supplies a bibliographic citation and a quotation. Its object is a book. An imprimatur is a permission to print, granted after censorship for faith and morals; it settles nothing about whether the reported apparitions were supernatural, and it is set out as its own rung precisely so that it cannot be read as the missing verdict on the rung before it.",
-        "sources": ["rbhr-santos-2025"]
+        "sources": [
+          "rbhr-santos-2025"
+        ]
       },
       {
         "label": "Further reported acts on the devotion",
         "when": "reported 1931, 20 February 1934, and abroad from 1935",
         "status": "reported-undocumented",
         "who": "Bishop Barreto; unnamed bishops in the United States, Germany and Hungary",
-        "outcome": "Devotional literature also reports an imprimatur of 8 March 1931 covering the chaplet prayers, an episcopal declaration of 20 February 1934 in which Barreto reinforced the importance of the devotion to Our Lady of Tears, and further imprimaturs for the chaplet granted by bishops abroad from 1935. Every one of these concerns the devotion and its printed texts rather than the apparitions, so even if all were produced tomorrow they would leave the rung above unanswered.",
-        "noDocument": "None of these texts was produced by any source consulted; the devotional sites and the encyclopedia articles that carry them cite no document and repeat one another. The Brazilian acts would be in the archdiocesan archive at the Cúria Metropolitana de Campinas; the foreign imprimaturs would be in the chanceries of the dioceses that granted them, which none of the sources names.",
-        "sources": ["wikipedia-en-olt", "cancaonova-nsl"]
+        "outcome": "Devotional literature also reports an imprimatur of 8 March 1931 covering the chaplet prayers, an episcopal declaration of 20 February 1934 in which Barreto reinforced the importance of the devotion to Our Lady of Tears, and further imprimaturs for the chaplet granted by bishops abroad from 1935. Every one of these concerns the devotion and its printed texts rather than the apparitions, so even if all were produced tomorrow they would leave the rung above unanswered. Santos (2019) now dates and attributes several of these: he gives 8 March 1932, not 1931, for the Brazilian imprimatur on the chaplet and the medal, and names the approvals abroad individually — Detroit under Bishop Michael James Gallagher and Munich-Freising under vicar general Ferdinand Buchwieser, both 22 March 1935; a nihil obstat numbered 924/1935 from the diocesan censor at Sopron, 25 May 1935; and Győr under Bishop Stephanus Breyer, 13 July 1935. He records no act of 20 February 1934.",
+        "noDocument": "None of these texts has been produced by any source consulted. What changed with Santos (2019) is that they are no longer bare assertions: an academic footnote supplies dates, granting authorities, sees and — for Sopron — the only protocol number attaching to any act in this case that any source gives. The acts themselves are still unseen, which is why this rung has not moved; a reader weighing it should know that the evidence behind it is now materially stronger than the rung above it. The Brazilian act would be in the archdiocesan archive at the Cúria Metropolitana de Campinas, whose Livro do Tombo a devotional researcher states he has consulted; the foreign ones in the chanceries of Detroit, Munich and Freising, Sopron and Győr.",
+        "sources": [
+          "rde-santos-2019",
+          "wikipedia-en-olt",
+          "cancaonova-nsl"
+        ]
       },
       {
         "label": "A ruling by the Holy See",
         "when": "1929 onwards",
         "status": "not-found",
         "who": "Roman Curia; apostolic nunciature to Brazil",
-        "outcome": "Rome was not absent from the case. In May 1929 the apostolic nuncio to Brazil, Benedetto Aloisi Masella, spent a week in Campinas following the celebrations and the reported manifestations at the Institute, with the São Paulo press covering each step and describing him as pleased with what he saw. But a visit is not an act: no decree, rescript, response or report of the Holy See or of any Roman dicastery on the Campinas apparitions has been located, and no source consulted refers to one.",
-        "noDocument": "This rung is \"no ruling found\", not \"the case never went to Rome\", and the distinction is the point. Recording it as \"did not reach\" would require positive evidence that the case was never referred, and there is none: the nuncio's 1929 visit shows Roman attention, while the claim that Barreto skipped the expected notification to the Holy See rests on a contemporary priest's criticism in the press and on Santos's reading of it, not on a document. Searched: every source in this dataset, the Archdiocese of Campinas website, Catholic media coverage of the 2023 commission, and open web searches for any Holy See or Doctrine of the Faith act on the Campinas case. The Acta Apostolicae Sedis of the 1930s and the nunciature's own files were not consulted, and either could still hold something.",
-        "sources": ["rbhr-santos-2025", "catholic-hierarchy-masella"]
+        "outcome": "Rome was not absent from the case. In May 1929 the apostolic nuncio to Brazil, Benedetto Aloisi Masella, spent a week in Campinas following the celebrations and the reported manifestations at the Institute, with the São Paulo press covering each step and describing him as pleased with what he saw. But a visit is not an act: no decree, rescript, response or report of the Holy See or of any Roman dicastery on the Campinas apparitions has been located, and no source consulted refers to one. Santos (2019) states flatly that the messages and the devotion have not been approved by the Holy See. Against that, the three devotional videos added to this dataset do assert Roman action: that Pius XI appointed an investigator, that a canonical process was opened in 1935 with the Benedictine Dom Lourenço Zeller as apostolic visitor, that Zeller reported favourably, and that a decree of the Holy Office then ordered the images withdrawn and public cult suspended. That is an assertion of a restrictive Roman act, not a favourable one, and it is undocumented in every particular.",
+        "noDocument": "This rung is \"no ruling found\", not \"the case never went to Rome\", and the distinction is the point. Recording it as \"did not reach\" would require positive evidence that the case was never referred, and there is none: the nuncio's 1929 visit shows Roman attention, while the claim that Barreto skipped the expected notification to the Holy See rests on a contemporary priest's criticism in the press and on Santos's reading of it, not on a document. Searched: every source in this dataset, the Archdiocese of Campinas website, Catholic media coverage of the 2023 commission, and open web searches for any Holy See or Doctrine of the Faith act on the Campinas case. The Acta Apostolicae Sedis of the 1930s and the nunciature's own files were not consulted, and either could still hold something. One qualification has been added since: three devotional videos now cited in this dataset DO refer to Roman acts — an appointment by Pius XI, a 1935 apostolic visitation and a decree of the Holy Office — without a date, a protocol number or a text for any of them, and no institutional or academic source consulted mentions any of the three. The person named is real and partly checks out: Dom Lourenço Zeller OSB (Riedlingen 1873 – Belém 1945) was a German-born Benedictine in Brazil, appointed titular bishop of Dorylæum by Pius XI on 7 January 1939 and buried at the monastery in Rio de Janeiro. His role in this case is what is unattested — and the videos misdate his episcopal appointment to 1945 and call him abbot of Rio, which he never was. These remain leads for the Vatican Apostolic Archive and the Campinas curia.",
+        "sources": [
+          "rde-santos-2019",
+          "rbhr-santos-2025",
+          "catholic-hierarchy-masella",
+          "video-tonon-cdb-profecia",
+          "video-tonon-lente-catolica"
+        ]
       }
     ]
   },
@@ -61,27 +84,49 @@
     {
       "label": "What it is",
       "value": "A series of reported apparitions of Jesus (8 November 1929, as \"Jesus Manietado\", Jesus Bound) and of the Virgin Mary presenting herself as \"Nossa Senhora das Lágrimas\" (Our Lady of Tears, 8 March and 8 April 1930), to Sister Amália de Jesus Flagelado in the chapel of the Missionárias de Jesus Crucificado mother house in Campinas, São Paulo, Brazil. The Chaplet (Coroa/Terço) of Tears devotion traces its origin to these reports.",
-      "sources": ["cancaonova-nsl", "wikipedia-pt-nsl", "acidigital-comissao-2023"]
+      "sources": [
+        "cancaonova-nsl",
+        "wikipedia-pt-nsl",
+        "acidigital-comissao-2023"
+      ]
     },
     {
       "label": "Reported visionary",
       "value": "Sister Amália de Jesus Flagelado, born Amália Aguirre (Riós, Ourense, Galicia, Spain, 22 July 1901 – Taubaté, Brazil, 18 April 1977), a member of the first group of the Instituto das Missionárias de Jesus Crucificado.",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023", "wikipedia-pt-amalia"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023",
+        "wikipedia-pt-amalia"
+      ]
     },
     {
       "label": "Church ruling on the apparitions",
-      "value": "No judgment by Church authority on the apparitions themselves could be located. Devotional literature states that Bishop Francisco de Campos Barreto of Campinas recognized the phenomena and granted an imprimatur for Sister Amália's writings and the chaplet prayers on 8 March 1931, but no copy or archival citation of that document was found, and the one located primary document — the archdiocesan decree of 16 June 2023 — makes no pronouncement on the apparitions. The academic study of the 1928–1929 controversy records no canonically constituted diocesan inquiry either; the Holy See's nuncio to Brazil spent a week in Campinas in May 1929, but no Roman act arising from that visit was located.",
-      "sources": ["wikipedia-en-olt", "cancaonova-nsl", "decreto-comissao-2023", "rbhr-santos-2025"]
+      "value": "No judgment by Church authority on the apparitions themselves could be located. What IS dated is narrower and concerns the devotion: an academic source (Santos 2019) records an imprimatur signed by Bishop Francisco de Campos Barreto on 8 March 1932 authorising the chaplet and the medal within the diocese, and names four approvals abroad in 1935, one of them carrying a protocol number. Devotional literature instead reports an episcopal recognition of the apparitions and an imprimatur on 8 March 1931, and a declaration of 20 February 1934; no copy or archival citation of either was found, and neither academic study of the case records them. The one located primary document — the archdiocesan decree of 16 June 2023 — makes no pronouncement on the apparitions. Santos states that the messages and the devotion have still not been approved by the Holy See.",
+      "sources": [
+        "rde-santos-2019",
+        "rbhr-santos-2025",
+        "decreto-comissao-2023",
+        "wikipedia-en-olt",
+        "cancaonova-nsl"
+      ]
     },
     {
       "label": "Approval of the chaplet vs. approval of the apparitions",
-      "value": "These are distinct acts. An imprimatur or authorization to publish prayers permits a devotion; it is not a declaration that the apparitions were supernatural. The reported 1931 authorization concerns publication of the writings and prayers. One imprimatur by Bishop Barreto is documented with a bibliographic citation — the one he granted for the 1933 volume \"Licções de Jesus Victima\", whose preface he also wrote — and that act too is a permission to print a book. This dataset records no located Church declaration of supernaturality for the Campinas apparitions.",
-      "sources": ["wikipedia-en-olt", "cancaonova-nsl", "rbhr-santos-2025"]
+      "value": "These are distinct acts. An imprimatur or authorization to publish prayers permits a devotion; it is not a declaration that the apparitions were supernatural. Three such permissions are dated by academic sources and all three have a printed text or an object as their object: Barreto's imprimatur of 8 March 1932 for the Chaplet and the Medal of Tears, his imprimatur and preface for the 1933 volume “Licções de Jesus Victima”, and his 1934 preface to “Glórias e Poder de Nossa Senhora das Lágrimas”; to these the 1935 approvals by bishops in the United States, Germany and Hungary add permissions to print the prayers in other jurisdictions. This dataset records no located Church declaration of supernaturality for the Campinas apparitions.",
+      "sources": [
+        "rde-santos-2019",
+        "rbhr-santos-2025",
+        "wikipedia-en-olt",
+        "cancaonova-nsl"
+      ]
     },
     {
       "label": "Status of the visionary's cause",
       "value": "On 16 June 2023 Archbishop João Inácio Müller of Campinas decreed the creation of a Study Commission \"Ir. Amália de Jesus Flagelado\" to investigate her possible \"odor of sanctity\" with a view to the POSSIBLE opening of a beatification cause. As of that decree, no cause had been opened and no judgment on her sanctity or on the apparitions had been made.",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023"
+      ]
     }
   ],
   "events": [
@@ -92,27 +137,40 @@
       "place": "Riós, Ourense, Spain",
       "title": "Birth of Amália Aguirre",
       "text": "Amália Aguirre is born in Riós, province of Ourense, Galicia, Spain. The date is attested in the 2023 archdiocesan decree, which describes her as \"nascida em Riós, Província de Ourense – Galícia/Espanha, em 22 de julho de 1901\".",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023", "wikipedia-pt-amalia"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023",
+        "wikipedia-pt-amalia"
+      ]
     },
     {
       "year": 1919,
       "date": "1919",
-      "dateVerified": false,
-      "dateNote": "Portuguese Wikipedia gives 16 June 1919 for her arrival in Campinas; the Unicamp memory-center account and devotional literature give only the year 1919 (entry through the port of Salvador). No primary immigration record located.",
+      "dateVerified": true,
+      "dateNote": "Year now attested by an academic source (Santos 2019), which had previously rested on devotional and encyclopedia material; Portuguese Wikipedia gives 16 June 1919 for the arrival in Campinas, a precision no source consulted supports.",
       "place": "Campinas, Brazil",
       "title": "The Aguirre family emigrates to Brazil",
-      "text": "Amália Aguirre emigrates from Spain to Brazil with her mother and sisters, eventually settling in Campinas, São Paulo.",
-      "sources": ["unicamp-cmu-amalia", "wikipedia-pt-nsl", "coroa-lagrimas-fundacao"]
+      "text": "Amália Aguirre emigrates from Spain to Brazil after the end of the First World War and, after a period in Bahia, the family settles in Campinas, São Paulo. Santos (2019) gives the year as 1919 and names her parents as Andres and Emerita Aguirre.",
+      "sources": [
+        "rde-santos-2019",
+        "unicamp-cmu-amalia",
+        "wikipedia-pt-nsl",
+        "coroa-lagrimas-fundacao"
+      ]
     },
     {
       "year": 1928,
       "date": "1928-05-03",
       "dateVerified": true,
-      "dateNote": "The congregation's official history dates the canonical founding 3 May 1928, with the habit taken 11 May 1928, growing out of an association active since 1917; the Unicamp memory-center article dates the initiative to 1927. The 2023 archdiocesan decree says Amália, with seven other religious, \"iniciou\" the Institute in 1928.",
+      "dateNote": "The congregation's official history dates the canonical founding 3 May 1928, with the habit taken 11 May 1928, growing out of an association active since 1917; the Unicamp memory-center article dates the initiative to 1927. The 2023 archdiocesan decree says Amália, with seven other religious, \"iniciou\" the Institute in 1928. The number of foundresses is also reported differently: the congregation's own history says the foundation took place “com apenas onze irmãs”, while the 2023 archdiocesan decree says Sister Amália began the Institute “em companhia de mais sete religiosas”, that is as one of eight. Tonon follows the count of eight and calls her the eighth to join.",
       "place": "Campinas, Brazil",
       "title": "Founding of the Instituto das Missionárias de Jesus Crucificado",
       "text": "Bishop Francisco de Campos Barreto of Campinas and Maria Villac (in religion Madre Maria do Calvário) found the Instituto das Missionárias de Jesus Crucificado, transforming an earlier association (1917) into a religious congregation; eleven sisters form the first group. Amália Aguirre is among the first members and takes the religious name Irmã Amália de Jesus Flagelado.",
-      "sources": ["mjc-nossa-historia", "decreto-comissao-2023", "coroa-lagrimas-fundacao"]
+      "sources": [
+        "mjc-nossa-historia",
+        "decreto-comissao-2023",
+        "coroa-lagrimas-fundacao"
+      ]
     },
     {
       "year": 1928,
@@ -122,7 +180,9 @@
       "place": "Campinas, Brazil",
       "title": "Reported stigmata become public; press controversy",
       "text": "Sister Amália's reported stigmata, said to have begun earlier in 1928, become publicly known and draw heavy press attention. The phenomena are immediately contested: physicians and rationalist commentators attribute them to psychological illness, and Dr. Sousa Ribeiro accuses Bishop Barreto of fabricating the case, while Dr. Arthur de Vasconcelos defends the events as genuine in his 1929 book \"Res Non Verba\". Media coverage diminishes after late 1928.",
-      "sources": ["unicamp-cmu-amalia"]
+      "sources": [
+        "unicamp-cmu-amalia"
+      ]
     },
     {
       "year": 1928,
@@ -132,7 +192,9 @@
       "place": "Campinas, Brazil",
       "title": "Bishop Barreto tells the press the case is genuine",
       "text": "In an interview published by the São Paulo newspaper Diário Nacional, Bishop Francisco de Campos Barreto reaffirms his conviction that what is happening to Sister Amália is a true stigmatization — \"extraordinário, milagroso\" — and that she is not ill. Santos reads the statement as assertive and out of step with the canonical norms then in force, which required prudence and silence until the case had been verified by suitable persons appointed by the ecclesiastical authority. A view given to a newspaper is not a canonical judgment, and no such judgment has been located.",
-      "sources": ["rbhr-santos-2025"]
+      "sources": [
+        "rbhr-santos-2025"
+      ]
     },
     {
       "year": 1929,
@@ -142,7 +204,10 @@
       "place": "Campinas, Brazil",
       "title": "The apostolic nuncio visits Campinas",
       "text": "The Holy See's apostolic nuncio to Brazil — named by Santos as \"D. Aloisi Mansella\", that is Archbishop Benedetto Aloisi Masella, nuncio in Brazil from 1927 to 1946 — spends a week in Campinas following the celebrations and the reported manifestations at the house of the Missionárias de Jesus Crucificado. The São Paulo press covers each step and reports him as pleased with what he sees. No act, judgment or report of the Holy See arising from the visit has been located: the visit establishes Roman attention, not a Roman ruling.",
-      "sources": ["rbhr-santos-2025", "catholic-hierarchy-masella"]
+      "sources": [
+        "rbhr-santos-2025",
+        "catholic-hierarchy-masella"
+      ]
     },
     {
       "year": 1929,
@@ -152,7 +217,10 @@
       "place": "Campinas, Brazil",
       "title": "Reported apparition of Jesus (\"Jesus Manietado\")",
       "text": "Sister Amália reports an apparition of Jesus, bound (\"Jesus Manietado\"), in the chapel of the Institute's mother house, with the promise — as devotional literature transmits it — that whatever is asked of him through the tears of his Mother will be lovingly granted.",
-      "sources": ["acidigital-comissao-2023", "wikipedia-pt-nsl"]
+      "sources": [
+        "acidigital-comissao-2023",
+        "wikipedia-pt-nsl"
+      ]
     },
     {
       "year": 1930,
@@ -162,7 +230,11 @@
       "place": "Campinas, Brazil",
       "title": "Reported apparition of Mary as \"Nossa Senhora das Lágrimas\"",
       "text": "Sister Amália reports that the Virgin Mary appeared to her in the convent chapel, presented herself as Our Lady of Tears, and taught her the Chaplet (Coroa/Terço) of Tears, saying — as the devotional accounts transmit it — \"this is the rosary of My tears, promised by My Son to our dear Institute\". This report is the origin of the Chaplet of Tears devotion.",
-      "sources": ["cancaonova-nsl", "acidigital-comissao-2023", "wikipedia-pt-nsl"]
+      "sources": [
+        "cancaonova-nsl",
+        "acidigital-comissao-2023",
+        "wikipedia-pt-nsl"
+      ]
     },
     {
       "year": 1930,
@@ -172,7 +244,10 @@
       "place": "Campinas, Brazil",
       "title": "Reported second Marian apparition; the medal of the Tears",
       "text": "Sister Amália reports a further apparition in which Mary asks for a medal bearing her image and the invocation \"Ó Virgem Dolorosíssima, as Vossas Lágrimas derrubaram o império infernal\" (O most sorrowful Virgin, your tears have overthrown the infernal empire).",
-      "sources": ["cancaonova-nsl", "wikipedia-pt-nsl"]
+      "sources": [
+        "cancaonova-nsl",
+        "wikipedia-pt-nsl"
+      ]
     },
     {
       "year": 1931,
@@ -181,8 +256,13 @@
       "dateNote": "Sources disagree on precision: Canção Nova gives only \"1931\"; English and Portuguese Wikipedia give 8 March 1931. No copy of the document itself, nor an archival citation for it, was located; the 2023 archdiocesan decree does not mention it.",
       "place": "Campinas, Brazil",
       "title": "Reported episcopal recognition and imprimatur",
-      "text": "Devotional literature states that Bishop Francisco de Campos Barreto recognized the veracity of Sister Amália's stigmata and apparitions and granted the authorizations — including the imprimatur — for publication of her writings and of the chaplet prayers. This dataset records the claim as reported by that literature; the underlying document has not been located, and an authorization to publish prayers is in any case distinct from a judgment that the apparitions were supernatural.",
-      "sources": ["wikipedia-en-olt", "wikipedia-pt-nsl", "cancaonova-nsl"]
+      "text": "Devotional literature states that Bishop Francisco de Campos Barreto recognized the veracity of Sister Amália's stigmata and apparitions and granted the authorizations — including the imprimatur — for publication of her writings and of the chaplet prayers. This dataset records the claim as reported by that literature; the underlying document has not been located, and an authorization to publish prayers is in any case distinct from a judgment that the apparitions were supernatural. An academic source located since — Santos (2019) — dates Barreto's imprimatur for the chaplet and the medal to 8 March 1932 instead, and records no episcopal act of 1931 at all.",
+      "sources": [
+        "wikipedia-en-olt",
+        "wikipedia-pt-nsl",
+        "cancaonova-nsl",
+        "rde-santos-2019"
+      ]
     },
     {
       "year": 1931,
@@ -191,8 +271,12 @@
       "dateNote": "Attested by ACI Digital and Wikipedia; no primary record located.",
       "place": "Campinas, Brazil",
       "title": "Sister Amália makes perpetual vows",
-      "text": "Sister Amália de Jesus Flagelado makes her perpetual vows in the Instituto das Missionárias de Jesus Crucificado.",
-      "sources": ["acidigital-comissao-2023", "wikipedia-pt-nsl"]
+      "text": "Sister Amália de Jesus Flagelado makes her perpetual vows in the Instituto das Missionárias de Jesus Crucificado. Santos (2019) places the perpetual profession and her taking of the religious name in 1931, corroborating the year but not the day.",
+      "sources": [
+        "acidigital-comissao-2023",
+        "wikipedia-pt-nsl",
+        "rde-santos-2019"
+      ]
     },
     {
       "year": 1933,
@@ -202,7 +286,9 @@
       "place": "Campinas, Brazil",
       "title": "Imprimatur for \"Licções de Jesus Victima\"",
       "text": "Bishop Barreto grants the imprimatur for Licções de Jesus Victima, the volume of messages attributed to \"Jesus Manietado\" published by the Institute, and writes its preface. This is the only episcopal act in the case for which a scholarly source gives a bibliographic citation and a quotation. Its object is a book: an imprimatur is a permission to print, granted after censorship for faith and morals, and it decides nothing about whether the reported apparitions were supernatural.",
-      "sources": ["rbhr-santos-2025"]
+      "sources": [
+        "rbhr-santos-2025"
+      ]
     },
     {
       "year": 1934,
@@ -211,8 +297,13 @@
       "dateNote": "Date given by English Wikipedia, following devotional literature; the declaration itself was not located.",
       "place": "Campinas, Brazil",
       "title": "Reported episcopal declaration on the devotion",
-      "text": "Devotional literature states that Bishop Barreto published an episcopal declaration reinforcing the importance of the devotion to Our Lady of Tears. Devotional accounts also report later imprimaturs for the chaplet prayers by bishops outside Brazil (United States, Germany, Hungary, from 1935); none of those documents were located either, and they are recorded here only as claims of that literature.",
-      "sources": ["wikipedia-en-olt", "cancaonova-nsl"]
+      "text": "Devotional literature states that Bishop Barreto published an episcopal declaration reinforcing the importance of the devotion to Our Lady of Tears. Devotional accounts also report later imprimaturs for the chaplet prayers by bishops outside Brazil (United States, Germany, Hungary, from 1935); none of those documents were located either, and they are recorded here only as claims of that literature. Neither of the two academic studies of the case records a declaration of 20 February 1934; Santos (2019) places in 1934 a different act, Barreto's preface to “Glórias e Poder de Nossa Senhora das Lágrimas”, and dates the imprimaturs abroad precisely to 1935. Raphael Tonon, in the longest of the three videos, gives 20 February as the day of Barreto's approval but places it in 1932, not 1934.",
+      "sources": [
+        "wikipedia-en-olt",
+        "cancaonova-nsl",
+        "rde-santos-2019",
+        "video-tonon-lente-catolica"
+      ]
     },
     {
       "year": 1941,
@@ -221,7 +312,10 @@
       "place": "Campinas, Brazil",
       "title": "Death of Bishop Francisco de Campos Barreto",
       "text": "Francisco de Campos Barreto, second diocesan bishop of Campinas (installed 14 November 1920) and founder of the Instituto das Missionárias de Jesus Crucificado, dies in office.",
-      "sources": ["catholic-hierarchy-barreto", "decreto-comissao-2023"]
+      "sources": [
+        "catholic-hierarchy-barreto",
+        "decreto-comissao-2023"
+      ]
     },
     {
       "year": 1952,
@@ -231,7 +325,9 @@
       "place": "Rome, Italy",
       "title": "Decretum Laudis for the Missionárias de Jesus Crucificado",
       "text": "Pope Pius XII grants the Decretum Laudis recognizing the Missionárias de Jesus Crucificado as a congregation of pontifical right. The recognition concerns the congregation, not the apparition reports.",
-      "sources": ["decreto-comissao-2023"]
+      "sources": [
+        "decreto-comissao-2023"
+      ]
     },
     {
       "year": 1977,
@@ -240,8 +336,14 @@
       "dateNote": "Date attested by ACI Digital and Portuguese Wikipedia; the 2023 decree confirms she died within the territory of the Diocese of Taubaté (it records the transfer of canonical competence from its bishop) but gives no date. No primary death record located.",
       "place": "Taubaté, Brazil",
       "title": "Death of Sister Amália de Jesus Flagelado",
-      "text": "Sister Amália dies in Taubaté, São Paulo, aged 75.",
-      "sources": ["acidigital-comissao-2023", "wikipedia-pt-amalia", "decreto-comissao-2023"]
+      "text": "Sister Amália dies in Taubaté, São Paulo, aged 75; Santos (2019) writes that she died “com fama de santa”. Devotional sources and Tonon agree that she is buried in the tomb of the Missionárias de Jesus Crucificado in the Franciscan cemetery beside the Igreja de Santa Clara in Taubaté, not in the convent, and that the grave is marked and visited.",
+      "sources": [
+        "acidigital-comissao-2023",
+        "wikipedia-pt-amalia",
+        "decreto-comissao-2023",
+        "rde-santos-2019",
+        "video-tonon-anima-60"
+      ]
     },
     {
       "year": 2023,
@@ -250,7 +352,199 @@
       "place": "Campinas, Brazil",
       "title": "Archdiocese of Campinas creates the Study Commission \"Ir. Amália de Jesus Flagelado\"",
       "text": "Archbishop João Inácio Müller signs the decree creating the Comissão de Estudos \"Ir. Amália de Jesus Flagelado\" (Chancery record: Livro XXXII dos Atos de Governo, Prot. 106), charged with investigating the situation and carrying out the diligences required \"para a possível abertura de processo de beatificação\", examining her possible odor of sanctity and heroic virtue. The decree cites the faithful's devotion and a prior historical-canonical opinion; it makes no pronouncement on the apparitions themselves, and notes the transfer of canonical competence agreed with the Bishop of Taubaté, Dom Wilson Luís Angotti Filho.",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023"
+      ]
+    },
+    {
+      "year": 1908,
+      "date": "1908-06-07",
+      "dateVerified": true,
+      "place": "Campinas, Brazil",
+      "title": "The Diocese of Campinas is erected",
+      "text": "Pope Pius X erects the Diocese of Campinas, which is installed on 1 November 1908 under its first bishop, Dom João Batista Corrêa Nery. The see is twenty years old, and on its second bishop, when the reports at the Institute begin; it is raised to a metropolitan archdiocese only in 1958. This is context for the later record rather than part of it: a young diocese with a short institutional memory and no established practice for handling a reported private revelation.",
+      "sources": [
+        "arqcampinas-bispos"
+      ]
+    },
+    {
+      "year": 1917,
+      "date": "1917",
+      "dateVerified": true,
+      "place": "Campinas, Brazil",
+      "title": "Maria Villac gathers the association from which the congregation grows",
+      "text": "Maria Villac, born in Campinas on 26 February 1894, begins meeting with friends for prayer and then for visiting the poor and the sick on the industrial outskirts of Campinas and São Paulo. The congregation's own history counts 364 members in the association by 1927. Santos (2019) describes the same body as the religious association from which the Institute was formed.",
+      "sources": [
+        "mjc-nossa-historia",
+        "mjc-sim-villac",
+        "rde-santos-2019"
+      ]
+    },
+    {
+      "year": 1920,
+      "date": "1920-11-14",
+      "dateVerified": true,
+      "place": "Campinas, Brazil",
+      "title": "Francisco de Campos Barreto is installed as second bishop of Campinas",
+      "text": "Dom Francisco de Campos Barreto takes possession of the see of Campinas, which he governs until his death in 1941. Every episcopal act in this dataset — the founding of the Institute, the 1928 press declarations, the imprimaturs, the preface — is his; the record of the case effectively begins and ends with his episcopate.",
+      "sources": [
+        "catholic-hierarchy-barreto",
+        "arqcampinas-bispos"
+      ]
+    },
+    {
+      "year": 1927,
+      "date": "1927-09-29",
+      "dateVerified": true,
+      "dateNote": "Resolves an apparent conflict already flagged in the dataset: Unicamp dates the initiative to 1927, the congregation and the 2023 decree date the foundation to 1928. Both are right about different acts. Raphael Tonon, in two of the three 2020s videos, instead places the founding itself at a Christmas Mass in the episcopal palace chapel — 25 December 1927 in one video and 25 December 1928 in another, a contradiction internal to the same speaker; no source consulted supports either date.",
+      "place": "Campinas, Brazil",
+      "title": "Maria Villac accepts the bishop's proposal to found a congregation",
+      "text": "According to the congregation's own history, Bishop Barreto proposed on 6 September 1927 that Maria Villac's association be transformed into a religious congregation, and she gave her assent on 29 September 1927. This is the 1927 initiative that the Centro de Memória da Unicamp account dates the founding to; the formal foundation followed on 3 May 1928.",
+      "sources": [
+        "mjc-sim-villac",
+        "mjc-nossa-historia",
+        "unicamp-cmu-amalia"
+      ]
+    },
+    {
+      "year": 1928,
+      "date": "1928-05-11",
+      "dateVerified": true,
+      "dateNote": "Academic date. Tonon dates the clothing of the first sisters to 11 May 1929, a year later, and says Barreto chose the day because it was then the feast of Nossa Senhora Aparecida; no source consulted supports 1929.",
+      "place": "Campinas, Brazil",
+      "title": "Amália Aguirre receives the novice's habit with the first group",
+      "text": "Santos (2019) records that Amália Aguirre was among the first religious to receive the novitiate habit, on 11 May 1928, at the mother house in Campinas, and describes her as documented at the time as frail in appearance and of slight theological formation. Her reported stigmata become public later the same year.",
+      "sources": [
+        "rde-santos-2019"
+      ]
+    },
+    {
+      "year": 1929,
+      "date": "1929",
+      "dateVerified": false,
+      "dateNote": "Year as given by Tonon reading what he describes as an original of the periodical; the issue itself was not seen, and neither its date nor its existence could be confirmed from any other source. “A Missionária” is recorded in KEYWORDS.md as an archival lead for Campinas.",
+      "place": "Campinas, Brazil",
+      "title": "The Institute's own periodical publishes the account of the cure the devotion's origin story turns on",
+      "text": "The devotional tradition traces the whole devotion to a reported cure: a man came to the convent door because his wife had been given up by her doctors, and a sister — unnamed in the original telling — offered her own life for the mother's. Raphael Tonon states that he holds an original of “A Missionária”, the Institute's own periodical, in which Bishop Barreto authorised the sisters to publish the account, with the people involved reduced to initials; he reads from it and dates the episode to 1929, and adds, from later family testimony, that the sick woman was the wife of a brother of Madre Villac. What is recorded here is that the account was PUBLISHED and by whom — not that a cure occurred. No copy of the periodical was located independently, no physician's statement or other contemporary attestation of a recovery was found, and no Church authority has ever recognised a cure in this case.",
+      "sources": [
+        "video-tonon-lente-catolica",
+        "video-tonon-anima-60",
+        "cancaonova-nsl"
+      ]
+    },
+    {
+      "year": 1932,
+      "date": "1932-03-08",
+      "dateVerified": true,
+      "dateNote": "Same day and month, one year later, than the 8 March 1931 imprimatur that devotional literature and the Wikipedia articles report; Santos supplies 1932 and the devotional sources supply no document for either year. A devotional site consulted on 5 August 2026 also gives 8 March 1932, and Tonon gives 1932 in two of the three videos — adding, without a source, fifty days' indulgence. The dataset keeps both dates and does not merge them: the 1931 claim remains recorded as reported.",
+      "place": "Campinas, Brazil",
+      "title": "Imprimatur of Bishop Barreto for the Chaplet and the Medal of Tears",
+      "text": "Santos (2019) records an imprimatur signed by Bishop Francisco de Campos Barreto on 8 March 1932 authorising the Terço das Lágrimas and the Medalha das Lágrimas to be disseminated within the diocese. This is the earliest episcopal act on the devotion for which an academic source supplies a date and a granting authority. Its object is the chaplet and the medal — devotional texts and an object — and an imprimatur is a permission to print granted after censorship for faith and morals. Santos describes it as evidence of the bishop's support for the case; he records no act of his declaring the apparitions supernatural, and states that the messages and the devotion have not been approved by the Holy See.",
+      "sources": [
+        "rde-santos-2019"
+      ]
+    },
+    {
+      "year": 1934,
+      "date": "1934",
+      "dateVerified": true,
+      "dateNote": "Santos's 2019 article dates Barreto's preface to “Glórias e Poder” to 1934; his 2025 article dates an imprimatur and preface by Barreto for a different volume, “Licções de Jesus Victima”, to 1933. The dataset carries both, as two acts on two books, and notes that neither is the episcopal declaration of 20 February 1934 that devotional literature reports.",
+      "place": "Campinas, Brazil",
+      "title": "Barreto prefaces the first book on the visions",
+      "text": "Santos (2019) records that in 1934 Bishop Barreto wrote the preface to “Glórias e Poder de Nossa Senhora das Lágrimas”, the first book to set out Sister Amália's visions of Christ Manietado and of Our Lady of Tears, and describes the work as presenting the apparitions as a miraculous phenomenon explained as a divine grace. A preface is an endorsement by the bishop of a book about the reports; it is not a judgment on them.",
+      "sources": [
+        "rde-santos-2019",
+        "cdb-lagrimas-edicoes"
+      ]
+    },
+    {
+      "year": 1935,
+      "date": "1935",
+      "dateVerified": true,
+      "dateNote": "The same footnote also lists an imprimatur from Archbishop John Robert Roach of Saint Paul and Minneapolis with no date. That one cannot belong to 1935: Roach was archbishop there from 1975 to 1995. It is recorded here as an error or a much later approval carried in the same list, and is not counted among the 1935 acts.",
+      "title": "Approvals of the chaplet by bishops abroad",
+      "text": "Santos (2019) names the foreign ecclesiastical approvals of the devotion individually: an imprimatur from Bishop Michael James Gallagher of Detroit dated 22 March 1935; an imprimatur from the vicar general Ferdinand Buchwieser of the Archdiocese of Munich and Freising, also 22 March 1935; a nihil obstat numbered 924/1935 from Ansgarus Borsiczky, diocesan censor at Sopron in Hungary, dated 25 May 1935; and an imprimatur from Bishop Stephanus Breyer of Győr, Hungary, dated 13 July 1935. This is the only protocol number attaching to any act in the whole case that any source consulted supplies. Every one of these permits the printing of the chaplet's prayers in another jurisdiction; none is a judgment on what was reported at Campinas.",
+      "sources": [
+        "rde-santos-2019"
+      ]
+    },
+    {
+      "year": 1941,
+      "date": "1941-12-31",
+      "dateVerified": false,
+      "dateNote": "Santos places these developments after Barreto's death of 22 August 1941 without giving them dates; the event is filed at the end of 1941 so that it follows his death, and the date is flagged unverified for that reason. Raphael Tonon gives a different and much stronger account of the same withdrawal: that a canonical process was opened in 1935, that the Holy See appointed the Benedictine Dom Lourenço Zeller apostolic visitor, that Zeller reported favourably to the Holy Office, and that a Holy Office decree then ordered the images withdrawn and public cult suspended while private recitation of the chaplet remained free. No text, date or protocol number was produced for that decree, no source consulted outside the three videos refers to it, and Zeller's own biography contradicts part of the account (see the disambiguation note). The two explanations are recorded side by side and neither is adopted.",
+      "place": "Campinas, Brazil",
+      "title": "After Barreto's death the devotion is withdrawn from public view",
+      "text": "Santos (2019) records that following the death of Bishop Barreto in 1941 the devotion to Our Lady of Tears was moved backstage in Campinas: the chapel where the apparition was reported was closed to public access and reserved to the sisters, the devotional image of the Virgin of Tears was taken down from the cathedral altar and moved to the convent chapel, and the book “Glórias e Poder de Nossa Senhora das Lágrimas” disappeared from the holdings of Catholic libraries. He attributes the silence to the death of the case's chief promoter and to a return of prudence, and names no act of any authority ordering it.",
+      "sources": [
+        "rde-santos-2019"
+      ]
+    },
+    {
+      "year": 1953,
+      "date": "1953",
+      "dateVerified": true,
+      "place": "Taubaté, Brazil",
+      "title": "Sister Amália moves to Taubaté and founds a new house",
+      "text": "Santos (2019) records that in 1953 Sister Amália transferred to Taubaté, in the Paraíba valley, where she founded a new house of the congregation; she remained there until her death. Tonon adds that the move was a removal and that she was forbidden to speak of the apparition, and that the house she founded began as a milk kitchen for nursing mothers and became the Lar Irmã Amália. The transfer is recorded here; the reason for it is his account and is not established.",
+      "sources": [
+        "rde-santos-2019",
+        "video-tonon-cdb-profecia"
+      ]
+    },
+    {
+      "year": 1954,
+      "date": "1954",
+      "dateVerified": false,
+      "dateNote": "Year attested by the congregation's published material; a founding document naming her was not consulted.",
+      "place": "Brazil",
+      "title": "Madre Maria Villac among the founders of the Conference of Religious of Brazil",
+      "text": "The congregation records that its foundress, Madre Maria Villac, was one of the founders of the Conferência dos Religiosos do Brasil (CRB) in 1954 and served for several years as a general counsellor — an indication of the standing the Missionárias de Jesus Crucificado had reached nationally two years after the Decretum Laudis, and of a public life for the congregation entirely separate from the apparition reports.",
+      "sources": [
+        "mjc-nossa-historia"
+      ]
+    },
+    {
+      "year": 1984,
+      "date": "1984-03-01",
+      "dateVerified": false,
+      "dateNote": "Fills an open question in context.md. Congregational and devotional material consulted on 5 August 2026 gives 1 March 1984; Raphael Tonon states in one of the videos that she died in 1978, the year after Sister Amália, and elsewhere in the same lecture says “78” again. The 1984 date is followed here because it comes from the congregation's own side, and the date is left flagged because no register or obituary was seen.",
+      "place": "Brazil",
+      "title": "Death of Madre Maria Villac",
+      "text": "Maria Villac, in religion Madre Maria do Calvário, foundress and lifelong superior general of the Instituto das Missionárias de Jesus Crucificado, dies on 1 March 1984, aged 90. She outlived Sister Amália by nearly seven years.",
+      "sources": [
+        "mjc-nossa-historia",
+        "coroa-lagrimas-fundacao"
+      ]
+    },
+    {
+      "year": 2023,
+      "date": "2023-06-19",
+      "dateVerified": false,
+      "dateNote": "Date as given by Tonon. The archdiocesan article carrying the announcement returned HTTP 404 on 5 August 2026 after a site migration, the archdiocesan site's own search returned nothing for “Virgo Lacrimarum”, and Wayback was rate-limited; the note's own date, protocol number and text therefore remain unread. The chancery's published Comunicados Oficiais for June 2023 (Prot. 013, 15 June 2023) list Prot. 099–104 and do not include it.",
+      "place": "Campinas, Brazil",
+      "title": "The archdiocese publishes a note on the devotion to the title “Virgo Lacrimarum”",
+      "text": "Alongside the decree creating the study commission, the Archdiocese of Campinas announced that Archbishop João Inácio Müller had also published a note concerning the devotion to the Marian title “Virgo Lacrimarum”. The archdiocese's own headline is the evidence that such a note exists; its text was not read. Raphael Tonon, a cooperator of the commission created by the same decree, describes it in one of the videos as the archbishop approving the title by a decree of 19 June 2023, and stresses that in his reading the title stands on scripture, tradition and the magisterium independently of the apparitions. Whether the note is an approval, a clarification or a caution is NOT established here, and no separate decree numbered in the chancery's series was located for it.",
+      "sources": [
+        "arqcampinas-nota-2023",
+        "video-tonon-anima-60"
+      ]
+    },
+    {
+      "year": 2023,
+      "date": "2023-09",
+      "dateVerified": false,
+      "dateNote": "Year taken from the publisher's listing for “Vida Íntima” vol. 1 (2023); the month is nominal and the date is flagged. The Centro Dom Bosco volumes carry no publication date in the listings consulted, and the provenance of the notebook texts rests on Tonon's account alone.",
+      "place": "Brazil",
+      "title": "Sister Amália's notebooks and a full biography reach print again",
+      "text": "The texts Bishop Barreto had published in the 1930s return to print in Brazil: Centro Dom Bosco issues editions of “Glórias e Poder de Nossa Senhora das Lágrimas”, “Lições de Jesus Vítima” and “Do Presídio de Amor”, and Editora Imaculada publishes Rita Elisa Sêda's documentary collection “Vida Íntima: Irmã Amália de Jesus Flagelado” (vol. 1, 2023) and her book-length biography. Tonon states that he obtained digital copies of the six notebooks from correspondents in Portugal, the originals having been unobtainable in Brazil, and passed them to the publisher. Two of the people behind these editions — Sêda and Tonon — are named in the 16 June 2023 decree as members of the archdiocesan study commission.",
+      "sources": [
+        "cdb-lagrimas-edicoes",
+        "seda-irma-amalia",
+        "decreto-comissao-2023",
+        "video-tonon-anima-60"
+      ]
     }
   ],
   "figures": [
@@ -259,27 +553,43 @@
       "role": "Reported visionary and stigmatic; member of the first group of the Instituto das Missionárias de Jesus Crucificado (1928). Her reported stigmata (1928) and apparitions (1929–1930) are the origin of the Chaplet of Tears devotion. Since 16 June 2023 an archdiocesan study commission examines her possible \"odor of sanctity\" with a view to the possible opening of a beatification cause.",
       "dates": "1901–1977",
       "country": "Spain / Brazil",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023", "unicamp-cmu-amalia"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023",
+        "unicamp-cmu-amalia"
+      ]
     },
     {
       "name": "Francisco de Campos Barreto",
       "role": "Second diocesan bishop of Campinas (appointed 30 July 1920, installed 14 November 1920, died in office 1941); previously bishop of Pelotas (1911–1920). Founder, with Maria Villac, of the Instituto das Missionárias de Jesus Crucificado (1928). Contemporary critics accused him of promoting the Amália case (the Unicamp account records Dr. Sousa Ribeiro's accusation); devotional literature credits him with recognizing the phenomena and authorizing the devotion's publications in 1931 — a document not located here.",
       "dates": "1877–1941",
       "country": "Brazil",
-      "sources": ["catholic-hierarchy-barreto", "unicamp-cmu-amalia", "mjc-nossa-historia"]
+      "sources": [
+        "catholic-hierarchy-barreto",
+        "unicamp-cmu-amalia",
+        "mjc-nossa-historia"
+      ]
     },
     {
       "name": "Maria Villac (Madre Maria do Calvário)",
-      "role": "Foundress and first superior of the Instituto das Missionárias de Jesus Crucificado; led the association from which the congregation grew. Born in Campinas on 26 February 1894; a death date was not established from the sources consulted.",
-      "dates": "1894–?",
+      "role": "Foundress and lifelong superior general of the Instituto das Missionárias de Jesus Crucificado; led the association from which the congregation grew, accepted Bishop Barreto's proposal to turn it into a congregation on 29 September 1927, and was among the founders of the Conferência dos Religiosos do Brasil in 1954. Born in Campinas on 26 February 1894; congregational and devotional material gives her death as 1 March 1984, a date one devotional commentator contradicts with 1978.",
+      "dates": "1894–1984 (death date not verified)",
       "country": "Brazil",
-      "sources": ["mjc-nossa-historia", "coroa-lagrimas-fundacao"]
+      "sources": [
+        "mjc-nossa-historia",
+        "mjc-sim-villac",
+        "coroa-lagrimas-fundacao",
+        "video-tonon-cdb-profecia"
+      ]
     },
     {
       "name": "João Inácio Müller",
       "role": "Archbishop Metropolitan of Campinas; signed the 16 June 2023 decree creating the Study Commission \"Ir. Amália de Jesus Flagelado\".",
       "country": "Brazil",
-      "sources": ["decreto-comissao-2023", "acidigital-comissao-2023"]
+      "sources": [
+        "decreto-comissao-2023",
+        "acidigital-comissao-2023"
+      ]
     }
   ],
   "organizations": [
@@ -288,13 +598,19 @@
       "founded": "1928",
       "place": "Campinas, Brazil",
       "relation": "The congregation Sister Amália belonged to; the apparitions are reported to have occurred in the chapel of its mother house in Campinas. Recognized of pontifical right by the Decretum Laudis of Pius XII (1952); today present in Brazil, Bolivia, Paraguay, Angola and Mozambique. Note: the congregation's own published history page, as consulted on 5 August 2026, recounts the founding by Dom Barreto and Maria Villac without mentioning Sister Amália or the apparitions — the apparition narrative is carried by devotional literature, not by the Institute's institutional account.",
-      "sources": ["mjc-nossa-historia", "decreto-comissao-2023"]
+      "sources": [
+        "mjc-nossa-historia",
+        "decreto-comissao-2023"
+      ]
     },
     {
       "name": "Archdiocese of Campinas",
       "place": "Campinas, Brazil",
       "relation": "The Church authority territorially competent for the case. Its bishop Francisco de Campos Barreto founded the Institute and, per devotional literature, authorized the devotion's publications (1931, document not located); its archbishop João Inácio Müller created the 2023 study commission on Sister Amália. No ruling by it on the apparitions themselves was located.",
-      "sources": ["decreto-comissao-2023", "catholic-hierarchy-barreto"]
+      "sources": [
+        "decreto-comissao-2023",
+        "catholic-hierarchy-barreto"
+      ]
     }
   ],
   "disambiguation": {
@@ -303,22 +619,53 @@
       {
         "title": "Campinas (1930) ≠ Syracuse (1953)",
         "text": "\"Our Lady of Tears\" names more than one case. The Campinas events are reported apparitions to a religious sister (1929–1930). The Madonna delle Lacrime of Syracuse, Sicily, is a different case — a plaster image reported to have wept on 29 August–1 September 1953 — with its own, and much stronger, ecclesiastical record: the bishops of Sicily declared in December 1953 that the weeping was real, and Pius XII spoke of it in a radio message of 17 October 1954. Neither case's status transfers to the other.",
-        "sources": ["cna-syracuse", "cancaonova-nsl"]
+        "sources": [
+          "cna-syracuse",
+          "cancaonova-nsl"
+        ]
       },
       {
         "title": "Imprimatur on the prayers ≠ approval of the apparitions",
         "text": "The approval devotional literature reports for 1931 is an authorization to publish Sister Amália's writings and the chaplet prayers. An imprimatur is a permission to print, not a declaration that an apparition was supernatural. No declaration of supernaturality for the Campinas apparitions was located in any source consulted.",
-        "sources": ["wikipedia-en-olt", "cancaonova-nsl"]
+        "sources": [
+          "wikipedia-en-olt",
+          "cancaonova-nsl"
+        ]
       },
       {
         "title": "The 2023 commission ≠ an opened cause, and it is not about the apparitions",
         "text": "The 16 June 2023 decree creates a commission to study whether a beatification cause for Sister Amália may POSSIBLY be opened, examining her \"odor of sanctity or not\" (\"odor de santidade ou menos\"). It is not an opened cause, not a beatification, and it pronounces nothing about the apparitions. Some tertiary sources describe it as the opening of a canonical beatification process; the decree's own text is more limited.",
-        "sources": ["decreto-comissao-2023", "acidigital-comissao-2023"]
+        "sources": [
+          "decreto-comissao-2023",
+          "acidigital-comissao-2023"
+        ]
       },
       {
         "title": "The Institute's history ≠ the devotional narrative",
         "text": "The Missionárias de Jesus Crucificado's own published history (as consulted on 5 August 2026) does not mention Sister Amália or the apparitions; it centers on Dom Barreto and Maria Villac. The apparition narrative is transmitted by devotional websites and publishers, which largely repeat one another without citing documents. The two bodies of literature should not be read as one voice.",
-        "sources": ["mjc-nossa-historia", "coroa-lagrimas-fundacao"]
+        "sources": [
+          "mjc-nossa-historia",
+          "coroa-lagrimas-fundacao"
+        ]
+      },
+      {
+        "title": "The chief populariser of the devotion sits on the commission studying it",
+        "text": "Almost all recent public exposition of the Campinas case in Brazil comes from one man, Raphael Tonon, in lectures and podcasts from the 2020s. The 16 June 2023 archdiocesan decree names “Prof. Luiz Raphael Tonon” among the cooperators of the study commission on Sister Amália, alongside “Profª. Rita Elisa Sêda Pinto Müller”, the biographer, and “Pe. Rafael Capelato”, one of its coordinators, whom Tonon describes as having written a Gregorian thesis on Bishop Barreto. This matters in two directions. It means his account is better informed than an outsider's and that he has had access to material others have not — he says he has read the Livro do Tombo in the archdiocesan archive. It also means that agreement between the devotional literature, the popular videos and the people advising the archdiocese is not independent corroboration: it is a small circle of the same researchers. Nothing he says in the videos is an act of the archdiocese, and he says so himself, reporting that the archbishop told him to publish as a layman and that the Church would judge by results.",
+        "sources": [
+          "decreto-comissao-2023",
+          "video-tonon-cdb-profecia",
+          "video-tonon-anima-60",
+          "video-tonon-lente-catolica"
+        ]
+      },
+      {
+        "title": "Why the devotion went quiet: two incompatible explanations",
+        "text": "Everyone agrees that after the 1930s the devotion was withdrawn from public view in Campinas — the image off the cathedral altar, the chapel closed, the books out of the libraries. The explanations do not agree. The academic account (Santos 2019) attaches the silence to the death in 1941 of Bishop Barreto, the case's chief promoter, and to a return of prudence, and names no order from anyone. The devotional account attaches it to an act of authority six years earlier: a canonical process opened in 1935, an apostolic visitor sent by the Holy See, and a decree of the Holy Office restricting public cult while leaving private recitation free. The second version would mean Rome ruled on the case; no text, date or protocol number has ever been produced for it, and no institutional or academic source refers to it. This dataset records both and adopts neither, and the approval ladder continues to report the Holy See rung as “no ruling found” rather than as a ruling.",
+        "sources": [
+          "rde-santos-2019",
+          "video-tonon-cdb-profecia",
+          "video-tonon-lente-catolica"
+        ]
       }
     ]
   },
@@ -426,6 +773,78 @@
       "publisher": "Catholic News Agency / EWTN News",
       "publisherNote": "Used only for the Syracuse (1953) disambiguation: the distinct weeping-image case and its 1953 Sicilian bishops' judgment. Original CNA URL redirects here.",
       "type": "news"
+    },
+    {
+      "id": "rde-santos-2019",
+      "title": "No silêncio da clausura: videntes de aparições marianas no Brasil (1928-1937)",
+      "url": "https://doi.org/10.7213/1981-416X.19.063.DS04",
+      "publisher": "Revista Diálogo Educacional (PUCPR)",
+      "publisherNote": "Peer-reviewed academic article by Magno Francisco de Jesus Santos (UFRN), v. 19, n. 63, p. 1397–1417, Oct–Dec 2019 — the same historian as the 2025 RBHR study, here comparing Campinas with Cimbres (1936). Evidentially the most important source located after the 2023 decree: it is the only one consulted that DATES the episcopal act on the devotion (imprimatur of 8 March 1932 for the Chaplet and Medal of Tears) and that names the foreign approvals of 1935 individually, with granting authority, see and — for Sopron — a protocol number. It works from the 1929 Campinas and São Paulo press and from the depositions taken from the visionaries in the diocesan verification of the reports. It reproduces none of those acts, and states that the messages and the devotion have still not been approved by the Holy See.",
+      "type": "academic"
+    },
+    {
+      "id": "mjc-sim-villac",
+      "title": "29 de Setembro — O Sim de Madre Maria Villac",
+      "url": "https://mjc.org.br/29-de-setembro-o-sim-de-madre-maria-villac-o-inicio-de-uma-missao-transformadora/",
+      "publisher": "Missionárias de Jesus Crucificado",
+      "publisherNote": "The congregation's own account of its origin: Bishop Barreto proposed turning Maria Villac's association into a religious congregation on 6 September 1927; she accepted on 29 September 1927; the foundation followed on 3 May 1928 with eleven sisters. Like the rest of the congregation's published history, and as consulted on 5 August 2026, it does not mention Sister Amália or the apparitions.",
+      "type": "institutional"
+    },
+    {
+      "id": "arqcampinas-bispos",
+      "title": "Bispos de Campinas",
+      "url": "https://arquidiocesecampinas.com/clero_/bispos-de-campinas/",
+      "publisher": "Arquidiocese de Campinas",
+      "publisherNote": "The archdiocese's own list of its bishops, used for the institutional frame around the reports: the diocese was erected by Pius X on 7 June 1908 and installed on 1 November 1908 under its first bishop, João Batista Corrêa Nery, and was raised to a metropolitan see in 1958.",
+      "type": "institutional"
+    },
+    {
+      "id": "arqcampinas-nota-2023",
+      "title": "Dom João Inácio Müller nomeia Comissão de Estudos “Irmã Amália de Jesus Flagelado”. Publica, também, nota a respeito da devoção ao título “Virgo Lacrimarum”",
+      "url": "https://www.arquidiocesecampinas.com.br/dom-joao-inacio-muller-nomeia-comissao-de-estudos-irma-amalia-de-jesus-flagelado-sob-o-possivel-processo-de-beatificacao-de-acordo-com-o-direito-da-igreja-publica-tambem-nota-a-respeito-da-devoc/",
+      "publisher": "Arquidiocese de Campinas",
+      "publisherNote": "The archdiocese's own announcement that the archbishop published, alongside the 16 June 2023 commission decree, a note on the devotion to the title “Virgo Lacrimarum”. Cited here for the EXISTENCE of that note, which its headline establishes in the archdiocese's own voice. The page returned HTTP 404 when fetched on 5 August 2026 following a site migration, and the note's text, date and protocol number were therefore not read; no separate PDF of it was located on the archdiocesan site. It is listed so that the gap is visible and addressable rather than silent.",
+      "type": "institutional"
+    },
+    {
+      "id": "seda-irma-amalia",
+      "title": "Irmã Amália e a Devoção a Nossa Senhora das Lágrimas",
+      "url": "https://www.editoraimaculada.com/produto/lancamento-setembro.html",
+      "publisher": "Editora Imaculada",
+      "publisherNote": "Book-length devotional biography by Rita Elisa Sêda (536 pp.; 6th edition as listed in 2026), by the same publisher as her two-volume documentary collection “Vida Íntima: Irmã Amália de Jesus Flagelado” (vol. 1, 2023). Sympathetic perspective, and identified here because the 16 June 2023 archdiocesan decree names “Profª. Rita Elisa Sêda Pinto Müller” among the study commission's cooperators — so the principal modern biographer sits inside the body examining the case. Not consulted directly for this dataset: no claim below rests on it.",
+      "type": "devotional"
+    },
+    {
+      "id": "cdb-lagrimas-edicoes",
+      "title": "Nossa Senhora das Lágrimas — obras da Irmã Amália de Jesus Flagelado",
+      "url": "https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas",
+      "publisher": "Centro Dom Bosco",
+      "publisherNote": "Traditionalist Catholic publisher's current editions of the notebooks attributed to Sister Amália — “Glórias e Poder de Nossa Senhora das Lágrimas”, “Lições de Jesus Vítima” and “Do Presídio de Amor” — the texts Bishop Barreto first published in the 1930s. Sympathetic perspective. Relevant as bibliography rather than as evidence: these are modern reprints, and none of the listings consulted reproduces an original imprimatur, title page or date.",
+      "type": "devotional"
+    },
+    {
+      "id": "video-tonon-cdb-profecia",
+      "title": "A profecia de Nossa Senhora das Lágrimas para o Brasil — prof. Raphael Tonon",
+      "url": "https://youtu.be/iZOHoERKdlI",
+      "publisher": "Centro Dom Bosco (YouTube)",
+      "publisherNote": "Devotional commentary — sympathetic perspective. Lecture (≈ 19,300 words transcribed) by Raphael Tonon, historian and catechist, whom the 16 June 2023 archdiocesan decree names as a cooperator of the study commission on Sister Amália: he speaks as a devotee and researcher of the case, not for the archdiocese. Read together with the two podcasts below as ONE position stated three times, not three attestations. Used only for what the devotional tradition holds and for the archival leads it names; every dated claim taken from it is labelled as his, and none of the acts he describes was reproduced by him or located elsewhere. Transcript preserved in the cronologia archive (lagrimas-tonon-profecia-brasil).",
+      "type": "video"
+    },
+    {
+      "id": "video-tonon-anima-60",
+      "title": "Nossa Sra. das Lágrimas, conhece? — Anima Podcast #60 com Raphael Tonon",
+      "url": "https://youtu.be/BgE8X0sby3k",
+      "publisher": "Anima Podcast (YouTube)",
+      "publisherNote": "Devotional commentary — sympathetic perspective; same speaker as the two other videos. Notable for naming the modern editions of Sister Amália's six notebooks and for dating Barreto's approval of the chaplet to 1932 with fifty days' indulgence — a year that agrees with the academic record (Santos 2019) and not with the devotional 8 March 1931. Transcript preserved in the cronologia archive (lagrimas-anima-60-tonon).",
+      "type": "video"
+    },
+    {
+      "id": "video-tonon-lente-catolica",
+      "title": "Podcast Nossa Senhora das Lágrimas — Raphael Tonon e Nilton Junior",
+      "url": "https://youtu.be/LDaorlS_9XI",
+      "publisher": "Lente Católica / Comunidade Católica (YouTube)",
+      "publisherNote": "Devotional commentary — sympathetic perspective; same speaker again, in the longest and most source-naming of the three (≈ 22,000 words). The one of the three that names archival material out loud: the Livro do Tombo in the archdiocesan archive of Campinas, and “A Missionária”, the Institute's own periodical, from which he reads an anonymised 1929 account of the reported cure at the origin of the devotion. Those are leads for the Campinas archive, not documents produced here. Transcript preserved in the cronologia archive (lagrimas-lente-catolica-tonon).",
+      "type": "video"
     }
   ]
 }
