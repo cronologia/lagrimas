@@ -676,7 +676,7 @@
       "url": "https://www.arquidiocesecampinas.com.br/wp-content/uploads/2023/06/DECRETO-COMISS%C3%83O-DE-ESTUDOS-IR.-AM%C3%81LIA.pdf",
       "publisher": "Arquidiocese de Campinas",
       "publisherNote": "Primary diocesan document: scanned PDF of the decree signed by Archbishop João Inácio Müller and chancellor Pe. Emerson de Almeida Amaral, dated 16 June 2023 (Chancery: Livro XXXII dos Atos de Governo, Prot. 106). The one primary Church document located for this dataset; its recitals also attest her birth data, the 1928 Institute founding and the 1952 Decretum Laudis.",
-      "type": "decree"
+      "type": "official"
     },
     {
       "id": "unicamp-cmu-amalia",
@@ -708,7 +708,7 @@
       "url": "https://mjc.org.br/nossa-historia/",
       "publisher": "Missionárias de Jesus Crucificado",
       "publisherNote": "The congregation's own institutional history — primary-adjacent for the founding. Notably, as consulted on 5 August 2026, it does not mention Sister Amália or the apparitions.",
-      "type": "institutional"
+      "type": "web"
     },
     {
       "id": "acidigital-comissao-2023",
@@ -724,7 +724,7 @@
       "url": "https://santuario.cancaonova.com/nossasenhora/nossa-senhora-das-lagrimas-historia-coroa/",
       "publisher": "Santuário Canção Nova",
       "publisherNote": "Devotional account by a major Brazilian Catholic media community — sympathetic perspective; cites no documents. Used for what the devotional tradition itself transmits.",
-      "type": "devotional"
+      "type": "web"
     },
     {
       "id": "coroa-lagrimas-fundacao",
@@ -732,7 +732,7 @@
       "url": "https://coroadaslagrimasoficial.com.br/fundacao-do-instituto-das-missionarias-de-jesus-crucificado/",
       "publisher": "Coroa das Lágrimas Oficial",
       "publisherNote": "Devotional website promoting the chaplet — sympathetic perspective; narrative without cited documents; part of the derivative devotional chain and labeled as such.",
-      "type": "devotional"
+      "type": "web"
     },
     {
       "id": "wikipedia-pt-nsl",
@@ -788,7 +788,7 @@
       "url": "https://mjc.org.br/29-de-setembro-o-sim-de-madre-maria-villac-o-inicio-de-uma-missao-transformadora/",
       "publisher": "Missionárias de Jesus Crucificado",
       "publisherNote": "The congregation's own account of its origin: Bishop Barreto proposed turning Maria Villac's association into a religious congregation on 6 September 1927; she accepted on 29 September 1927; the foundation followed on 3 May 1928 with eleven sisters. Like the rest of the congregation's published history, and as consulted on 5 August 2026, it does not mention Sister Amália or the apparitions.",
-      "type": "institutional"
+      "type": "web"
     },
     {
       "id": "arqcampinas-bispos",
@@ -796,7 +796,7 @@
       "url": "https://arquidiocesecampinas.com/clero_/bispos-de-campinas/",
       "publisher": "Arquidiocese de Campinas",
       "publisherNote": "The archdiocese's own list of its bishops, used for the institutional frame around the reports: the diocese was erected by Pius X on 7 June 1908 and installed on 1 November 1908 under its first bishop, João Batista Corrêa Nery, and was raised to a metropolitan see in 1958.",
-      "type": "institutional"
+      "type": "web"
     },
     {
       "id": "arqcampinas-nota-2023",
@@ -804,7 +804,7 @@
       "url": "https://www.arquidiocesecampinas.com.br/dom-joao-inacio-muller-nomeia-comissao-de-estudos-irma-amalia-de-jesus-flagelado-sob-o-possivel-processo-de-beatificacao-de-acordo-com-o-direito-da-igreja-publica-tambem-nota-a-respeito-da-devoc/",
       "publisher": "Arquidiocese de Campinas",
       "publisherNote": "The archdiocese's own announcement that the archbishop published, alongside the 16 June 2023 commission decree, a note on the devotion to the title “Virgo Lacrimarum”. Cited here for the EXISTENCE of that note, which its headline establishes in the archdiocese's own voice. The page returned HTTP 404 when fetched on 5 August 2026 following a site migration, and the note's text, date and protocol number were therefore not read; no separate PDF of it was located on the archdiocesan site. It is listed so that the gap is visible and addressable rather than silent.",
-      "type": "institutional"
+      "type": "news"
     },
     {
       "id": "seda-irma-amalia",
@@ -812,7 +812,7 @@
       "url": "https://www.editoraimaculada.com/produto/lancamento-setembro.html",
       "publisher": "Editora Imaculada",
       "publisherNote": "Book-length devotional biography by Rita Elisa Sêda (536 pp.; 6th edition as listed in 2026), by the same publisher as her two-volume documentary collection “Vida Íntima: Irmã Amália de Jesus Flagelado” (vol. 1, 2023). Sympathetic perspective, and identified here because the 16 June 2023 archdiocesan decree names “Profª. Rita Elisa Sêda Pinto Müller” among the study commission's cooperators — so the principal modern biographer sits inside the body examining the case. Not consulted directly for this dataset: no claim below rests on it.",
-      "type": "devotional"
+      "type": "book"
     },
     {
       "id": "cdb-lagrimas-edicoes",
@@ -820,7 +820,7 @@
       "url": "https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas",
       "publisher": "Centro Dom Bosco",
       "publisherNote": "Traditionalist Catholic publisher's current editions of the notebooks attributed to Sister Amália — “Glórias e Poder de Nossa Senhora das Lágrimas”, “Lições de Jesus Vítima” and “Do Presídio de Amor” — the texts Bishop Barreto first published in the 1930s. Sympathetic perspective. Relevant as bibliography rather than as evidence: these are modern reprints, and none of the listings consulted reproduces an original imprimatur, title page or date.",
-      "type": "devotional"
+      "type": "book"
     },
     {
       "id": "video-tonon-cdb-profecia",
