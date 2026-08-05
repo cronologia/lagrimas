@@ -138,6 +138,25 @@ byte-identical to a build without the feature. Shapes are shown in
   events happened. fsp's year-slider membership map is a declared follow-up
   (core#3), not covered by this key yet.
 
+- **`approvalLadder`** — how far a reported apparition got through Church
+  judgment (`renderApprovalLadder`), rendered at the TOP of the page, above
+  `about`, because for a reported apparition the verdict is what a reader looks
+  for first and what devotional sources most often blur. Rungs are DATA-DECLARED
+  (`stages[]`), never hardcoded: real cases do not all have three. Four
+  properties are load-bearing and any redesign must keep them — (1) no overall
+  verdict is ever rendered for the case, only per-rung ones; (2) `not-found`
+  ("we searched and found nothing"), `not-reached` ("the case positively did not
+  go here") and `negative` stay three different things; (3) every rung carries
+  `sources[]` or a `noDocument` note saying what was searched, or the build
+  fails; (4) status is text + glyph + prose, never colour alone. `status` is a
+  closed enum (`STATUS_GLYPH`) and is deliberately EXCLUDED from the
+  `approvalLadder` entry in `SUBTREE_TRANSLATABLE` — translating it would turn
+  `favourable` into `Investigado` and break only the localized build. For this
+  repo the finding is an absence: no Church judgment on the Campinas apparitions
+  themselves has been located, and the 16 June 2023 decree concerns Sister
+  Amália's possible beatification cause, not the apparitions, so it appears only
+  in the ladder's intro prose saying exactly that — never as a rung.
+
 - **`meta.threads`** — the per-repo lane taxonomy (core#23) and, once declared,
   the **swimlanes** figure (`renderSwimlanes`): one row per lane, one column per
   decade, each cell that lane's event count, rendered as a real `<table>`
