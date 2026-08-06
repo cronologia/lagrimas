@@ -619,6 +619,13 @@
     "note": "Reported private revelations are contested terrain by nature: the primary phenomena are attested mainly by devotional literature that recycles itself, while the institutional record is thin. These distinctions keep the claims from flattening into each other.",
     "items": [
       {
+        "title": "Approved for pilgrimage is not the same as approved as an apparition — and that is the Church's rule, not this page's",
+        "text": "A shrine, a crowned image, a feast, indulgences, a papal visit: it is reasonable to read all that as the Church saying the apparition happened. It is not what the Church says it is doing, and since 2024 it says so in writing. The Dicastery for the Doctrine of the Faith's \"Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena\" (17 May 2024) sets out six possible conclusions, and art. 23 makes the position explicit: \"as a rule, neither the Diocesan Bishop, nor the Episcopal Conferences, nor the Dicastery will declare that these phenomena are of supernatural origin\", though the Pope may authorise a special procedure. The ordinary favourable outcome is now \"Nihil obstat\", which art. 17 defines as acknowledging \"many signs of the action of the Holy Spirit\" in a spiritual experience \"without expressing any certainty about the supernatural authenticity of the phenomenon itself\". The document's own presentation adds that most shrines \"have never had an official declaration of the supernatural nature of the events\".\n\nThe reason is what a private revelation is. Public revelation closed with the apostles, so no apparition adds an article of faith, and even an approved one obliges no one to believe — the Congregation for the Doctrine of the Faith said exactly that when it published the third part of the Fátima secret in 2000. What a bishop is actually asked is a pastoral question: is this devotion safe, is it free of doctrinal error, is it bearing good fruit? That can be answered yes without answering the historical question, and usually is. The same acts are granted to devotions with no apparition behind them at all — Our Lady of the Rosary and Our Lady of Mount Carmel have feasts, crowned images and basilicas, and there is no reported apparition to approve.\n\nSo this page is not withholding approval; it is saying who gave which one, about what. Where a bishop did rule on an apparition, the ladder says so in his own words and marks the rung favourable — Lourdes 1862 and La Salette 1851 are quoted verbatim, Fátima 1930 is cited to its pastoral letter. What the ladder refuses to do is upgrade a crown into a verdict. If it did, a case a bishop examined and endorsed would look identical to a case nobody ever ruled on, because both have pilgrims; and the reverse error would follow just as easily, reading a Roman act against one seer's later writings as Rome condemning the apparition. Keeping the objects apart is the only way the chart carries information at all. Where the sources themselves say the Church's recognition is \"implicit\", the page records that word too, and does not promote it.",
+        "sources": [
+          "ddf-norms-2024"
+        ]
+      },
+      {
         "title": "Campinas (1930) ≠ Syracuse (1953)",
         "text": "\"Our Lady of Tears\" names more than one case. The Campinas events are reported apparitions to a religious sister (1929–1930). The Madonna delle Lacrime of Syracuse, Sicily, is a different case — a plaster image reported to have wept on 29 August–1 September 1953 — with its own, and much stronger, ecclesiastical record: the bishops of Sicily declared in December 1953 that the weeping was real, and Pius XII spoke of it in a radio message of 17 October 1954. Neither case's status transfers to the other.",
         "sources": [
@@ -863,6 +870,14 @@
       "publisher": "Missionários das Lágrimas de Maria",
       "publisherNote": "Devotional history of the devotion. Cited for the same absence: it attributes to Barreto testimony about the graces obtained through the Chaplet and the power of the Virgin's tears — statements about the DEVOTION's fruits — and records no episcopal act on the apparitions. Consulted 6 August 2026.",
       "type": "web"
+    },
+    {
+      "id": "ddf-norms-2024",
+      "title": "Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena (17 May 2024)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "publisher": "Dicastery for the Doctrine of the Faith, Holy See",
+      "publisherNote": "The Church's current procedure for judging reported apparitions, in force since 19 May 2024; its art. 27 entirely replaces the norms of 25 February 1978. Read in full for this dataset. Cited here for the rule it states rather than for anything it decides about this case: it is not applied retroactively, and no case in this chronology was judged under it.",
+      "type": "official"
     }
   ]
 }
