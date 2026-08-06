@@ -335,7 +335,7 @@ function disclaimerFor(meta, ui) {
   // it: "hand-authored by the assistant — NOT produced by scripts/translate.js".
   // A loose /translate\.js/ matches that sentence and reports the exact
   // opposite of what it says. Only the string translate.js itself writes counts.
-  if (typeof meta.generatedBy === 'string' && /^scripts\/translate\.js/.test(meta.generatedBy.trim())) return set.machine;
+  if (typeof meta.generatedBy === 'string' && /^scripts\/translate\.js\b/.test(meta.generatedBy.trim())) return set.machine;
   return set.authored;
 }
 
