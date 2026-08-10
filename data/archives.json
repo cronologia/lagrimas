@@ -1,0 +1,96 @@
+{
+  "generatedBy": "scripts/archive-refs.js",
+  "updatedAt": "2026-08-10",
+  "snapshots": {
+    "https://arquidiocesecampinas.com/clero_/bispos-de-campinas/": {
+      "refId": "arqcampinas-bispos",
+      "archiveUrl": "https://web.archive.org/web/20251109194257/http://arquidiocesecampinas.com/clero_/bispos-de-campinas/",
+      "timestamp": "20251109194257",
+      "checkedAt": "2026-08-10"
+    },
+    "https://coroadaslagrimasoficial.com.br/fundacao-do-instituto-das-missionarias-de-jesus-crucificado/": {
+      "refId": "coroa-lagrimas-fundacao",
+      "archiveUrl": "https://web.archive.org/web/20260317100125/https://coroadaslagrimasoficial.com.br/fundacao-do-instituto-das-missionarias-de-jesus-crucificado/",
+      "timestamp": "20260317100125",
+      "checkedAt": "2026-08-10"
+    },
+    "https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas": {
+      "refId": "cdb-lagrimas-edicoes",
+      "archiveUrl": "https://web.archive.org/web/20250723025336/https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas",
+      "timestamp": "20250723025336",
+      "checkedAt": "2026-08-10"
+    },
+    "https://missionarios-das-lagrimas.webnode.page/historia/": {
+      "refId": "missionarios-lagrimas-historia",
+      "archiveUrl": "https://web.archive.org/web/20220922100307/https://missionarios-das-lagrimas.webnode.page/historia/",
+      "timestamp": "20220922100307",
+      "checkedAt": "2026-08-10"
+    },
+    "https://mjc.org.br/29-de-setembro-o-sim-de-madre-maria-villac-o-inicio-de-uma-missao-transformadora/": {
+      "refId": "mjc-sim-villac",
+      "archiveUrl": "https://web.archive.org/web/20251114213159/https://mjc.org.br/29-de-setembro-o-sim-de-madre-maria-villac-o-inicio-de-uma-missao-transformadora/",
+      "timestamp": "20251114213159",
+      "checkedAt": "2026-08-10"
+    },
+    "https://mjc.org.br/nossa-historia/": {
+      "refId": "mjc-nossa-historia",
+      "archiveUrl": "https://web.archive.org/web/20260213140444/http://mjc.org.br/nossa-historia/",
+      "timestamp": "20260213140444",
+      "checkedAt": "2026-08-10"
+    },
+    "https://periodicoseletronicos.ufma.br/index.php/rbhr/article/view/27185": {
+      "refId": "rbhr-santos-2025",
+      "archiveUrl": "https://web.archive.org/web/20251214141838/https://periodicoseletronicos.ufma.br/index.php/rbhr/article/view/27185",
+      "timestamp": "20251214141838",
+      "checkedAt": "2026-08-10"
+    },
+    "https://pt.wikipedia.org/wiki/Am%C3%A1lia_de_Jesus_Flagelado": {
+      "refId": "wikipedia-pt-amalia",
+      "archiveUrl": "https://web.archive.org/web/20260414055037/https://pt.wikipedia.org/wiki/Am%C3%A1lia_de_Jesus_Flagelado",
+      "timestamp": "20260414055037",
+      "checkedAt": "2026-08-10"
+    },
+    "https://pt.wikipedia.org/wiki/Nossa_Senhora_das_L%C3%A1grimas": {
+      "refId": "wikipedia-pt-nsl",
+      "archiveUrl": "https://web.archive.org/web/20260807022006/https://pt.wikipedia.org/wiki/Nossa_Senhora_das_L%C3%A1grimas",
+      "timestamp": "20260807022006",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.acidigital.com/noticia/55440/comissao-estudara-odor-de-santidade-de-irma-amalia-de-jesus-flagelado": {
+      "refId": "acidigital-comissao-2023",
+      "archiveUrl": "https://web.archive.org/web/20241202180503/https://www.acidigital.com/noticia/55440/comissao-estudara-odor-de-santidade-de-irma-amalia-de-jesus-flagelado",
+      "timestamp": "20241202180503",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.arquidiocesecampinas.com.br/wp-content/uploads/2023/06/DECRETO-COMISS%C3%83O-DE-ESTUDOS-IR.-AM%C3%81LIA.pdf": {
+      "refId": "decreto-comissao-2023",
+      "archiveUrl": "https://web.archive.org/web/20260810080750/https://www.arquidiocesecampinas.com.br/wp-content/uploads/2023/06/DECRETO-COMISS%C3%83O-DE-ESTUDOS-IR.-AM%C3%81LIA.pdf",
+      "timestamp": "20260810080750",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.catholic-hierarchy.org/bishop/baloisi.html": {
+      "refId": "catholic-hierarchy-masella",
+      "archiveUrl": "https://web.archive.org/web/20251112230345/https://www.catholic-hierarchy.org/bishop/baloisi.html",
+      "timestamp": "20251112230345",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.catholic-hierarchy.org/bishop/bcambar.html": {
+      "refId": "catholic-hierarchy-barreto",
+      "archiveUrl": "https://web.archive.org/web/20260315012915/https://www.catholic-hierarchy.org/bishop/bcambar.html",
+      "timestamp": "20260315012915",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.editoraimaculada.com/produto/lancamento-setembro.html": {
+      "refId": "seda-irma-amalia",
+      "archiveUrl": "https://web.archive.org/web/20240713133227/https://www.editoraimaculada.com/produto/lancamento-setembro.html",
+      "timestamp": "20240713133227",
+      "checkedAt": "2026-08-10"
+    },
+    "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html": {
+      "refId": "ddf-norms-2024",
+      "archiveUrl": "https://web.archive.org/web/20260724130748/https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "timestamp": "20260724130748",
+      "checkedAt": "2026-08-10"
+    }
+  }
+}
