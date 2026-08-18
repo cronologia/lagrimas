@@ -439,6 +439,84 @@ if (d.disambiguation !== undefined) {
   });
 }
 
+// ---- pages (documentary subpages) ------------------------------------------
+// Optional. Each entry becomes /<locale>/<id>/ and reproduces a text — here the
+// prayers of the chaplet, which are the OBJECT of the imprimaturs the
+// chronology dates. Two rules carry the sourcing discipline onto a page that
+// prints devotional text:
+//
+//   1. Every section says where it comes from. `sources[]` when someone else
+//      transmits it; `basis` when it is this site's own composition. A section
+//      with neither is refused — an arrangement that names no author reads as
+//      tradition, and on this subject that is precisely the confusion the whole
+//      dataset exists to undo.
+//   2. A block of kind "prayer" must carry `original` — the text in the
+//      language its publishers print it in. A prayer that exists on the page
+//      only as an English rendering is a paraphrase presented as a prayer.
+if (d.pages !== undefined) {
+  if (!isArr(d.pages) || d.pages.length === 0) {
+    err('pages must be a non-empty array (omit the key entirely to declare none)');
+  } else {
+    const pageIds = new Set();
+    const sectionKind = new Set(['prayer', 'note']);
+    d.pages.forEach((p, i) => {
+      const at = `pages[${i}]`;
+      if (!isStr(p.id)) err(`${at}.id missing`);
+      else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.id)) err(`${at}.id must be kebab-case (it is a URL segment), got "${p.id}"`);
+      else if (pageIds.has(p.id)) err(`${at}.id duplicated: ${p.id}`);
+      else pageIds.add(p.id);
+      for (const k of ['title', 'subtitle', 'description', 'intro']) {
+        if (!isStr(p[k])) err(`${at}.${k} missing`);
+      }
+      if (!isStr(p.note)) {
+        err(`${at}.note missing — the banner at the top of the page saying what it is and is not (a text reproduced is not a claim endorsed)`);
+      }
+      if (p.navLabel !== undefined && !isStr(p.navLabel)) err(`${at}.navLabel must be a string`);
+      if (p.originalLang !== undefined && !/^[a-z]{2}$/.test(p.originalLang)) {
+        err(`${at}.originalLang must be a two-letter language code`);
+      }
+      checkSources(at, p.sources, true);
+      if (!isArr(p.sections) || p.sections.length === 0) {
+        return err(`${at}.sections must be a non-empty array`);
+      }
+      const sectionIds = new Set();
+      p.sections.forEach((s, j) => {
+        const sAt = `${at}.sections[${j}]`;
+        if (!isStr(s.id)) err(`${sAt}.id missing`);
+        else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.id)) err(`${sAt}.id must be kebab-case (it is an anchor), got "${s.id}"`);
+        else if (sectionIds.has(s.id)) err(`${sAt}.id duplicated: ${s.id}`);
+        else sectionIds.add(s.id);
+        if (!isStr(s.heading)) err(`${sAt}.heading missing`);
+        if (s.navLabel !== undefined && !isStr(s.navLabel)) err(`${sAt}.navLabel must be a string`);
+        if (s.note !== undefined && !isStr(s.note)) err(`${sAt}.note must be a string`);
+        checkSources(sAt, s.sources, false);
+        const cited = isArr(s.sources) && s.sources.length > 0;
+        if (!cited && !isStr(s.basis)) {
+          err(`${sAt}: needs sources[] (someone else transmits this) or basis (prose saying this is the site's own composition and what it was composed from). A section that claims neither reads as tradition.`);
+        }
+        if (!isArr(s.blocks) || s.blocks.length === 0) {
+          return err(`${sAt}.blocks must be a non-empty array`);
+        }
+        s.blocks.forEach((b, k) => {
+          const bAt = `${sAt}.blocks[${k}]`;
+          const kind = b.kind === undefined ? 'note' : b.kind;
+          if (!sectionKind.has(kind)) err(`${bAt}.kind must be one of ${[...sectionKind].join(', ')}, got "${b.kind}"`);
+          if (b.label !== undefined && !isStr(b.label)) err(`${bAt}.label must be a string`);
+          if (kind === 'prayer') {
+            if (!isStr(b.original)) err(`${bAt}.original missing — a prayer block reproduces the text in the language it is printed in; a translation alone is a paraphrase presented as a prayer`);
+            checkSources(bAt, b.sources, true);
+          } else {
+            if (b.original !== undefined) err(`${bAt}.original is only for kind "prayer"`);
+            if (!isStr(b.text)) err(`${bAt}.text missing`);
+            checkSources(bAt, b.sources, false);
+          }
+          if (b.text !== undefined && !isStr(b.text)) err(`${bAt}.text must be a string`);
+        });
+      });
+    });
+  }
+}
+
 // ---- glossary cross-links -------------------------------------------------
 // Every [[term-id]] marker (see build.js) must resolve to a known glossary
 // term. The known ids are read from the vendored, pinned list in

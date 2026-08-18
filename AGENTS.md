@@ -39,14 +39,14 @@ scripts/check-links.js   Link-health checker (out-of-band/CI): HEAD/ranged-GET s
 scripts/sync-glossary-terms.js  Refresh data/glossary-terms.json from cronologia/glossary (out-of-band; needs network)
 scripts/sync-places.js   Refresh data/places.json from cronologia/core (out-of-band; sibling checkout or network); --check detects a stale copy
 scripts/translate.js     Fills data/i18n/*.json from a translation backend (env-configured; no-op offline)
-build.js                 Compiler: data/chronology.json (+ i18n + archives) -> docs/{en,es,pt}/ + sitemap + robots
+build.js                 Compiler: data/chronology.json (+ i18n + archives) -> docs/{en,es,pt}/ (chronology + one dir per declared subpage) + sitemap + robots
 test/                    node:test suites (helpers + data invariants + per-locale drift check)
 .github/workflows/deploy.yml  CI: validate, test, build, drift check, Pages deploy (main + manual dispatch)
 .github/workflows/wayback.yml CI: weekly archive-refs run; commits data/archives.json + rebuilt docs/
 .github/workflows/link-health.yml CI: weekly check-links run; opens/updates a single "link health" issue with the failures (never edits data)
 docs/                    COMPILED OUTPUT, served by GitHub Pages (committed)
   index.html               root redirect stub -> preferred locale
-  en/ es/ pt/              one localized site per locale
+  en/ es/ pt/              one localized site per locale (index.html + chaplet/ + novena/)
   sitemap.xml robots.txt   per-locale SEO
 ```
 
@@ -177,6 +177,52 @@ byte-identical to a build without the feature. Shapes are shown in
 Print baseline: `src/styles.css` ships an `@media print` block (nav/chips
 hidden, figures `break-inside: avoid`, the subway SVG scaled to page width) —
 extend it when adding a new visualization.
+
+## Documentary subpages (`pages[]`, optional — off by default)
+
+The chronology is not the only page the build emits. A dataset may declare
+`pages[]`, and each entry compiles to `/{lang}/<id>/` in every locale, with its
+own `<title>`, description, canonical, hreflang alternates and sitemap entries
+(`routesFor()` derives the routes; nothing is hardcoded). With no `pages` key
+there are no extra routes and the chronology page is byte-identical to a build
+without the feature — the same opt-in contract as the visualizations.
+
+This repo declares two, and the reason is specific to the subject: most of the
+Church acts the record can date have a *text* as their object. The 8 March 1932 imprimatur
+and the four 1935 approvals abroad permit the printing of the chaplet's prayers
+and a medal, and judge nothing about the apparitions. A chronology that dates
+those acts and never shows what they were about leaves a reader one click short
+of the thing being judged.
+
+- **`chaplet`** — the prayers, quoted in Portuguese with a working translation.
+- **`novena`** — a nine-day arrangement of the chaplet with the seven sorrows,
+  composed for this site and labelled as such throughout.
+
+Four rules the renderer and the validator enforce together; any redesign keeps
+them:
+
+1. **A transmitted text is quoted in its own language.** A `kind: "prayer"`
+   block carries `original` — the wording its publishers print — and `original`
+   is deliberately OUTSIDE `TRANSLATABLE_KEYS`, so the localization walk never
+   touches it. A prayer is not the site's prose, and a Spanish page printing a
+   Spanish "original" would be lying about what it reproduces.
+2. **The translation says it is one.** `text` beside a prayer renders under the
+   label "Working translation", and is SUPPRESSED when localization has
+   returned the original — on the pt page the gloss of a Portuguese prayer is
+   the prayer, so the pt dictionary maps the English gloss to the original
+   itself and the page prints it once. `test/subpages.test.js` pins both.
+3. **Every section says where it comes from.** `sources[]` when someone else
+   transmits it, `basis` when it is this site's own composition — and `basis`
+   RENDERS, for the same reason the thread lanes' does. A section with neither
+   fails validation: an arrangement that names no author reads as tradition,
+   which on this subject is the confusion the whole dataset exists to undo.
+4. **A subpage lists only the sources it cites, with the SITE-WIDE numbers**
+   (`<li value="n">` pins the marker), so `[26]` means the same document on
+   every page of the site.
+
+Adding a page is a data edit like any other: declare it in `data/chronology.json`,
+translate every new string in `data/i18n/{es,pt}.json` (the i18n completeness
+test fails otherwise), then run the gate and commit the regenerated `docs/`.
 
 ## Thread lanes (optional, off by default — schema only; renderer pending, core#23)
 

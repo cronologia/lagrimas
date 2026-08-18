@@ -550,3 +550,65 @@ figure.approval-ladder { margin: 0 0 1rem; }
   .al-details, .al-details > *, .al-panels, .al-panel { display: block !important; }
   .al-panel[hidden] { display: block !important; }
 }
+
+/* ---------------------------------------------------------------------------
+   Documentary subpages (`pages[]`) — the pages that reproduce a text.
+
+   The typography carries an editorial distinction, so it is not decoration: a
+   reproduced prayer is set apart as a quotation in its own language, the
+   working translation sits under it in the page's language and plainly says so,
+   and the line that closes each section — citations, or the admission that the
+   arrangement is this site's own — is styled to be read rather than skipped.
+   -------------------------------------------------------------------------- */
+.nav-page { color: #fff !important; border-bottom: 2px solid var(--accent); }
+.nav-page::before { content: "→ "; opacity: .7; }
+
+.prayer-block { margin: 1rem 0 1.35rem; }
+.prayer-label { margin: 0 0 .35rem; font-size: .82rem; font-variant: small-caps; letter-spacing: .06em; color: var(--accent-dark); font-weight: 700; }
+.prayer-prose { margin: .35rem 0; max-width: 70ch; }
+
+/* The reproduced text. Quoted, not asserted: it is somebody else's wording, and
+   the page says whose in the line below it. */
+blockquote.prayer-original {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: .9rem 1.15rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+blockquote.prayer-original p { margin: .45rem 0; }
+blockquote.prayer-original p:first-child { margin-top: 0; }
+blockquote.prayer-original p:last-child { margin-bottom: 0; }
+
+.prayer-gloss { margin: .45rem 0 0 1.15rem; color: var(--muted); font-size: .92rem; max-width: 68ch; }
+.prayer-gloss-label { font-size: .78rem; font-variant: small-caps; letter-spacing: .05em; color: var(--accent); font-weight: 700; margin-right: .3rem; }
+.prayer-cites { margin: .3rem 0 0 1.15rem; }
+
+/* "What this rests on" — citations, or the site admitting an arrangement is its
+   own. Bordered rather than muted into invisibility: on this subject the
+   provenance line is the part a reader most needs and most easily skips. */
+.prayer-basis {
+  margin: .9rem 0 0;
+  padding: .5rem .8rem;
+  background: #fbfaf8;
+  border-left: 3px solid var(--line);
+  border-radius: 3px;
+  font-size: .85rem;
+  color: var(--muted);
+  max-width: 72ch;
+}
+.prayer-basis-label { font-weight: 700; color: var(--accent-dark); margin-right: .3rem; }
+
+@media (max-width: 560px) {
+  .prayer-gloss, .prayer-cites { margin-left: 0; }
+}
+
+@media print {
+  /* A prayer split across a page break is unusable to the person praying it. */
+  .prayer-block, blockquote.prayer-original { break-inside: avoid; page-break-inside: avoid; }
+  blockquote.prayer-original { background: none; border-left-color: #999; }
+  .prayer-basis { background: none; border-left-color: #999; }
+}
