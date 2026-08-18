@@ -26,6 +26,24 @@ Campinas' decree of **16 June 2023** creating a study commission on Sister
 Amália's possible "odor of sanctity", toward the *possible* opening of a
 beatification cause. It makes no pronouncement on the apparitions.
 
+## The two text pages
+
+Beside the chronology the site publishes two subpages, in all three locales:
+
+- **`/{lang}/chaplet/`** — the text of the Chaplet of Tears, quoted in
+  Portuguese with a working translation. It is here because the imprimatur of
+  8 March 1932 and the four approvals abroad in 1935 are acts about *this
+  text*, and a chronology that dates them should show what they were about.
+  Reproducing it is not endorsing the claim behind it, and the page says so.
+- **`/{lang}/novena/`** — a nine-day arrangement of the chaplet, one sorrow of
+  Mary at a time. The nine-day practice is attested by devotional literature
+  and a printed novena already exists (Vozes, 2023); the arrangement itself is
+  this site's own composition, carries no approval and says so on the page.
+
+Every section of both pages declares its provenance: `sources[]` when someone
+else transmits it, a rendered `basis` when it was composed here. The validator
+refuses a section with neither.
+
 ## Layout
 
 ```

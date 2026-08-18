@@ -21,4 +21,46 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/"/>
   </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/en/chaplet/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+  </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/es/chaplet/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+  </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/pt/chaplet/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/chaplet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/chaplet/"/>
+  </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/en/novena/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/novena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/novena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+  </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/es/novena/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/novena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/novena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+  </url>
+  <url>
+    <loc>https://cronologia.github.io/lagrimas/pt/novena/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cronologia.github.io/lagrimas/es/novena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cronologia.github.io/lagrimas/pt/novena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cronologia.github.io/lagrimas/en/novena/"/>
+  </url>
 </urlset>

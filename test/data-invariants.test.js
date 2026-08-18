@@ -10,7 +10,7 @@ const path = require('node:path');
 const {
   renderPage, renderRootStub, renderSitemap, renderRobots,
   siteBase, localizeData, loadDict, LOCALES, ROUTES, esc,
-  loadPlaces, loadWorld,
+  loadPlaces, loadWorld, subPages, routesFor, renderSubPage,
 } = require('../build.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -93,10 +93,12 @@ test('translation cache is applied where present', () => {
 
 test('sitemap lists every route × locale with alternates; robots points to it', () => {
   const base = siteBase(data.meta);
-  const sitemap = renderSitemap(base, ROUTES);
+  // routesFor, not ROUTES: a declared subpage is a route, and a page that the
+  // build writes but the sitemap omits is invisible to every crawler.
+  const sitemap = renderSitemap(base, routesFor(data));
   assert.match(sitemap, /<\?xml/);
   assert.match(sitemap, /xmlns:xhtml=/);
-  for (const route of ROUTES) for (const lang of LOCALES) {
+  for (const route of routesFor(data)) for (const lang of LOCALES) {
     assert.ok(sitemap.includes(`<loc>${base}${lang}/${route}</loc>`), `sitemap missing ${lang}/${route}`);
   }
   assert.ok(renderRobots(base).includes(`Sitemap: ${base}sitemap.xml`));
@@ -115,14 +117,22 @@ test('committed docs/ is the current render (no drift)', () => {
   if (!fs.existsSync(path.join(docs, 'index.html'))) return;
   const base = siteBase(data.meta);
   assert.equal(fs.readFileSync(path.join(docs, 'index.html'), 'utf8'), renderRootStub(base), 'root stub drift — run node build.js');
-  assert.equal(fs.readFileSync(path.join(docs, 'sitemap.xml'), 'utf8'), renderSitemap(base, ROUTES), 'sitemap drift — run node build.js');
+  assert.equal(fs.readFileSync(path.join(docs, 'sitemap.xml'), 'utf8'), renderSitemap(base, routesFor(data)), 'sitemap drift — run node build.js');
   assert.equal(fs.readFileSync(path.join(docs, 'robots.txt'), 'utf8'), renderRobots(base), 'robots drift — run node build.js');
   // Pass the same gazetteer and basemap main() does, or a dataset that
   // declares placesMap renders map-less here and reports phantom drift.
   const places = loadPlaces();
   const world = loadWorld();
   for (const lang of LOCALES) {
+    const localized = localizeData(data, loadDict(lang), lang);
     const f = path.join(docs, lang, 'index.html');
-    assert.equal(fs.readFileSync(f, 'utf8'), renderPage(localizeData(data, loadDict(lang), lang), archives(), { lang, base, route: '', places, world }), `docs/${lang}/ drift — run node build.js`);
+    assert.equal(fs.readFileSync(f, 'utf8'), renderPage(localized, archives(), { lang, base, route: '', places, world }), `docs/${lang}/ drift — run node build.js`);
+    // Subpages drift the same way and are checked the same way: they are
+    // localized from the SAME localized copy the chronology page is built from,
+    // so a translation that reached one and not the other shows up here.
+    for (const page of subPages(localized)) {
+      const pf = path.join(docs, lang, page.id, 'index.html');
+      assert.equal(fs.readFileSync(pf, 'utf8'), renderSubPage(page, localized, archives(), { lang, base }), `docs/${lang}/${page.id}/ drift — run node build.js`);
+    }
   }
 });

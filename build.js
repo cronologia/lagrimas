@@ -42,9 +42,11 @@ const OUT_DIR = path.join(ROOT, 'docs');
 
 const LOCALES = ['en', 'es', 'pt'];
 const OG_LOCALE = { en: 'en_US', es: 'es_ES', pt: 'pt_BR' };
-// Page paths (relative to a locale root) the site emits. The base template ships
-// a single page; sites with detail pages push their routes here so the sitemap
-// and hreflang stay complete.
+// Page paths (relative to a locale root) the site emits, before the dataset has
+// its say: every site has the chronology at the locale root. Detail pages are
+// DECLARED IN THE DATA (`pages[]`) rather than listed here, and `routesFor(data)`
+// is what the sitemap, the drift check and the build itself read — so a page
+// cannot exist on disk while the sitemap and the hreflang alternates ignore it.
 const ROUTES = [''];
 
 // Data fields whose string values are prose to translate. Proper names, URLs,
@@ -144,6 +146,14 @@ const UI = {
       adjacent: 'Church act on a related matter — not a ruling on the apparition',
     },
     ladderDetails: 'Step by step, with the documents',
+    // Subpage chrome. `prayerGloss` labels the working translation printed
+    // beside a reproduced prayer — it says the English is this site's rendering
+    // and not a liturgical text, which is the whole reason it is labelled at
+    // all. `pageBasis` introduces the line that says what a section rests on:
+    // citations when someone else transmits it, prose when the arrangement is
+    // this site's own.
+    prayerGloss: 'Working translation:',
+    pageBasis: 'What this rests on:',
     // English is the authoritative text, so it never carries a translation note.
     disclaimers: null,
   },
@@ -210,6 +220,8 @@ const UI = {
       adjacent: 'Acto de la Iglesia sobre una materia relacionada — no una resolución sobre la aparición',
     },
     ladderDetails: 'Paso a paso, con los documentos',
+    prayerGloss: 'Traducción de trabajo:',
+    pageBasis: 'En qué se funda:',
     disclaimers: {
       machine: 'Traducción automática del inglés; la página en inglés es la versión de referencia.',
       authored: 'Traducción del inglés escrita por el asistente, sin revisión humana; la página en inglés es la versión de referencia.',
@@ -279,6 +291,8 @@ const UI = {
       adjacent: 'Ato da Igreja sobre matéria relacionada — não uma decisão sobre a aparição',
     },
     ladderDetails: 'Passo a passo, com os documentos',
+    prayerGloss: 'Tradução de trabalho:',
+    pageBasis: 'Em que se fundamenta:',
     disclaimers: {
       machine: 'Tradução automática do inglês; a página em inglês é a versão de referência.',
       authored: 'Tradução do inglês escrita pelo assistente, sem revisão humana; a página em inglês é a versão de referência.',
@@ -493,12 +507,17 @@ function alternates(base, route, lang) {
   return `  <link rel="canonical" href="${esc(url(lang))}">\n${links}\n  <link rel="alternate" hreflang="x-default" href="${esc(base)}">`;
 }
 
-/** Localized <head> SEO block (canonical/hreflang/OG/Twitter/JSON-LD). */
-function seoHead(meta, base, route, lang) {
+/** Localized <head> SEO block (canonical/hreflang/OG/Twitter/JSON-LD).
+ *
+ * `jsonLdType` is 'WebSite' for the site's root page and 'WebPage' for a
+ * subpage — three subpages all announcing themselves as the whole site is the
+ * kind of thing a search engine resolves by picking one and dropping the rest.
+ */
+function seoHead(meta, base, route, lang, jsonLdType = 'WebSite') {
   const title = meta.title;
   const description = meta.description;
   const pageUrl = `${base}${lang}/${route}`;
-  const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: title, description, url: pageUrl, inLanguage: lang };
+  const jsonLd = { '@context': 'https://schema.org', '@type': jsonLdType, name: title, description, url: pageUrl, inLanguage: lang };
   return `${alternates(base, route, lang)}
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(title)}">
@@ -514,11 +533,17 @@ ${JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c').split('\n').map((l) =
   </script>`;
 }
 
-/** Path-preserving language switcher (swap only the locale segment). */
+/** Path-preserving language switcher (swap only the locale segment).
+ *
+ * The `../` prefix is computed from the route's own depth (`upTo`), so the same
+ * switcher works from `/en/` and from `/en/chaplet/` and a subpage's ES link
+ * lands on the ES subpage rather than 404ing one directory up.
+ */
 function langSwitcher(route, lang, ui) {
+  const up = upTo(route);
   const links = LOCALES.map((l) => (l === lang
     ? `<span class="lang-current" aria-current="true">${l.toUpperCase()}</span>`
-    : `<a href="../${l}/${route}" hreflang="${l}">${l.toUpperCase()}</a>`)).join('');
+    : `<a href="${up}${l}/${route}" hreflang="${l}">${l.toUpperCase()}</a>`)).join('');
   return `<nav class="lang-switch" aria-label="${esc(ui.language)}">${links}</nav>`;
 }
 
@@ -1988,7 +2013,7 @@ function renderOrgCard(org, refNumById, ui) {
  * not a parenthesis, it is a paragraph. Over NOTE_INLINE_MAX it gets its own
  * line under the reference.
  */
-function renderReference(r, n, archives, ui) {
+function renderReference(r, n, archives, ui, opts = {}) {
   const snap = archives[r.url];
   const archived = snap && snap.archiveUrl
     ? ` · <a class="archive-link" href="${esc(snap.archiveUrl)}" rel="noopener noreferrer" target="_blank">🗄 archived${snap.timestamp ? ` ${esc(formatArchiveTs(snap.timestamp))}` : ''}</a>`
@@ -2013,7 +2038,14 @@ function renderReference(r, n, archives, ui) {
     UNKNOWN_REF_TYPES.add(r.type);
   }
   const type = (ui && ui.refTypes && ui.refTypes[r.type]) || r.type;
-  return `        <li id="ref-${n}">
+  // A subpage lists only the sources it cites, and their numbers are the
+  // SITE-WIDE ones, so the list is sparse — 3, 7, 24 — and the browser's own
+  // counter would print 1, 2, 3 beside citation markers reading [3], [7], [24].
+  // `value` pins each marker to the number the citation used. Omitted (and the
+  // markup unchanged) on the chronology page, which lists every reference in
+  // order and needs no override.
+  const value = opts.explicitValue ? ` value="${n}"` : '';
+  return `        <li id="ref-${n}"${value}>
           <a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${esc(r.title)}</a>${archived}
           <span class="ref-meta">${esc(pub)} · ${esc(type)}</span>${noteLine}
         </li>`;
@@ -2122,6 +2154,221 @@ ${cards}
 `;
 }
 
+/* ---------------------------------------------------------------------------
+ * Documentary subpages (`pages[]` — optional, off by default).
+ *
+ * A chronology of a devotion sometimes has to SHOW a text rather than describe
+ * it. Here the text is the Chaplet of Tears, and it is the object of most of
+ * the Church acts the record can date: the imprimatur of 8 March 1932 and the
+ * four approvals abroad in 1935 permit the printing of these words and of
+ * nothing else. A page that cites those acts and never shows what they are
+ * about leaves the reader one click short of the thing being judged.
+ *
+ * Reproducing a devotional text is not endorsing the claim behind it, and the
+ * shape of a page is what keeps the two apart:
+ *
+ *   - a transmitted text is quoted in its OWN language (`original`, which the
+ *     localization walk never touches, because a prayer is not the site's prose)
+ *     with a working translation beside it (`text`, translated like any other
+ *     prose and labelled as a working translation, never as a liturgical one);
+ *   - every section says where it comes from — `sources[]` when someone else
+ *     transmits it, `basis` when it is this site's own composition — and the
+ *     validator refuses a section with neither. `basis` RENDERS, for the same
+ *     reason the thread lanes' does: an editorial arrangement that does not
+ *     announce itself is passed off as tradition.
+ *
+ * With no `pages` key there are no extra routes, no nav links and no sitemap
+ * entries, and the chronology page is byte-identical to a build without the
+ * feature (the opt-in contract the viz renderers keep).
+ * ------------------------------------------------------------------------- */
+
+/** The subpages a dataset declares ([] when it declares none). */
+function subPages(data) {
+  return Array.isArray(data && data.pages) ? data.pages : [];
+}
+
+/**
+ * Every route the site occupies: the chronology, then one per declared subpage.
+ * The sitemap, the hreflang alternates and the drift check all read this, so a
+ * page that exists on disk and not in here cannot happen.
+ */
+function routesFor(data) {
+  return ROUTES.concat(subPages(data).map((p) => `${p.id}/`));
+}
+
+/**
+ * The `../` prefix that walks from a route's own directory back to docs/.
+ *
+ * The locale root ('') sits one level down (docs/en/index.html), a subpage two
+ * (docs/en/chaplet/index.html). Everything relative — the stylesheet and the
+ * language switcher — goes through this, so the root page keeps the exact
+ * `../styles.css` and `../es/` it has always emitted.
+ */
+function upTo(route) {
+  return '../'.repeat(String(route || '').split('/').filter(Boolean).length + 1);
+}
+
+/** Split a prose field into paragraphs on blank-line-free newlines. */
+function proseLines(value) {
+  return String(value === null || value === undefined ? '' : value)
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
+}
+
+/**
+ * One block of a subpage: a reproduced prayer, or the site's own prose.
+ *
+ * `kind: "prayer"` carries `original` — the text as its publishers print it —
+ * and renders it as a quotation in its own language. `text` is the working
+ * translation, and it is SUPPRESSED when localization has brought it back to
+ * the original: on the Portuguese page the gloss of a Portuguese prayer is the
+ * prayer, and printing it twice would suggest two texts where there is one.
+ */
+function renderPrayerBlock(block, refNumById, ui, originalLang) {
+  if (!block) return '';
+  const label = block.label
+    ? `        <p class="prayer-label">${renderText(block.label)}</p>\n`
+    : '';
+  const cites = renderCites(block.sources, refNumById);
+  if (block.kind !== 'prayer') {
+    const body = proseLines(block.text)
+      .map((l, i, all) => `        <p class="prayer-prose">${renderText(l)}${i === all.length - 1 ? cites : ''}</p>`)
+      .join('\n');
+    return `      <div class="prayer-block">\n${label}${body}\n      </div>`;
+  }
+  const original = proseLines(block.original)
+    .map((l) => `          <p>${renderText(l)}</p>`)
+    .join('\n');
+  const same = proseLines(block.text).join('\n') === proseLines(block.original).join('\n');
+  const gloss = block.text && !same
+    ? '\n' + proseLines(block.text)
+      .map((l, i) => `        <p class="prayer-gloss">${i === 0 ? `<span class="prayer-gloss-label">${esc(ui.prayerGloss)}</span> ` : ''}${renderText(l)}</p>`)
+      .join('\n')
+    : '';
+  return `      <div class="prayer-block">
+${label}        <blockquote class="prayer-original" lang="${esc(originalLang)}">
+${original}
+        </blockquote>${gloss}${cites ? `\n        <p class="prayer-cites">${cites}</p>` : ''}
+      </div>`;
+}
+
+/**
+ * One section of a subpage, closing with the line that says what it rests on.
+ *
+ * That line is not optional decoration: `basis` is how a section of the site's
+ * own composition declares itself as such, in the reader's language, next to
+ * the composition rather than in a note nobody opens.
+ */
+function renderPageSection(section, refNumById, ui, originalLang) {
+  const blocks = (section.blocks || [])
+    .map((b) => renderPrayerBlock(b, refNumById, ui, originalLang))
+    .filter(Boolean)
+    .join('\n');
+  const note = section.note ? `      <p class="section-intro">${renderText(section.note)}</p>\n` : '';
+  const cites = renderCites(section.sources, refNumById);
+  const basis = section.basis ? ` ${renderText(section.basis)}` : '';
+  const rests = basis || cites
+    ? `\n      <p class="prayer-basis"><span class="prayer-basis-label">${esc(ui.pageBasis)}</span>${basis}${cites ? ` ${cites}` : ''}</p>`
+    : '';
+  return `    <section id="${esc(section.id)}">
+      <h2>${renderText(section.heading)}</h2>
+${note}${blocks}${rests}
+    </section>`;
+}
+
+/**
+ * A subpage: the same chrome as the chronology, the page's own SEO, and a
+ * references list carrying ONLY the sources this page cites — numbered with the
+ * site-wide numbering, so [14] means the same document on every page.
+ */
+function renderSubPage(page, data, archives, opts = {}) {
+  const { meta, references } = data;
+  const lang = opts.lang || (meta && meta.language) || 'en';
+  const ui = UI[lang] || UI.en;
+  const disclaimer = disclaimerFor(loadDictMeta(lang), ui);
+  const base = opts.base || siteBase(meta);
+  const route = `${page.id}/`;
+  const up = upTo(route);
+  const originalLang = page.originalLang || 'pt';
+
+  const refNumById = new Map(references.map((r, i) => [r.id, i + 1]));
+  const cited = new Set();
+  const collect = (ids) => (ids || []).forEach((id) => cited.add(id));
+  collect(page.sources);
+  for (const s of page.sections || []) {
+    collect(s.sources);
+    for (const b of s.blocks || []) collect(b.sources);
+  }
+  const pageRefs = references.filter((r) => cited.has(r.id));
+  const archivedRefs = pageRefs.filter((r) => archives[r.url] && archives[r.url].archiveUrl).length;
+
+  // Back to the chronology, then across to the sibling subpages.
+  const chips = [{ href: '../', label: `← ${ui.chronology}` }].concat(
+    subPages(data)
+      .filter((p) => p.id !== page.id)
+      .map((p) => ({ href: `../${p.id}/`, label: p.navLabel || p.title }))
+  );
+
+  const navLinks = (page.sections || [])
+    .map((s) => `      <a href="#${esc(s.id)}">${esc(s.navLabel || s.heading)}</a>`)
+    .join('\n');
+
+  const pageMeta = Object.assign({}, meta, { title: page.title, description: page.description });
+
+  return `<!DOCTYPE html>
+<html lang="${esc(meta.language || 'en')}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${esc(page.title)}</title>
+  <meta name="description" content="${esc(page.description)}">
+${ANALYTICS}
+  <link rel="stylesheet" href="${up}styles.css">
+${seoHead(pageMeta, base, route, lang, 'WebPage')}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      ${langSwitcher(route, lang, ui)}
+      <h1>${esc(page.title)}</h1>
+      <p class="subtitle">${esc(page.subtitle)}</p>
+      <p class="lead">${renderText(page.intro)}</p>
+      <p class="updated">${esc(ui.lastUpdated)} ${esc(meta.lastUpdated)}</p>${renderVizChips(chips)}
+    </div>
+  </header>${disclaimer ? `\n  <div class="i18n-disclaimer" role="note">🌐 ${esc(disclaimer)}</div>` : ''}
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a href="../">${esc(ui.chronology)}</a>
+${navLinks}
+      <a href="#references">${esc(ui.references)}</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <p class="notice notice-attribution">${renderText(page.note)}${renderCites(page.sources, refNumById)}</p>
+${(page.sections || []).map((s) => renderPageSection(s, refNumById, ui, originalLang)).join('\n\n')}
+
+    <section id="references">
+      <h2>${esc(ui.referencesHeading)}</h2>
+      <p class="section-intro">${ui.refsIntro(pageRefs.length, archivedRefs)}</p>
+      <ol class="references">
+${pageRefs.map((r) => renderReference(r, refNumById.get(r.id), archives, ui, { explicitValue: true })).join('\n')}
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>${ui.footer}</p>
+    </div>
+  </footer>
+</body>
+</html>
+`;
+}
+
 function renderPage(data, archives, opts = {}) {
   const { meta, facts, events, figures, organizations, disambiguation, references } = data;
   const lang = opts.lang || (meta && meta.language) || 'en';
@@ -2184,6 +2431,14 @@ function renderPage(data, archives, opts = {}) {
 
   const archivedRefs = references.filter((r) => archives[r.url] && archives[r.url].archiveUrl).length;
 
+  // Links out to the declared subpages, sitting at the end of the section nav
+  // where a reader who has finished the chronology finds them. '' when the
+  // dataset declares no pages, which is what keeps this page byte-identical to
+  // a build without the feature.
+  const pageLinks = subPages(data)
+    .map((p) => `\n      <a class="nav-page" href="${esc(p.id)}/">${esc(p.navLabel || p.title)}</a>`)
+    .join('');
+
   return `<!DOCTYPE html>
 <html lang="${esc(meta.language || 'en')}">
 <head>
@@ -2192,7 +2447,7 @@ function renderPage(data, archives, opts = {}) {
   <title>${esc(meta.title)}</title>
   <meta name="description" content="${esc(meta.description)}">
 ${ANALYTICS}
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="${upTo(route)}styles.css">
 ${seoHead(meta, base, route, lang)}
 </head>
 <body>
@@ -2213,7 +2468,7 @@ ${seoHead(meta, base, route, lang)}
       <a href="#figures">${esc(ui.figures)}</a>
       <a href="#organizations">${esc(ui.organizations)}</a>
       ${disambigCards ? `<a href="#disambiguation">${esc(ui.disambiguation)}</a>` : ''}
-      <a href="#references">${esc(ui.references)}</a>
+      <a href="#references">${esc(ui.references)}</a>${pageLinks}
     </div>
   </nav>
 
@@ -2295,9 +2550,17 @@ function main() {
     const dir = path.join(OUT_DIR, lang);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), renderPage(localized, archives, { lang, base, route: '', places, world }));
+    // Subpages are localized from the SAME localized copy, so a prayer's
+    // working translation and the chronology that links to it can never fall
+    // out of step.
+    for (const page of subPages(localized)) {
+      const pageDir = path.join(dir, page.id);
+      fs.mkdirSync(pageDir, { recursive: true });
+      fs.writeFileSync(path.join(pageDir, 'index.html'), renderSubPage(page, localized, archives, { lang, base }));
+    }
   }
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), renderRootStub(base));
-  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), renderSitemap(base, ROUTES));
+  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), renderSitemap(base, routesFor(data)));
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), renderRobots(base));
   fs.copyFileSync(path.join(SRC_DIR, 'styles.css'), path.join(OUT_DIR, 'styles.css'));
   // Disable Jekyll processing on GitHub Pages.
@@ -2305,7 +2568,7 @@ function main() {
 
   const archivedRefs = data.references.filter((r) => archives[r.url] && archives[r.url].archiveUrl).length;
   console.log(
-    `Built ${LOCALES.length} locales (${LOCALES.join(', ')}) × ${ROUTES.length} route(s) + root redirect, sitemap, robots — ` +
+    `Built ${LOCALES.length} locales (${LOCALES.join(', ')}) × ${routesFor(data).length} route(s) + root redirect, sitemap, robots — ` +
     `${data.events.length} events, ${data.figures.length} figures, ` +
     `${data.references.length} references, ${archivedRefs} with archive fallback.`
   );
@@ -2339,6 +2602,7 @@ module.exports = {
   PLACE_COMPOUND_SEP, placeIndex, resolvePlaceString, layoutPlacesMap, renderPlacesMap,
   loadPlaces, loadWorld,
   renderPage,
+  subPages, routesFor, upTo, proseLines, renderPrayerBlock, renderPageSection, renderSubPage,
   LOCALES, ROUTES, OG_LOCALE, UI, loadDict, loadDictMeta, disclaimerFor, renderApprovalLadder, ladderRungs, STATUS_GLYPH,
   renderEventRow, UNKNOWN_REF_TYPES, renderReference, siteBase, translator, localizeData,
   TRANSLATABLE_KEYS, SUBTREE_TRANSLATABLE, keysFor, collectTranslatable,
