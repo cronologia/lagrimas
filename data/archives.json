@@ -1,7 +1,13 @@
 {
   "generatedBy": "scripts/archive-refs.js",
-  "updatedAt": "2026-08-17",
+  "updatedAt": "2026-08-24",
   "snapshots": {
+    "https://apostoladolagrimasbrasil.org/dom-barreto/": {
+      "refId": "apostolado-dom-barreto",
+      "archiveUrl": "https://web.archive.org/web/20260824073732/https://apostoladolagrimasbrasil.org/dom-barreto/",
+      "timestamp": "20260824073732",
+      "checkedAt": "2026-08-24"
+    },
     "https://arquidiocesecampinas.com/clero_/bispos-de-campinas/": {
       "refId": "arqcampinas-bispos",
       "archiveUrl": "https://web.archive.org/web/20251109194257/http://arquidiocesecampinas.com/clero_/bispos-de-campinas/",
@@ -13,6 +19,18 @@
       "archiveUrl": "https://web.archive.org/web/20260317100125/https://coroadaslagrimasoficial.com.br/fundacao-do-instituto-das-missionarias-de-jesus-crucificado/",
       "timestamp": "20260317100125",
       "checkedAt": "2026-08-10"
+    },
+    "https://coroadaslagrimasoficial.com.br/reze-a-coroa-das-lagrimas/": {
+      "refId": "coroa-lagrimas-rezar",
+      "archiveUrl": "https://web.archive.org/web/20260210124259/https://coroadaslagrimasoficial.com.br/reze-a-coroa-das-lagrimas/",
+      "timestamp": "20260210124259",
+      "checkedAt": "2026-08-24"
+    },
+    "https://en.wikipedia.org/wiki/Our_Lady_of_Tears": {
+      "refId": "wikipedia-en-olt",
+      "archiveUrl": "https://web.archive.org/web/20260809062204/https://en.wikipedia.org/wiki/Our_Lady_of_Tears",
+      "timestamp": "20260809062204",
+      "checkedAt": "2026-08-24"
     },
     "https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas": {
       "refId": "cdb-lagrimas-edicoes",
@@ -38,6 +56,12 @@
       "timestamp": "20260213140444",
       "checkedAt": "2026-08-10"
     },
+    "https://novenas.totusmariae.org/coroa-das-lagrimas/": {
+      "refId": "totusmariae-novena-coroa",
+      "archiveUrl": "https://web.archive.org/web/20260410154441/https://novenas.totusmariae.org/coroa-das-lagrimas/",
+      "timestamp": "20260410154441",
+      "checkedAt": "2026-08-24"
+    },
     "https://periodicoseletronicos.ufma.br/index.php/rbhr/article/view/27185": {
       "refId": "rbhr-santos-2025",
       "archiveUrl": "https://web.archive.org/web/20251214141838/https://periodicoseletronicos.ufma.br/index.php/rbhr/article/view/27185",
@@ -50,11 +74,23 @@
       "timestamp": "20260414055037",
       "checkedAt": "2026-08-10"
     },
+    "https://pt.wikipedia.org/wiki/Coroa_de_Nossa_Senhora_das_L%C3%A1grimas": {
+      "refId": "wikipedia-pt-coroa",
+      "archiveUrl": "https://web.archive.org/web/20260521012523/https://pt.wikipedia.org/wiki/Coroa_de_Nossa_Senhora_das_L%C3%A1grimas",
+      "timestamp": "20260521012523",
+      "checkedAt": "2026-08-24"
+    },
     "https://pt.wikipedia.org/wiki/Nossa_Senhora_das_L%C3%A1grimas": {
       "refId": "wikipedia-pt-nsl",
       "archiveUrl": "https://web.archive.org/web/20260807022006/https://pt.wikipedia.org/wiki/Nossa_Senhora_das_L%C3%A1grimas",
       "timestamp": "20260807022006",
       "checkedAt": "2026-08-10"
+    },
+    "https://santuario.cancaonova.com/nossasenhora/nossa-senhora-das-lagrimas-historia-coroa/": {
+      "refId": "cancaonova-nsl",
+      "archiveUrl": "https://web.archive.org/web/20260824073216/https://santuario.cancaonova.com/nossasenhora/nossa-senhora-das-lagrimas-historia-coroa/",
+      "timestamp": "20260824073216",
+      "checkedAt": "2026-08-24"
     },
     "https://www.acidigital.com/noticia/55440/comissao-estudara-odor-de-santidade-de-irma-amalia-de-jesus-flagelado": {
       "refId": "acidigital-comissao-2023",
@@ -85,6 +121,12 @@
       "archiveUrl": "https://web.archive.org/web/20240713133227/https://www.editoraimaculada.com/produto/lancamento-setembro.html",
       "timestamp": "20240713133227",
       "checkedAt": "2026-08-10"
+    },
+    "https://www.ewtnnews.com/world/europe/weeping-madonna-of-syracuse-commemorated-in-sicily": {
+      "refId": "cna-syracuse",
+      "archiveUrl": "https://web.archive.org/web/20260824073250/https://www.ewtnnews.com/world/europe/weeping-madonna-of-syracuse-commemorated-in-sicily",
+      "timestamp": "20260824073250",
+      "checkedAt": "2026-08-24"
     },
     "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html": {
       "refId": "ddf-norms-2024",
