@@ -31,10 +31,13 @@ beatification cause. It makes no pronouncement on the apparitions.
 Beside the chronology the site publishes two subpages, in all three locales:
 
 - **`/{lang}/chaplet/`** — the text of the Chaplet of Tears, quoted in
-  Portuguese with a working translation. It is here because the imprimatur of
-  8 March 1932 and the four approvals abroad in 1935 are acts about *this
-  text*, and a chronology that dates them should show what they were about.
-  Reproducing it is not endorsing the claim behind it, and the page says so.
+  Portuguese with a working translation, laid out to be prayed straight
+  through: seven groups, each with a meditation and both invocations as they
+  are said. It is here because the imprimatur of 8 March 1932 and the four
+  approvals abroad in 1935 are acts about *this text*, and a chronology that
+  dates them should show what they were about. Reproducing it is not endorsing
+  the claim behind it, and the page says so. The meditations are the project
+  editor's own composition and are marked as such at every group.
 - **`/{lang}/novena/`** — a nine-day arrangement of the chaplet, one sorrow of
   Mary at a time. The nine-day practice is attested by devotional literature
   and a printed novena already exists (Vozes, 2023); the arrangement itself is

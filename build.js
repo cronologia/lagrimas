@@ -2216,22 +2216,67 @@ function proseLines(value) {
     .filter(Boolean);
 }
 
+/** Block kinds whose text is QUOTED — reproduced in its own language. */
+const QUOTED_KINDS = new Set(['prayer', 'meditation']);
+
 /**
- * One block of a subpage: a reproduced prayer, or the site's own prose.
+ * Every quoted block on the site, keyed "<page-id>#<block-id>".
  *
- * `kind: "prayer"` carries `original` — the text as its publishers print it —
- * and renders it as a quotation in its own language. `text` is the working
- * translation, and it is SUPPRESSED when localization has brought it back to
- * the original: on the Portuguese page the gloss of a Portuguese prayer is the
- * prayer, and printing it twice would suggest two texts where there is one.
+ * A pray-along page says the same two invocations at every one of the seven
+ * groups, and the two pages share the same meditations. Copying the text into
+ * fourteen places would mean fourteen places to fix a typo in and thirteen
+ * chances for the copies to drift apart — on a page whose whole claim is that
+ * it reproduces a text faithfully. So the text is declared once and referenced.
  */
-function renderPrayerBlock(block, refNumById, ui, originalLang) {
+function blockIndex(data) {
+  const index = new Map();
+  for (const page of subPages(data)) {
+    for (const section of page.sections || []) {
+      for (const block of section.blocks || []) {
+        if (block.id) index.set(`${page.id}#${block.id}`, block);
+      }
+    }
+  }
+  return index;
+}
+
+/**
+ * Follow a block's `sameAs` to the block it reproduces ("block-id" on the same
+ * page, or "page-id#block-id" across pages), keeping the referring block's own
+ * label — the same invocation is introduced differently at the large bead and
+ * at the three final beads. Returns null for an unresolved reference: the
+ * validator refuses those, and rendering nothing beats rendering a rubric with
+ * no prayer under it.
+ */
+function resolveBlock(block, pageId, index) {
+  if (!block || !block.sameAs) return block;
+  const key = block.sameAs.includes('#') ? block.sameAs : `${pageId}#${block.sameAs}`;
+  const target = index && index.get(key);
+  if (!target) return null;
+  return Object.assign({}, target, {
+    id: undefined,
+    label: block.label !== undefined ? block.label : target.label,
+  });
+}
+
+/**
+ * One block of a subpage: a reproduced text, or the site's own prose.
+ *
+ * A `prayer` (said on the beads) or a `meditation` (considered before them)
+ * carries `original` — the text in the language it is written in — and renders
+ * it as a quotation. `text` is the working translation, and it is SUPPRESSED
+ * when localization has brought it back to the original: on the Portuguese page
+ * the gloss of a Portuguese prayer is the prayer, and printing it twice would
+ * suggest two texts where there is one.
+ */
+function renderPrayerBlock(block, refNumById, ui, originalLang, opts = {}) {
+  block = resolveBlock(block, opts.pageId, opts.index);
   if (!block) return '';
   const label = block.label
     ? `        <p class="prayer-label">${renderText(block.label)}</p>\n`
     : '';
   const cites = renderCites(block.sources, refNumById);
-  if (block.kind !== 'prayer') {
+  if (!QUOTED_KINDS.has(block.kind)) {
     const body = proseLines(block.text)
       .map((l, i, all) => `        <p class="prayer-prose">${renderText(l)}${i === all.length - 1 ? cites : ''}</p>`)
       .join('\n');
@@ -2247,7 +2292,7 @@ function renderPrayerBlock(block, refNumById, ui, originalLang) {
       .join('\n')
     : '';
   return `      <div class="prayer-block">
-${label}        <blockquote class="prayer-original" lang="${esc(originalLang)}">
+${label}        <blockquote class="prayer-original${block.kind === 'meditation' ? ' prayer-meditation' : ''}" lang="${esc(originalLang)}">
 ${original}
         </blockquote>${gloss}${cites ? `\n        <p class="prayer-cites">${cites}</p>` : ''}
       </div>`;
@@ -2260,9 +2305,9 @@ ${original}
  * own composition declares itself as such, in the reader's language, next to
  * the composition rather than in a note nobody opens.
  */
-function renderPageSection(section, refNumById, ui, originalLang) {
+function renderPageSection(section, refNumById, ui, originalLang, opts = {}) {
   const blocks = (section.blocks || [])
-    .map((b) => renderPrayerBlock(b, refNumById, ui, originalLang))
+    .map((b) => renderPrayerBlock(b, refNumById, ui, originalLang, opts))
     .filter(Boolean)
     .join('\n');
   const note = section.note ? `      <p class="section-intro">${renderText(section.note)}</p>\n` : '';
@@ -2293,12 +2338,21 @@ function renderSubPage(page, data, archives, opts = {}) {
   const originalLang = page.originalLang || 'pt';
 
   const refNumById = new Map(references.map((r, i) => [r.id, i + 1]));
+  const index = blockIndex(data);
+  const sectionOpts = { pageId: page.id, index };
+  // What the page CITES includes what its references cite: a block that
+  // reproduces another block's text reproduces its citations too, and a
+  // reference cited only through a `sameAs` would otherwise be marked [26] in
+  // the text and be missing from the list under it.
   const cited = new Set();
   const collect = (ids) => (ids || []).forEach((id) => cited.add(id));
   collect(page.sources);
   for (const s of page.sections || []) {
     collect(s.sources);
-    for (const b of s.blocks || []) collect(b.sources);
+    for (const b of s.blocks || []) {
+      const resolved = resolveBlock(b, page.id, index);
+      collect(resolved ? resolved.sources : b.sources);
+    }
   }
   const pageRefs = references.filter((r) => cited.has(r.id));
   const archivedRefs = pageRefs.filter((r) => archives[r.url] && archives[r.url].archiveUrl).length;
@@ -2348,7 +2402,7 @@ ${navLinks}
 
   <main class="wrap">
     <p class="notice notice-attribution">${renderText(page.note)}${renderCites(page.sources, refNumById)}</p>
-${(page.sections || []).map((s) => renderPageSection(s, refNumById, ui, originalLang)).join('\n\n')}
+${(page.sections || []).map((s) => renderPageSection(s, refNumById, ui, originalLang, sectionOpts)).join('\n\n')}
 
     <section id="references">
       <h2>${esc(ui.referencesHeading)}</h2>
@@ -2603,6 +2657,7 @@ module.exports = {
   loadPlaces, loadWorld,
   renderPage,
   subPages, routesFor, upTo, proseLines, renderPrayerBlock, renderPageSection, renderSubPage,
+  QUOTED_KINDS, blockIndex, resolveBlock,
   LOCALES, ROUTES, OG_LOCALE, UI, loadDict, loadDictMeta, disclaimerFor, renderApprovalLadder, ladderRungs, STATUS_GLYPH,
   renderEventRow, UNKNOWN_REF_TYPES, renderReference, siteBase, translator, localizeData,
   TRANSLATABLE_KEYS, SUBTREE_TRANSLATABLE, keysFor, collectTranslatable,

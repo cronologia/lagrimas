@@ -5,7 +5,7 @@
     "description": "An open, source-referenced chronology of the reported apparitions of Our Lady of Tears (Nossa Senhora das Lágrimas) to Sister Amália de Jesus Flagelado in Campinas, Brazil, and of the Chaplet of Tears devotion that grew from them.",
     "language": "en",
     "siteUrl": "https://cronologia.github.io/lagrimas/",
-    "lastUpdated": "2026-08-18",
+    "lastUpdated": "2026-08-19",
     "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. The scope now runs wider than the reported events themselves, carrying the founding of the congregation and the state of the diocese before them and the congregation's growth, the spread of the devotion, the visionary's later life and the 2023 commission after them. Reported cures and wonders are recorded only as ACCOUNTS — that something was reported, by whom, and when first attested — never as events that happened, and they carry no rung on the approval ladder. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents, and the recent video commentary comes from a single speaker who also sits on the archdiocesan study commission; the provenance notes on each reference say so. Corrections against primary sources are welcome."
   },
   "approvalLadder": {
@@ -683,11 +683,11 @@
       "id": "chaplet",
       "title": "The Chaplet of Tears — the text",
       "navLabel": "The chaplet text",
-      "subtitle": "The prayers of the Coroa das Lágrimas as the devotion's publishers print them today, in Portuguese, with a working translation",
+      "subtitle": "The prayers of the Coroa das Lágrimas as its publishers print them, laid out to be prayed straight through, with a working translation beside each",
       "description": "The text of the Chaplet of Tears (Coroa/Terço das Lágrimas) in Portuguese with a working translation: the arrangement of the beads, the prayer said on each of them, and where each part comes from.",
       "originalLang": "pt",
       "intro": "Most of the Church acts this chronology has been able to date have a printed text as their object. Bishop Barreto's imprimatur of 8 March 1932, and the four approvals granted abroad in 1935, permit the printing of this chaplet's prayers and of a medal — and judge nothing about what was reported at Campinas. This page shows the text those acts were about.",
-      "note": "Reproducing a prayer is not endorsing the claim behind it. No judgment by Church authority on the Campinas apparitions has been located (the chronology page sets out, act by act, what was and was not judged), and nothing here says that these words were dictated to anyone. What the Portuguese below attests is narrower and checkable: it is the wording the devotion's own publishers print today. No copy of the 1932–1935 printings — the ones whose approval the chronology dates — was located, so where today's wording departs from theirs cannot be said.",
+      "note": "Reproducing a prayer is not endorsing the claim behind it. No judgment by Church authority on the Campinas apparitions has been located (the chronology page sets out, act by act, what was and was not judged), and nothing here says that these words were dictated to anyone. What the Portuguese below attests is narrower and checkable: it is the wording the devotion's own publishers print today. No copy of the 1932–1935 printings — the ones whose approval the chronology dates — was located, so where today's wording departs from theirs cannot be said. The meditations interleaved with the beads are a separate matter, and are marked wherever they appear: they are an original composition by this project's editor, not part of the chaplet as anyone transmits it.",
       "sources": [
         "coroa-lagrimas-rezar",
         "cancaonova-nsl",
@@ -713,6 +713,11 @@
               "kind": "note",
               "label": "The medal",
               "text": "The chaplet ends in a medal bearing Our Lady of Tears on one face and Jesus Manietado — Jesus Bound — on the other. Those are the two apparitions the chronology records as reported, in November 1929 and in March and April 1930; the medal is also the object named in the imprimatur of 8 March 1932, alongside the chaplet itself."
+            },
+            {
+              "kind": "note",
+              "label": "How this page is laid out",
+              "text": "Straight down, in the order it is prayed: the opening prayer, then the two invocations once with their sources, then the seven groups — each with a meditation and both invocations as they are said — then the three final beads, the final prayer and the closing invocations. Where the seven sorrows come from, and who wrote the meditations, is set out at the foot of the page."
             }
           ]
         },
@@ -738,9 +743,10 @@
           ]
         },
         {
-          "id": "large-bead",
-          "heading": "On each large bead",
-          "navLabel": "Large bead",
+          "id": "invocations",
+          "heading": "The two invocations",
+          "navLabel": "Invocations",
+          "note": "These two sentences carry the whole chaplet. The first is said once at the head of each group of beads; the second on each of the seven beads that follow it, forty-nine times in all. They are given here once with their sources, and then repeated at every group below, as they are actually prayed.",
           "sources": [
             "coroa-lagrimas-rezar",
             "cancaonova-nsl",
@@ -749,9 +755,22 @@
           "blocks": [
             {
               "kind": "prayer",
-              "label": "Once, at the head of each of the seven groups",
+              "id": "large-bead-invocation",
+              "label": "On the large bead",
               "original": "Vêde, ó Jesus, que são as Lágrimas d'Aquela que mais Vos amou na Terra, e que mais Vos ama no Céu.",
               "text": "Behold, O Jesus, these are the tears of her who loved you most on earth, and who loves you most in heaven.",
+              "sources": [
+                "coroa-lagrimas-rezar",
+                "cancaonova-nsl",
+                "wikipedia-pt-coroa"
+              ]
+            },
+            {
+              "kind": "prayer",
+              "id": "small-bead-invocation",
+              "label": "On each of the seven small beads",
+              "original": "Meu Jesus, ouvi os nossos rogos, pelas Lágrimas de Vossa Mãe Santíssima.",
+              "text": "My Jesus, hear our prayers, through the tears of your most holy Mother.",
               "sources": [
                 "coroa-lagrimas-rezar",
                 "cancaonova-nsl",
@@ -769,25 +788,163 @@
           ]
         },
         {
-          "id": "small-beads",
-          "heading": "On each of the seven small beads",
-          "navLabel": "Small beads",
-          "sources": [
-            "coroa-lagrimas-rezar",
-            "cancaonova-nsl",
-            "wikipedia-pt-coroa"
-          ],
+          "id": "group-1",
+          "heading": "First group — the prophecy of Simeon",
+          "navLabel": "Group 1",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
           "blocks": [
             {
-              "kind": "prayer",
-              "label": "Seven times in each group, forty-nine times in all",
-              "original": "Meu Jesus, ouvi os nossos rogos, pelas Lágrimas de Vossa Mãe Santíssima.",
-              "text": "My Jesus, hear our prayers, through the tears of your most holy Mother.",
-              "sources": [
-                "coroa-lagrimas-rezar",
-                "cancaonova-nsl",
-                "wikipedia-pt-coroa"
-              ]
+              "kind": "meditation",
+              "id": "med-1",
+              "label": "Meditation",
+              "original": "No Templo, o justo Simeão profetiza que uma espada de dor traspassará a alma de Maria, revelando o sofrimento redentor que acompanhará a vida de seu Divino Filho.",
+              "text": "In the temple, the just Simeon prophesies that a sword of sorrow will pierce Mary's soul, revealing the redemptive suffering that will accompany the life of her divine Son."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-2",
+          "heading": "Second group — the flight into Egypt",
+          "navLabel": "Group 2",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-2",
+              "label": "Meditation",
+              "original": "Sob a ameaça de Herodes, Maria enfrenta o desterro e as provações do deserto para salvar e proteger a vida do Menino Jesus recém-nascido.",
+              "text": "Under threat from Herod, Mary faces exile and the trials of the desert to save and protect the life of the newborn child Jesus."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-3",
+          "heading": "Third group — the loss of the child Jesus in the temple",
+          "navLabel": "Group 3",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-3",
+              "label": "Meditation",
+              "original": "Maria e José buscam em profunda aflição pelo Menino Jesus durante três dias por Jerusalém, até encontrá-Lo no Templo entre os doutores.",
+              "text": "Mary and Joseph search in deep distress for the child Jesus for three days through Jerusalem, until they find him in the temple among the teachers."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-4",
+          "heading": "Fourth group — the meeting on the road to Calvary",
+          "navLabel": "Group 4",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-4",
+              "label": "Meditation",
+              "original": "Ao carregar a pesada Cruz, Jesus cruza o Seu olhar com o de Sua Mãe, unindo Seus corações no sacrifício doloroso pela salvação dos homens.",
+              "text": "Carrying the heavy cross, Jesus meets the gaze of his Mother, uniting their hearts in the sorrowful sacrifice for the salvation of mankind."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-5",
+          "heading": "Fifth group — the crucifixion and death of Jesus",
+          "navLabel": "Group 5",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-5",
+              "label": "Meditation",
+              "original": "De pé junto à Cruz, a Virgem Maria testemunha a agonia extrema e a entrega da vida de Seu Filho amado pela remissão dos nossos pecados.",
+              "text": "Standing beside the cross, the Virgin Mary witnesses the extreme agony and the giving up of the life of her beloved Son for the remission of our sins."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-6",
+          "heading": "Sixth group — the descent from the cross",
+          "navLabel": "Group 6",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-6",
+              "label": "Meditation",
+              "original": "O corpo inerte e ferido do Salvador é acolhido no colo de Maria Santíssima, que o banha em silêncio com Suas santas lágrimas.",
+              "text": "The lifeless and wounded body of the Saviour is received into the lap of Mary most holy, who bathes it in silence with her holy tears."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
+            }
+          ]
+        },
+        {
+          "id": "group-7",
+          "heading": "Seventh group — the burial of Jesus and the solitude of Mary",
+          "navLabel": "Group 7",
+          "basis": "The meditation is an original composition by the project's editor, written for this devotion and printed as such — it is not transmitted text, it carries no imprimatur, and it is attributed to no one else. The chaplet's own sources assign no sorrow or mystery to any group; the pairing is this arrangement's.",
+          "blocks": [
+            {
+              "kind": "meditation",
+              "id": "med-7",
+              "label": "Meditation",
+              "original": "O corpo de Jesus é depositado no sepulcro, e Nossa Senhora permanece em profunda e silenciosa dor, guardando acesa a esperança da Ressurreição.",
+              "text": "The body of Jesus is laid in the tomb, and Our Lady remains in deep and silent sorrow, keeping alight the hope of the Resurrection."
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "On the large bead"
+            },
+            {
+              "sameAs": "small-bead-invocation",
+              "label": "On each of the seven small beads"
             }
           ]
         },
@@ -807,6 +964,10 @@
                 "coroa-lagrimas-rezar",
                 "cancaonova-nsl"
               ]
+            },
+            {
+              "sameAs": "large-bead-invocation",
+              "label": "Three times, on the three final beads"
             }
           ]
         },
@@ -861,9 +1022,9 @@
         },
         {
           "id": "sorrows",
-          "heading": "The seven sorrows, and where they come into this",
+          "heading": "Where the seven sorrows come from",
           "navLabel": "The seven sorrows",
-          "note": "The chaplet as its publishers transmit it prescribes no mysteries. Leaflets that pair one of the seven sorrows of Mary with each of the seven groups are making an arrangement, and it is worth knowing which part is which.",
+          "note": "The chaplet as its publishers transmit it prescribes no mysteries. Pairing one of the seven sorrows of Mary with each of the seven groups, as this page does, is an arrangement — and it is worth knowing which part of what you have just prayed is which.",
           "sources": [
             "wikipedia-pt-coroa",
             "cancaonova-nsl",
@@ -882,11 +1043,16 @@
             },
             {
               "kind": "note",
+              "label": "Who wrote the meditations",
+              "text": "The seven meditations above are an original composition by this project's editor, written for this devotion. They are not attributed to Sister Amália, to her writings or to any publisher, they carry no imprimatur, and no source transmits them. They are printed with the beads because the page is laid out to be prayed, and every one of them carries that statement beneath it."
+            },
+            {
+              "kind": "note",
               "label": "The traditional seven",
-              "text": "In their usual order: the prophecy of Simeon; the flight into Egypt; the loss of the child Jesus in the temple; the meeting on the road to Calvary; the crucifixion and death; receiving the body taken down from the cross; the burial. A nine-day arrangement built on that list is set out on the other page of this site, and it is this site's arrangement, not the devotion's."
+              "text": "The sorrows themselves are the traditional list, and they are the headings above: the prophecy of Simeon; the flight into Egypt; the loss of the child Jesus in the temple; the meeting on the road to Calvary; the crucifixion and death; receiving the body taken down from the cross; the burial. A nine-day arrangement built on the same list is on the other page of this site, and it too is this site's arrangement, not the devotion's."
             }
           ],
-          "basis": "The list of the seven sorrows is the traditional one, given here so that a reader meeting it in a leaflet can see what is being added to the chaplet and by whom. The pairing of one sorrow per group is not made by any source cited on this page."
+          "basis": "The list of the seven sorrows is the traditional one. The pairing of one sorrow per group, and the meditations printed with them, are this site's and are not made by any source cited on this page."
         }
       ]
     },
@@ -937,10 +1103,15 @@
           "id": "day-1",
           "heading": "Day 1 — The prophecy of Simeon",
           "navLabel": "Day 1",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-1",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "In the temple, Simeon blesses the parents and tells the mother that a sword will pierce her own soul (Luke 2:34–35). The presentation and the warning arrive in the same breath: the first sorrow is something foretold, and not yet suffered."
             }
           ]
@@ -949,10 +1120,15 @@
           "id": "day-2",
           "heading": "Day 2 — The flight into Egypt",
           "navLabel": "Day 2",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-2",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "Warned in a dream, Joseph takes the child and his mother by night and leaves the country (Matthew 2:13–15). The sorrow here is not a scene but a condition: a family on the road, out of reach of home, for as long as the danger lasts."
             }
           ]
@@ -961,10 +1137,15 @@
           "id": "day-3",
           "heading": "Day 3 — The loss of the child Jesus in the temple",
           "navLabel": "Day 3",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-3",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "Three days of searching in Jerusalem end among the teachers, with an answer his mother does not understand and keeps (Luke 2:41–50). This sorrow is absence, and it ends by his being found rather than by her being told why."
             }
           ]
@@ -973,10 +1154,15 @@
           "id": "day-4",
           "heading": "Day 4 — The meeting on the road to Calvary",
           "navLabel": "Day 4",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-4",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "The traditional stations place mother and son face to face on the way to the cross. The Gospels place the women of Jerusalem on that road (Luke 23:27) and Mary at its end (John 19:25); the meeting itself is carried by the devotion rather than by the text, which is worth knowing while praying it."
             }
           ]
@@ -985,10 +1171,15 @@
           "id": "day-5",
           "heading": "Day 5 — The crucifixion and death",
           "navLabel": "Day 5",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-5",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "His mother stands at the cross while he dies, and is given a son in the disciple standing beside her (John 19:25–27). This is the sorrow the chaplet's opening prayer names: the sorrowful road of Calvary, followed to the end of it."
             }
           ]
@@ -997,10 +1188,15 @@
           "id": "day-6",
           "heading": "Day 6 — Receiving the body taken down from the cross",
           "navLabel": "Day 6",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-6",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "The body is taken down and laid in his mother's arms before the burial (John 19:38–40). Here the tears the chaplet offers are shed with nothing left to do, which is the state most of the people who pray it are praying from."
             }
           ]
@@ -1009,10 +1205,15 @@
           "id": "day-7",
           "heading": "Day 7 — The burial",
           "navLabel": "Day 7",
-          "basis": "Composed for this site. The chaplet's own sources assign no mystery to any group; what this day rests on is the Gospel passage named in the meditation.",
+          "basis": "Two hands here, and they are marked apart: the meditation is the project editor's own composition, printed as it stands on the chaplet page; the Gospel locator beneath it is this page's. The chaplet's own sources assign no mystery to any group.",
           "blocks": [
             {
+              "sameAs": "chaplet#med-7",
+              "label": "Meditation"
+            },
+            {
               "kind": "note",
+              "label": "Where it is in the Gospels",
               "text": "They lay him in a new tomb in a garden, because the sabbath was near (John 19:41–42). The seventh sorrow is the one that has to be lived through with no event in it at all, and the chaplet says nothing new here either: the same invocation, three times, on the last three beads."
             }
           ]
