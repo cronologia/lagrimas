@@ -583,8 +583,19 @@ blockquote.prayer-original p { margin: .45rem 0; }
 blockquote.prayer-original p:first-child { margin-top: 0; }
 blockquote.prayer-original p:last-child { margin-bottom: 0; }
 
-.prayer-gloss { margin: .45rem 0 0 1.15rem; color: var(--muted); font-size: .92rem; max-width: 68ch; }
-.prayer-gloss-label { font-size: .78rem; font-variant: small-caps; letter-spacing: .05em; color: var(--accent); font-weight: 700; margin-right: .3rem; }
+/* The working translation. Full-strength body text, not a footnote: on the en
+   and es pages it is the half the reader actually prays from, and setting it
+   small and grey made the page a document to look at rather than to use. The
+   label carries the caveat instead — it says this rendering is the site's, not
+   a liturgical text — which is where the caveat belongs. */
+.prayer-gloss { margin: .5rem 0 0 1.15rem; color: var(--ink); font-size: 1rem; line-height: 1.6; max-width: 68ch; }
+.prayer-gloss-label { display: block; font-size: .78rem; font-variant: small-caps; letter-spacing: .05em; color: var(--accent); font-weight: 700; }
+
+/* A meditation is considered, not said: it is quoted like a prayer, because it
+   is somebody's text and reproduced verbatim, but it must never be mistaken for
+   words to recite on the beads. Lighter rule, italic, no filled ground. */
+blockquote.prayer-meditation { background: none; border-left-width: 3px; border-left-color: var(--line); border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; font-style: italic; font-size: .98rem; }
+blockquote.prayer-meditation + .prayer-gloss { font-style: italic; }
 .prayer-cites { margin: .3rem 0 0 1.15rem; }
 
 /* "What this rests on" — citations, or the site admitting an arrangement is its

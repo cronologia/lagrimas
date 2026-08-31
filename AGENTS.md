@@ -194,7 +194,11 @@ and a medal, and judge nothing about the apparitions. A chronology that dates
 those acts and never shows what they were about leaves a reader one click short
 of the thing being judged.
 
-- **`chaplet`** — the prayers, quoted in Portuguese with a working translation.
+- **`chaplet`** — the prayers, quoted in Portuguese with a working translation,
+  laid out as a PRAY-ALONG: opening prayer, the two invocations once with their
+  sources, then the seven groups, each with a meditation and both invocations as
+  they are actually said, then the final beads, final prayer and closing
+  invocations.
 - **`novena`** — a nine-day arrangement of the chaplet with the seven sorrows,
   composed for this site and labelled as such throughout.
 
@@ -218,7 +222,24 @@ them:
    which on this subject is the confusion the whole dataset exists to undo.
 4. **A subpage lists only the sources it cites, with the SITE-WIDE numbers**
    (`<li value="n">` pins the marker), so `[26]` means the same document on
-   every page of the site.
+   every page of the site. A source cited only through a `sameAs` counts as
+   cited, or the marker would appear with no entry under it.
+5. **A reproduced text has exactly one home.** A pray-along says the same two
+   invocations at all seven groups and shares its meditations with the novena
+   page; the text is declared once with an `id` and referenced by
+   `sameAs: "block-id"` (or `"page-id#block-id"` across pages), which carries
+   the original, its translation, its kind and its citations to the point of
+   use while the referring block supplies only its own rubric. Copying instead
+   would give a typo fourteen places to hide in on a page whose whole claim is
+   that it reproduces a text faithfully. `test/subpages.test.js` fails on any
+   duplicated `original` in the dataset.
+
+Two quoted kinds, and the difference is editorial rather than cosmetic:
+`prayer` is transmitted and must cite a source; `meditation` is considered
+rather than said, may be an original composition, and is then accounted for by
+the section's rendered `basis`. The seven meditations on these pages are the
+project editor's own, written for this devotion — not transmitted text, no
+imprimatur, attributed to no one else — and every group says so beneath it.
 
 Adding a page is a data edit like any other: declare it in `data/chronology.json`,
 translate every new string in `data/i18n/{es,pt}.json` (the i18n completeness

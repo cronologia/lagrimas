@@ -458,7 +458,17 @@ if (d.pages !== undefined) {
     err('pages must be a non-empty array (omit the key entirely to declare none)');
   } else {
     const pageIds = new Set();
-    const sectionKind = new Set(['prayer', 'note']);
+    const sectionKind = new Set(['prayer', 'meditation', 'note']);
+    // Every block that CAN be referenced, keyed "<page-id>#<block-id>", built
+    // before the walk so a `sameAs` may point forward as well as back.
+    const blocks = new Map();
+    for (const p of d.pages) {
+      for (const s of (isArr(p.sections) ? p.sections : [])) {
+        for (const b of (isArr(s.blocks) ? s.blocks : [])) {
+          if (isStr(p.id) && isStr(b.id)) blocks.set(`${p.id}#${b.id}`, b);
+        }
+      }
+    }
     d.pages.forEach((p, i) => {
       const at = `pages[${i}]`;
       if (!isStr(p.id)) err(`${at}.id missing`);
@@ -497,16 +507,39 @@ if (d.pages !== undefined) {
         if (!isArr(s.blocks) || s.blocks.length === 0) {
           return err(`${sAt}.blocks must be a non-empty array`);
         }
+        const blockIds = new Set();
         s.blocks.forEach((b, k) => {
           const bAt = `${sAt}.blocks[${k}]`;
+          if (b.id !== undefined) {
+            if (!isStr(b.id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(b.id)) err(`${bAt}.id must be kebab-case, got "${b.id}"`);
+            else if (blockIds.has(b.id)) err(`${bAt}.id duplicated on this page: ${b.id}`);
+            else blockIds.add(b.id);
+          }
+          if (b.label !== undefined && !isStr(b.label)) err(`${bAt}.label must be a string`);
+          // A reference to text declared elsewhere. It carries nothing of its
+          // own but a label: the point is that the words, and the citations
+          // that vouch for them, have exactly one home in the dataset.
+          if (b.sameAs !== undefined) {
+            if (!isStr(b.sameAs)) return err(`${bAt}.sameAs must be a string`);
+            const key = b.sameAs.includes('#') ? b.sameAs : `${p.id}#${b.sameAs}`;
+            const target = blocks.get(key);
+            if (!target) return err(`${bAt}.sameAs: no block "${key}" (use "block-id" on this page, or "page-id#block-id")`);
+            if (!isStr(target.original)) err(`${bAt}.sameAs points at "${key}", which reproduces no text of its own`);
+            for (const own of ['original', 'text', 'sources', 'kind']) {
+              if (b[own] !== undefined) err(`${bAt}.${own} must not be set beside sameAs — the referenced block owns the text, its translation, its kind and its citations`);
+            }
+            return;
+          }
           const kind = b.kind === undefined ? 'note' : b.kind;
           if (!sectionKind.has(kind)) err(`${bAt}.kind must be one of ${[...sectionKind].join(', ')}, got "${b.kind}"`);
-          if (b.label !== undefined && !isStr(b.label)) err(`${bAt}.label must be a string`);
-          if (kind === 'prayer') {
-            if (!isStr(b.original)) err(`${bAt}.original missing — a prayer block reproduces the text in the language it is printed in; a translation alone is a paraphrase presented as a prayer`);
-            checkSources(bAt, b.sources, true);
+          if (kind === 'prayer' || kind === 'meditation') {
+            if (!isStr(b.original)) err(`${bAt}.original missing — a ${kind} block reproduces the text in the language it is written in; a translation alone is a paraphrase presented as the thing itself`);
+            // A meditation may be the site's own composition, and then it has
+            // no source to cite: the section's `basis` is what accounts for it,
+            // and the section rule above already requires one of the two.
+            checkSources(bAt, b.sources, kind === 'prayer');
           } else {
-            if (b.original !== undefined) err(`${bAt}.original is only for kind "prayer"`);
+            if (b.original !== undefined) err(`${bAt}.original is only for kind "prayer" or "meditation"`);
             if (!isStr(b.text)) err(`${bAt}.text missing`);
             checkSources(bAt, b.sources, false);
           }

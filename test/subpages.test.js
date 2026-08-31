@@ -20,7 +20,7 @@ const path = require('node:path');
 const {
   subPages, routesFor, upTo, proseLines, renderPrayerBlock, renderPageSection,
   renderSubPage, renderPage, renderSitemap, langSwitcher, localizeData, loadDict,
-  siteBase, LOCALES, UI,
+  siteBase, LOCALES, UI, blockIndex, resolveBlock, QUOTED_KINDS, esc,
 } = require('../build.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -172,4 +172,89 @@ test('the Portuguese page prints each prayer once', () => {
     assert.ok(!html.includes('prayer-gloss'),
       `${page.id}: the pt page glosses a Portuguese prayer — its dictionary entry should be the original itself`);
   }
+});
+
+/* The pray-along, and the reference that keeps it honest.
+ *
+ * A page laid out to be prayed says the same two invocations at all seven
+ * groups, and shares its meditations with the novena page. Copied text would be
+ * fourteen places to fix a typo in; `sameAs` makes one of them, and these tests
+ * pin both halves — that the reference resolves and renders, and that the
+ * dataset actually uses it rather than copying.
+ */
+
+test('sameAs resolves within a page and across pages, keeping the caller\'s label', () => {
+  const index = blockIndex(data);
+  const inv = index.get('chaplet#large-bead-invocation');
+  assert.ok(inv && inv.original, 'the large-bead invocation should be declared once, with an id');
+
+  const samePage = resolveBlock({ sameAs: 'large-bead-invocation', label: 'Three times' }, 'chaplet', index);
+  assert.equal(samePage.original, inv.original);
+  assert.equal(samePage.label, 'Three times', 'the referring block keeps its own rubric');
+  assert.deepEqual(samePage.sources, inv.sources, 'the citations travel with the text');
+
+  const crossPage = resolveBlock({ sameAs: 'chaplet#med-1' }, 'novena', index);
+  assert.ok(crossPage && crossPage.original, 'the novena must reach the chaplet page\'s meditations');
+  assert.equal(crossPage.kind, 'meditation');
+
+  assert.equal(resolveBlock({ sameAs: 'no-such-block' }, 'chaplet', index), null,
+    'an unresolved reference renders nothing rather than a rubric with no text under it');
+});
+
+test('a referenced prayer renders its text and its citations at the point of use', () => {
+  const page = subPages(data).find((p) => p.id === 'chaplet');
+  const html = renderSubPage(page, data, {}, { lang: 'en', base });
+  const inv = blockIndex(data).get('chaplet#large-bead-invocation');
+  const uses = html.split(esc(inv.original)).length - 1;
+  assert.ok(uses >= 9, `the large-bead invocation should render at every group and the final beads, got ${uses}`);
+  // A reference cited ONLY through a sameAs still has to appear in the list.
+  const numById = new Map(data.references.map((r, i) => [r.id, i + 1]));
+  for (const id of inv.sources) {
+    assert.ok(html.includes(`<li id="ref-${numById.get(id)}"`), `source ${id} cited via sameAs but not listed`);
+  }
+});
+
+test('the invocations are declared once in the data, not copied per group', () => {
+  const originals = [];
+  for (const page of subPages(data)) {
+    for (const section of page.sections) {
+      for (const block of section.blocks || []) if (block.original) originals.push(block.original);
+    }
+  }
+  const dupes = originals.filter((o, i) => originals.indexOf(o) !== i);
+  assert.deepEqual(dupes, [], 'a reproduced text must have exactly one home in the dataset — use sameAs');
+});
+
+test('each of the seven groups is a meditation followed by both invocations', () => {
+  const page = subPages(data).find((p) => p.id === 'chaplet');
+  const groups = page.sections.filter((s) => /^group-\d$/.test(s.id));
+  assert.equal(groups.length, 7, 'the chaplet has seven groups of beads');
+  groups.forEach((s, i) => {
+    const kinds = s.blocks.map((b) => (b.sameAs ? `sameAs:${b.sameAs}` : b.kind));
+    assert.deepEqual(kinds, ['meditation', 'sameAs:large-bead-invocation', 'sameAs:small-bead-invocation'],
+      `group ${i + 1} must read in the order it is prayed`);
+  });
+});
+
+test('every meditation says whose composition it is', () => {
+  // A prayer is transmitted and cites a source; a meditation in this dataset is
+  // written, and the section's rendered `basis` is what says by whom. If a
+  // transmitted meditation is ever added, this fails and the choice gets made
+  // deliberately rather than by omission.
+  for (const page of subPages(data)) {
+    for (const section of page.sections) {
+      const meditations = (section.blocks || []).filter((b) => b.kind === 'meditation');
+      if (!meditations.length) continue;
+      assert.ok(section.basis && section.basis.trim(),
+        `${page.id}#${section.id}: a meditation with no basis reads as something the devotion transmits`);
+    }
+  }
+});
+
+test('a meditation is quoted, but never dressed as a prayer', () => {
+  assert.ok(QUOTED_KINDS.has('meditation') && QUOTED_KINDS.has('prayer'));
+  const html = renderPrayerBlock({
+    kind: 'meditation', original: 'No Templo, o justo Simeão…', text: 'In the temple…',
+  }, new Map(), ui, 'pt');
+  assert.match(html, /<blockquote class="prayer-original prayer-meditation"/);
 });
