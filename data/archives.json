@@ -1,6 +1,6 @@
 {
   "generatedBy": "scripts/archive-refs.js",
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-06",
   "snapshots": {
     "https://apostoladolagrimasbrasil.org/dom-barreto/": {
       "refId": "apostolado-dom-barreto",
@@ -25,6 +25,12 @@
       "archiveUrl": "https://web.archive.org/web/20260210124259/https://coroadaslagrimasoficial.com.br/reze-a-coroa-das-lagrimas/",
       "timestamp": "20260210124259",
       "checkedAt": "2026-08-24"
+    },
+    "https://difusao.cmu.unicamp.br/tema/view/4/o-caso-amalia-de-jesus-flagelado-contexto-e-narrativa": {
+      "refId": "unicamp-cmu-amalia",
+      "archiveUrl": "https://web.archive.org/web/20260831140118/https://difusao.cmu.unicamp.br/tema/view/4/o-caso-amalia-de-jesus-flagelado-contexto-e-narrativa",
+      "timestamp": "20260831140118",
+      "checkedAt": "2026-09-06"
     },
     "https://en.wikipedia.org/wiki/Our_Lady_of_Tears": {
       "refId": "wikipedia-en-olt",
@@ -133,6 +139,18 @@
       "archiveUrl": "https://web.archive.org/web/20260724130748/https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
       "timestamp": "20260724130748",
       "checkedAt": "2026-08-10"
+    },
+    "https://youtu.be/BgE8X0sby3k": {
+      "refId": "video-tonon-anima-60",
+      "archiveUrl": "https://web.archive.org/web/20260906221423/https://www.youtube.com/watch?v=BgE8X0sby3k&feature=youtu.be",
+      "timestamp": "20260906221423",
+      "checkedAt": "2026-09-06"
+    },
+    "https://youtu.be/iZOHoERKdlI": {
+      "refId": "video-tonon-cdb-profecia",
+      "archiveUrl": "https://web.archive.org/web/20260906221342/https://www.youtube.com/watch?v=iZOHoERKdlI&feature=youtu.be",
+      "timestamp": "20260906221342",
+      "checkedAt": "2026-09-06"
     }
   }
 }
