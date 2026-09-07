@@ -1,6 +1,6 @@
 {
   "generatedBy": "scripts/archive-refs.js",
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "snapshots": {
     "https://apostoladolagrimasbrasil.org/dom-barreto/": {
       "refId": "apostolado-dom-barreto",
@@ -134,6 +134,12 @@
       "timestamp": "20260824073250",
       "checkedAt": "2026-08-24"
     },
+    "https://www.travessa.pt/Artigo/Detalhe/nossa-senhora-das-lagrimas-novena-e-ladainha/artigo/860c67bd-8642-4df6-b319-01fee5baa1a7": {
+      "refId": "pimentel-novena-ladainha",
+      "archiveUrl": "https://web.archive.org/web/20260907124339/https://www.travessa.pt/Artigo/Detalhe/nossa-senhora-das-lagrimas-novena-e-ladainha/artigo/860c67bd-8642-4df6-b319-01fee5baa1a7",
+      "timestamp": "20260907124339",
+      "checkedAt": "2026-09-07"
+    },
     "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html": {
       "refId": "ddf-norms-2024",
       "archiveUrl": "https://web.archive.org/web/20260724130748/https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
@@ -145,6 +151,12 @@
       "archiveUrl": "https://web.archive.org/web/20260906221423/https://www.youtube.com/watch?v=BgE8X0sby3k&feature=youtu.be",
       "timestamp": "20260906221423",
       "checkedAt": "2026-09-06"
+    },
+    "https://youtu.be/LDaorlS_9XI": {
+      "refId": "video-tonon-lente-catolica",
+      "archiveUrl": "https://web.archive.org/web/20260907124254/https://www.youtube.com/watch?v=LDaorlS_9XI&feature=youtu.be",
+      "timestamp": "20260907124254",
+      "checkedAt": "2026-09-07"
     },
     "https://youtu.be/iZOHoERKdlI": {
       "refId": "video-tonon-cdb-profecia",
