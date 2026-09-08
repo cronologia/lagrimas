@@ -5,7 +5,7 @@
     "description": "An open, source-referenced chronology of the reported apparitions of Our Lady of Tears (Nossa Senhora das Lágrimas) to Sister Amália de Jesus Flagelado in Campinas, Brazil, and of the Chaplet of Tears devotion that grew from them.",
     "language": "en",
     "siteUrl": "https://cronologia.github.io/lagrimas/",
-    "lastUpdated": "2026-09-01",
+    "lastUpdated": "2026-09-08",
     "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. The scope now runs wider than the reported events themselves, carrying the founding of the congregation and the state of the diocese before them and the congregation's growth, the spread of the devotion, the visionary's later life and the 2023 commission after them. Reported cures and wonders are recorded only as ACCOUNTS — that something was reported, by whom, and when first attested — never as events that happened, and they carry no rung on the approval ladder. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents, and the recent video commentary comes from a single speaker who also sits on the archdiocesan study commission; the provenance notes on each reference say so. Corrections against primary sources are welcome."
   },
   "approvalLadder": {
@@ -1379,9 +1379,9 @@
     {
       "id": "rde-santos-2019",
       "title": "No silêncio da clausura: videntes de aparições marianas no Brasil (1928-1937)",
-      "url": "https://doi.org/10.7213/1981-416X.19.063.DS04",
+      "url": "https://periodicos.pucpr.br/dialogoeducacional/article/view/25694",
       "publisher": "Revista Diálogo Educacional (PUCPR)",
-      "publisherNote": "Peer-reviewed academic article by Magno Francisco de Jesus Santos (UFRN), v. 19, n. 63, p. 1397–1417, Oct–Dec 2019 — the same historian as the 2025 RBHR study, here comparing Campinas with Cimbres (1936). Evidentially the most important source located after the 2023 decree: it is the only one consulted that DATES the episcopal act on the devotion (imprimatur of 8 March 1932 for the Chaplet and Medal of Tears) and that names the foreign approvals of 1935 individually, with granting authority, see and — for Sopron — a protocol number. It works from the 1929 Campinas and São Paulo press and from the depositions taken from the visionaries in the diocesan verification of the reports. It reproduces none of those acts, and states that the messages and the devotion have still not been approved by the Holy See.",
+      "publisherNote": "Peer-reviewed academic article by Magno Francisco de Jesus Santos (UFRN), v. 19, n. 63, p. 1397–1417, Oct–Dec 2019 — the same historian as the 2025 RBHR study, here comparing Campinas with Cimbres (1936). Evidentially the most important source located after the 2023 decree: it is the only one consulted that DATES the episcopal act on the devotion (imprimatur of 8 March 1932 for the Chaplet and Medal of Tears) and that names the foreign approvals of 1935 individually, with granting authority, see and — for Sopron — a protocol number. It works from the 1929 Campinas and São Paulo press and from the depositions taken from the visionaries in the diocesan verification of the reports. It reproduces none of those acts, and states that the messages and the devotion have still not been approved by the Holy See. Cited by its landing page at the journal rather than by its DOI (10.7213/1981-416X.19.063.DS04, recorded here so the stable identifier is not lost): a DOI is a redirect, the Internet Archive captures the redirect and not the article, and this reference sat unarchivable for that reason while being the strongest source in the dataset. The landing page carries the article and can be, and now is, snapshotted.",
       "type": "academic"
     },
     {
