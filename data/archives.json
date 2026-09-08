@@ -1,6 +1,6 @@
 {
   "generatedBy": "scripts/archive-refs.js",
-  "updatedAt": "2026-09-07",
+  "updatedAt": "2026-09-08",
   "snapshots": {
     "https://apostoladolagrimasbrasil.org/dom-barreto/": {
       "refId": "apostolado-dom-barreto",
@@ -31,6 +31,12 @@
       "archiveUrl": "https://web.archive.org/web/20260831140118/https://difusao.cmu.unicamp.br/tema/view/4/o-caso-amalia-de-jesus-flagelado-contexto-e-narrativa",
       "timestamp": "20260831140118",
       "checkedAt": "2026-09-06"
+    },
+    "https://doi.org/10.7213/1981-416X.19.063.DS04": {
+      "refId": "rde-santos-2019",
+      "archiveUrl": "https://web.archive.org/web/20260908022455/https://periodicos.pucpr.br/dialogoeducacional/article/view/25694",
+      "timestamp": "20260908022455",
+      "checkedAt": "2026-09-08"
     },
     "https://en.wikipedia.org/wiki/Our_Lady_of_Tears": {
       "refId": "wikipedia-en-olt",
