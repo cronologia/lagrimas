@@ -623,3 +623,43 @@ blockquote.prayer-meditation + .prayer-gloss { font-style: italic; }
   blockquote.prayer-original { background: none; border-left-color: #999; }
   .prayer-basis { background: none; border-left-color: #999; }
 }
+
+/* ---------------------------------------------------------------------------
+   The pray-along on paper.
+
+   A page laid out to be prayed will be printed, and printed it ran to eleven
+   A4 sheets: seven groups, each repeating both invocations with a translation
+   under each. Tightened here to about half that.
+
+   What is NOT dropped, and must never be: the banner at the top, the line under
+   every group saying the meditation is the editor's composition, and the
+   provenance section at the foot. A printed sheet travels further than the page
+   does and carries no link back to its own caveats — so the caveats go with it.
+   The compaction is spacing and type size only.
+   -------------------------------------------------------------------------- */
+@media print {
+  /* The language pills. The print block near the top of this file cannot hide
+     them: `.lang-switch { display: flex }` is declared BELOW it, at equal
+     specificity, and a media query adds none — so the later rule wins and every
+     printed sheet carried EN ES PT. Hidden here instead, from the end of the
+     file, where the cascade is on our side. */
+  .lang-switch { display: none; }
+  body { font-size: 10.5pt; line-height: 1.4; }
+  main { padding: 0; }
+  section { margin: .9rem 0; }
+  h2 { font-size: 1.15rem; margin-bottom: .5rem; padding-bottom: .2rem; }
+  .site-header { padding: .5rem 0 .75rem; }
+  .site-header h1 { font-size: 1.5rem; }
+  .site-header .subtitle, .site-header .updated { font-size: .85rem; margin-bottom: .3rem; }
+  .prayer-block { margin: .5rem 0 .7rem; }
+  .prayer-label { margin-bottom: .15rem; }
+  blockquote.prayer-original { padding: .4rem .7rem; font-size: 1em; }
+  blockquote.prayer-original p { margin: .2rem 0; }
+  .prayer-gloss { margin: .25rem 0 0 .7rem; font-size: .95em; }
+  .prayer-gloss-label { display: inline; margin-right: .3rem; }
+  .prayer-cites { margin: .15rem 0 0 .7rem; }
+  .prayer-basis { margin-top: .45rem; padding: .3rem .6rem; font-size: .82em; }
+  /* A group of beads is one unit of praying; splitting it across a sheet is
+     the one break that actually costs the reader something. */
+  section[id^="group-"], section[id^="day-"] { break-inside: avoid; page-break-inside: avoid; }
+}

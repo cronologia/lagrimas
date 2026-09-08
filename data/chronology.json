@@ -5,7 +5,7 @@
     "description": "An open, source-referenced chronology of the reported apparitions of Our Lady of Tears (Nossa Senhora das Lágrimas) to Sister Amália de Jesus Flagelado in Campinas, Brazil, and of the Chaplet of Tears devotion that grew from them.",
     "language": "en",
     "siteUrl": "https://cronologia.github.io/lagrimas/",
-    "lastUpdated": "2026-08-19",
+    "lastUpdated": "2026-09-01",
     "dataQualityNote": "Work-in-progress dataset compiled from public sources (see references). The apparitions are recorded as REPORTED events: the dataset states who reported what and when, and what Church authorities have ruled and when — it does not assert the supernatural claims as fact. The scope now runs wider than the reported events themselves, carrying the founding of the congregation and the state of the diocese before them and the congregation's growth, the spread of the devotion, the visionary's later life and the 2023 commission after them. Reported cures and wonders are recorded only as ACCOUNTS — that something was reported, by whom, and when first attested — never as events that happened, and they carry no rung on the approval ladder. Contested claims are attributed to their authors; dates not yet verified against a primary source are flagged with a ? mark. Much of the devotional literature on this subject is derivative and cites no documents, and the recent video commentary comes from a single speaker who also sits on the archdiocesan study commission; the provenance notes on each reference say so. Corrections against primary sources are welcome."
   },
   "approvalLadder": {
@@ -524,7 +524,7 @@
       "year": 2023,
       "date": "2023-06-19",
       "dateVerified": false,
-      "dateNote": "Date as given by Tonon. The archdiocesan article carrying the announcement returned HTTP 404 on 5 August 2026 after a site migration, the archdiocesan site's own search returned nothing for “Virgo Lacrimarum”, and Wayback was rate-limited; the note's own date, protocol number and text therefore remain unread. The chancery's published Comunicados Oficiais for June 2023 (Prot. 013, 15 June 2023) list Prot. 099–104 and do not include it.",
+      "dateNote": "Date as given by Tonon. The archdiocesan article carrying the announcement returned HTTP 404 on 5 August 2026 after a site migration, the archdiocesan site's own search returned nothing for “Virgo Lacrimarum”, and Wayback was rate-limited; the note's own date, protocol number and text therefore remain unread. The chancery's published Comunicados Oficiais for June 2023 (Prot. 013, 15 June 2023) list Prot. 099–104 and do not include it. Checked again on 1 September 2026 through the site's own search API, with “Müller” and “comissão” as positive controls: the site returns nothing whatever for Sister Amália, and the Internet Archive has no capture of the article or of any page on that domain naming her. The announcement is, for now, unrecoverable; what survives of that day is the decree PDF, which is still served.",
       "place": "Campinas, Brazil",
       "title": "The archdiocese publishes a note on the devotion to the title “Virgo Lacrimarum”",
       "text": "Alongside the decree creating the study commission, the Archdiocese of Campinas announced that Archbishop João Inácio Müller had also published a note concerning the devotion to the Marian title “Virgo Lacrimarum”. The archdiocese's own headline is the evidence that such a note exists; its text was not read. Raphael Tonon, a cooperator of the commission created by the same decree, describes it in one of the videos as the archbishop approving the title by a decree of 19 June 2023, and stresses that in his reading the title stands on scripture, tradition and the magisterium independently of the apparitions. Whether the note is an approval, a clarification or a caution is NOT established here, and no separate decree numbered in the chancery's series was located for it.",
@@ -1405,7 +1405,7 @@
       "title": "Dom João Inácio Müller nomeia Comissão de Estudos “Irmã Amália de Jesus Flagelado”. Publica, também, nota a respeito da devoção ao título “Virgo Lacrimarum”",
       "url": "https://www.arquidiocesecampinas.com.br/dom-joao-inacio-muller-nomeia-comissao-de-estudos-irma-amalia-de-jesus-flagelado-sob-o-possivel-processo-de-beatificacao-de-acordo-com-o-direito-da-igreja-publica-tambem-nota-a-respeito-da-devoc/",
       "publisher": "Arquidiocese de Campinas",
-      "publisherNote": "The archdiocese's own announcement that the archbishop published, alongside the 16 June 2023 commission decree, a note on the devotion to the title “Virgo Lacrimarum”. Cited here for the EXISTENCE of that note, which its headline establishes in the archdiocese's own voice. The page returned HTTP 404 when fetched on 5 August 2026 following a site migration, and the note's text, date and protocol number were therefore not read; no separate PDF of it was located on the archdiocesan site. It is listed so that the gap is visible and addressable rather than silent.",
+      "publisherNote": "The archdiocese's own announcement of the 16 June 2023 decree, and of a note published alongside it on the devotion to the title “Virgo Lacrimarum”. Cited for the announcement's existence: its text was never read. Re-checked on 1 September 2026 and the position is worse than link rot. The URL returns 404; the Internet Archive holds no capture of it, and none of anything on that domain matching “amalia”; and the archdiocesan site's own search API returns nothing for “Amália”, “Flagelado” or “beatificação” — while the same query for “Müller” and for “comissão” returns results, so the search works and the absence is real. The archdiocese no longer publishes anything about Sister Amália. The URL is kept as the citation of record, because it is what was consulted; it is not retrievable today by any route tried. The decree PDF itself is a separate reference and is still live.",
       "type": "news"
     },
     {
@@ -1413,7 +1413,7 @@
       "title": "Irmã Amália e a Devoção a Nossa Senhora das Lágrimas",
       "url": "https://www.editoraimaculada.com/produto/lancamento-setembro.html",
       "publisher": "Editora Imaculada",
-      "publisherNote": "Book-length devotional biography by Rita Elisa Sêda (536 pp.; 6th edition as listed in 2026), by the same publisher as her two-volume documentary collection “Vida Íntima: Irmã Amália de Jesus Flagelado” (vol. 1, 2023). Sympathetic perspective, and identified here because the 16 June 2023 archdiocesan decree names “Profª. Rita Elisa Sêda Pinto Müller” among the study commission's cooperators — so the principal modern biographer sits inside the body examining the case. Not consulted directly for this dataset: no claim below rests on it.",
+      "publisherNote": "Book-length devotional biography by Rita Elisa Sêda (536 pp.; 6th edition as listed in 2026), by the same publisher as her two-volume documentary collection “Vida Íntima: Irmã Amália de Jesus Flagelado” (vol. 1, 2023). Sympathetic perspective, and identified here because the 16 June 2023 archdiocesan decree names “Profª. Rita Elisa Sêda Pinto Müller” among the study commission's cooperators — so the principal modern biographer sits inside the body examining the case. Not consulted directly for this dataset: no claim below rests on it. The live URL has since returned 404 (checked 1 September 2026); the Internet Archive capture linked beside it is the citation of record.",
       "type": "book"
     },
     {
@@ -1421,7 +1421,7 @@
       "title": "Nossa Senhora das Lágrimas — obras da Irmã Amália de Jesus Flagelado",
       "url": "https://loja.centrodombosco.org/combo-irma-amalia-nossa-senhora-das-lagrimas",
       "publisher": "Centro Dom Bosco",
-      "publisherNote": "Traditionalist Catholic publisher's current editions of the notebooks attributed to Sister Amália — “Glórias e Poder de Nossa Senhora das Lágrimas”, “Lições de Jesus Vítima” and “Do Presídio de Amor” — the texts Bishop Barreto first published in the 1930s. Sympathetic perspective. Relevant as bibliography rather than as evidence: these are modern reprints, and none of the listings consulted reproduces an original imprimatur, title page or date.",
+      "publisherNote": "Traditionalist Catholic publisher's current editions of the notebooks attributed to Sister Amália — “Glórias e Poder de Nossa Senhora das Lágrimas”, “Lições de Jesus Vítima” and “Do Presídio de Amor” — the texts Bishop Barreto first published in the 1930s. Sympathetic perspective. Relevant as bibliography rather than as evidence: these are modern reprints, and none of the listings consulted reproduces an original imprimatur, title page or date. The live URL has since returned 404 (checked 1 September 2026); the Internet Archive capture linked beside it is the citation of record.",
       "type": "book"
     },
     {

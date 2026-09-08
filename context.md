@@ -123,8 +123,16 @@ approval-ladder rung.
    Santos 2019). Still open: *why* she moved.
 5. Read the **"Virgo Lacrimarum" note** the archdiocese published alongside the
    16 June 2023 decree. Its existence is established by the archdiocese's own
-   headline; the page 404s after a site migration and Wayback was rate-limited.
-   Request it from the chancery by name, and ask for its protocol number.
+   headline, and that headline is now the only thing left of it. Re-checked
+   1 September 2026: the article URL 404s; the Internet Archive holds no capture
+   of it, nor of anything on that domain matching "amalia"; and the site's own
+   WordPress search API returns nothing for "Amália", "Flagelado" or
+   "beatificação", while "Müller" and "comissão" return results — so the search
+   works and the absence is the site's, not the method's. The archdiocese no
+   longer publishes anything about Sister Amália. Nothing on the open web
+   recovers it, so this is now a **chancery request, not a search**: ask for the
+   note by name and for its protocol number. The 16 June 2023 decree PDF is
+   unaffected and still served.
 6. Whether the current Archdiocese has said anything about the apparitions
    as such (the 2023 decree does not), and how the annual celebrations at the
    Basílica do Carmo relate to official status (local press coverage exists
