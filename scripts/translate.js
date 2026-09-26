@@ -31,7 +31,7 @@
  *   node scripts/translate.js es           # a single locale
  *
  * NOT translated: proper names, reference titles/publishers, URLs, dates, ids.
- * The translatable set is build.js's -- imported, not mirrored; see below.
+ * The translatable set is build.js's — imported, not mirrored; see below.
  */
 'use strict';
 
@@ -54,11 +54,11 @@ const DEFAULT_LOCALES = ['es', 'pt'];
  * under a comment saying the copy "MUST mirror build.js's set". It did not.
  * The copy skipped `references` wholesale, so the coverage number omitted every
  * `publisherNote` the localized pages actually render; and it knew nothing of
- * SUBTREE_TRANSLATABLE, so it counted `approvalLadder[].status` -- a closed
- * enum -- and told the operator to go translate `not-found`, which would fail
- * the localized build with "unknown status". A coverage report that measures a
+ * SUBTREE_TRANSLATABLE, so it counted `approvalLadder[].status` — a closed enum
+ * — and told the operator to go translate `not-found`, which would fail the
+ * localized build with "unknown status". A coverage report that measures a
  * different set than the renderer is worse than no report: it is a number that
- * looks like an answer. Requiring build.js is safe -- it runs main() only under
+ * looks like an answer. Requiring build.js is safe — it runs main() only under
  * `require.main === module`.
  */
 const { collectTranslatable: collectStrings } = require(path.join(ROOT, 'build.js'));

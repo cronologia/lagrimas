@@ -1,12 +1,13 @@
 {
   "_meta": {
     "targetLang": "es",
-    "coverage": "306/306",
+    "coverage": "307/307",
     "generatedBy": "hand-authored by Claude (Opus 5); bootstrap strings 2026-08-05, approval-ladder wave 2026-08-05 — NOT produced by scripts/translate.js; dateNote + adjacent wave 2026-08-05; chaplet/novena subpages wave 2026-08-18; pray-along wave 2026-08-19; link-rot wave 2026-09-01; doi-to-landing-page 2026-09-08",
     "note": "Exact-key dictionary covering every translatable string of data/chronology.json, including references[].publisherNote and the approvalLadder prose allowlist (label/when/who/outcome/noDocument/heading/note/caption/navLabel). The ladder's `status` is a closed enum and is deliberately NOT translated — it renders from build.js's UI table. Do not use `node scripts/translate.js --stats` to check coverage: it cannot see subtree-allowlisted keys and reports false gaps/false coverage. Use `node --test test/i18n-completeness.test.js`, which mirrors localizeData exactly.",
     "humanReviewed": false
   },
   "strings": {
+    "1928": "1928",
     "1933": "1933",
     "\"Our Lady of Tears\" names more than one case. The Campinas events are reported apparitions to a religious sister (1929–1930). The Madonna delle Lacrime of Syracuse, Sicily, is a different case — a plaster image reported to have wept on 29 August–1 September 1953 — with its own, and much stronger, ecclesiastical record: the bishops of Sicily declared in December 1953 that the weeping was real, and Pius XII spoke of it in a radio message of 17 October 1954. Neither case's status transfers to the other.": "\"Nuestra Señora de las Lágrimas\" nombra más de un caso. Los hechos de Campinas son apariciones reportadas a una religiosa (1929–1930). La Madonna delle Lacrime de Siracusa, Sicilia, es un caso diferente — una imagen de yeso que se reporta que lloró del 29 de agosto al 1 de septiembre de 1953 — con su propio registro eclesiástico, mucho más sólido: los obispos de Sicilia declararon en diciembre de 1953 que el llanto era real, y Pío XII habló de él en un radiomensaje del 17 de octubre de 1954. El estatus de un caso no se transfiere al otro.",
     "1928–1930": "1928–1930",
