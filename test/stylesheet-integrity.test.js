@@ -47,8 +47,7 @@ test('styles.css: every screen component is styled outside @media print', () => 
   // that each component is styled for SCREEN somewhere. A selector that appears
   // only inside print queries has no screen styling at all, which is exactly
   // what the missing brace did to the spine, the swimlanes and the ladder.
-  const COMPONENTS = ['.al-cascade', '.al-node-link', '.al-details', '.cs-track-list', '.date-note', '.sw-grid',
-    '.prayer-block', '.prayer-original', '.prayer-gloss', '.prayer-basis'];
+  const COMPONENTS = ['.al-cascade', '.al-node-link', '.al-details', '.cs-track-list', '.date-note', '.sw-grid', '.rv-list', '.rv-e'];
   const lines = stripped.split('\n');
   let depth = 0;
   let atRule = null;
@@ -66,4 +65,28 @@ test('styles.css: every screen component is styled outside @media print', () => 
   assert.deepEqual(invisible, [],
     `these components are styled ONLY inside @media print, so they render unstyled ` +
     `on screen: ${invisible.join(', ')}`);
+});
+
+test('styles.css: scroll containers clip absolutely positioned descendants', () => {
+  // .visually-hidden labels inside the swimlane and spine tables are
+  // absolutely positioned; a scroller that is not a containing block lets them
+  // escape and widen the whole page on a phone.
+  for (const sel of ['.viz-scroll', '.table-scroll']) {
+    const rule = stripped.match(new RegExp(`^\\${sel} \\{([^}]*)\\}`, 'm'));
+    assert.ok(rule, `${sel} rule missing`);
+    assert.match(rule[1], /position:\s*relative/, `${sel} must be position: relative`);
+  }
+});
+
+test('styles.css: dark mode is screen-only and redefines the base tokens', () => {
+  // The light page must not change, and print keeps the light page: the dark
+  // palette lives in one screen-only media block that redefines tokens.
+  const at = stripped.indexOf('@media screen and (prefers-color-scheme: dark)');
+  assert.ok(at !== -1, 'dark-mode block missing');
+  const block = stripped.slice(at, at + 1200);
+  for (const tok of ['--bg:', '--surface:', '--ink:', '--muted:', '--line:', '--accent-hi:']) {
+    assert.ok(block.includes(tok), `dark block does not redefine ${tok}`);
+  }
+  assert.ok(!/prefers-color-scheme:\s*dark\)\s*\{[\s\S]*?@media print/.test(stripped.slice(at, at + 4000)),
+    'the dark block must not wrap print rules');
 });

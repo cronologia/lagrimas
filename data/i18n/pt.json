@@ -1,12 +1,13 @@
 {
   "_meta": {
     "targetLang": "pt",
-    "coverage": "306/306",
+    "coverage": "307/307",
     "generatedBy": "hand-authored by Claude (Opus 5); bootstrap strings 2026-08-05, approval-ladder wave 2026-08-05 — NOT produced by scripts/translate.js; dateNote + adjacent wave 2026-08-05; chaplet/novena subpages wave 2026-08-18; pray-along wave 2026-08-19; link-rot wave 2026-09-01; doi-to-landing-page 2026-09-08",
     "note": "Exact-key dictionary covering every translatable string of data/chronology.json, including references[].publisherNote and the approvalLadder prose allowlist (label/when/who/outcome/noDocument/heading/note/caption/navLabel). The ladder's `status` is a closed enum and is deliberately NOT translated — it renders from build.js's UI table. Do not use `node scripts/translate.js --stats` to check coverage: it cannot see subtree-allowlisted keys and reports false gaps/false coverage. Use `node --test test/i18n-completeness.test.js`, which mirrors localizeData exactly.",
     "humanReviewed": false
   },
   "strings": {
+    "1928": "1928",
     "1933": "1933",
     "\"Our Lady of Tears\" names more than one case. The Campinas events are reported apparitions to a religious sister (1929–1930). The Madonna delle Lacrime of Syracuse, Sicily, is a different case — a plaster image reported to have wept on 29 August–1 September 1953 — with its own, and much stronger, ecclesiastical record: the bishops of Sicily declared in December 1953 that the weeping was real, and Pius XII spoke of it in a radio message of 17 October 1954. Neither case's status transfers to the other.": "\"Nossa Senhora das Lágrimas\" nomeia mais de um caso. Os fatos de Campinas são aparições relatadas a uma religiosa (1929–1930). A Madonna delle Lacrime de Siracusa, na Sicília, é um caso diferente — uma imagem de gesso que se relata ter lacrimejado de 29 de agosto a 1º de setembro de 1953 — com registro eclesiástico próprio, e muito mais sólido: os bispos da Sicília declararam em dezembro de 1953 que o lacrimejo era real, e Pio XII falou dele em radiomensagem de 17 de outubro de 1954. O estatuto de um caso não se transfere ao outro.",
     "1928–1930": "1928–1930",

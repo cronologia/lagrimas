@@ -1,0 +1,25 @@
+{
+  "_about": "Template build.js functions this site customises on purpose. Checked by cronologia/core tools/build-drift.py: an undeclared difference is drift; when the template's version of a declared function changes, the declaration goes STALE until the change is ported here and `base` is bumped (python3 tools/build-drift.py --hash <name>).",
+  "customized": {
+    "seoHead": {
+      "reason": "a jsonLdType option, so the prayer subpages can declare their own schema.org type",
+      "base": "121bafdbe3ee"
+    },
+    "langSwitcher": {
+      "reason": "links climb by route depth (upTo), so the switcher works on the subpages",
+      "base": "83021396b269"
+    },
+    "renderReference": {
+      "reason": "an explicitValue option: a subpage lists only the sources it cites, numbered with their site-wide numbers",
+      "base": "ba68630a935f"
+    },
+    "renderPage": {
+      "reason": "stylesheet and river.js paths by route depth; links to the declared subpages at the end of the nav",
+      "base": "45fda29b9eea"
+    },
+    "main": {
+      "reason": "writes the subpages (the `pages` key: chaplet, novena) for each locale and adds their routes to the sitemap",
+      "base": "7d2f6fde8121"
+    }
+  }
+}

@@ -45,6 +45,11 @@ else {
   if (d.meta.lastUpdated && !/^\d{4}-\d{2}-\d{2}$/.test(d.meta.lastUpdated)) {
     err(`meta.lastUpdated must be YYYY-MM-DD, got ${d.meta.lastUpdated}`);
   }
+  // Which layout the chronology section uses (core#108). Absent = the table.
+  if (d.meta.layout !== undefined) {
+    const { RIVER_LAYOUTS } = require('../build.js');
+    if (!RIVER_LAYOUTS.has(d.meta.layout)) err(`meta.layout must be one of ${[...RIVER_LAYOUTS].map((v) => JSON.stringify(v)).join(', ')}, got ${JSON.stringify(d.meta.layout)}`);
+  }
   // Optional header pill links to visual sections (viz-chips).
   if (d.meta.vizChips !== undefined) {
     if (!isArr(d.meta.vizChips)) err('meta.vizChips must be an array');
@@ -103,7 +108,10 @@ if (!isArr(d.events) || d.events.length === 0) err('events[] missing or empty');
 else {
   d.events.forEach((ev, i) => {
     const at = `events[${i}]`;
-    if (!isNum(ev.year) || ev.year < 1500 || ev.year > 2100) err(`${at}.year must be a plausible number`);
+    // A negative year is that many years BCE (-4 is 4 BCE); there is no year 0.
+    // Ancient events carry no ISO `date` — the exact day goes in `dateNote`.
+    if (!isNum(ev.year) || ev.year < -100 || ev.year > 2100) err(`${at}.year must be a plausible number (-100..2100; negative = BCE)`);
+    else if (ev.year === 0) err(`${at}.year is 0 — there is no year 0: 1 BCE is -1, 1 CE is 1`);
     if (!isStr(ev.title)) err(`${at}.title missing`);
     if (ev.date !== undefined && !isStr(ev.date)) err(`${at}.date must be a string`);
     if (typeof ev.dateVerified !== 'boolean') err(`${at}.dateVerified must be boolean`);
@@ -378,6 +386,57 @@ if (d.placesMap !== undefined) {
   }
 }
 
+// ---- catalogue (objects, where they are kept, and their images) -----------
+// Unlike an event's place, an item's `site` is the whole point of its map
+// marker, so an unresolved site is an ERROR here. Images are publications:
+// each must carry a licence from the free vocabulary and full attribution,
+// and its file must exist — a missing file ships a broken image.
+if (d.catalogue !== undefined) {
+  const cat = d.catalogue;
+  const at = 'catalogue';
+  if (cat === null || typeof cat !== 'object' || Array.isArray(cat)) {
+    err(`${at} must be an object`);
+  } else if (!isArr(cat.items) || cat.items.length === 0) {
+    err(`${at}.items must be a non-empty array`);
+  } else {
+    let gaz = null;
+    try { gaz = JSON.parse(fs.readFileSync(path.join(ROOT, PLACES_FILE), 'utf8')); } catch (e) {
+      err(`${at} is declared but ${PLACES_FILE} is missing or unreadable (${e.message}). Run: node scripts/sync-places.js`);
+    }
+    const index = gaz ? placeIndex(gaz) : null;
+    const { CATALOGUE_LICENSES } = require('../build.js');
+    const ids = new Set();
+    cat.items.forEach((it, i) => {
+      const iAt = `${at}.items[${i}]`;
+      if (!isStr(it.id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(it.id)) err(`${iAt}.id must be kebab-case`);
+      else if (ids.has(it.id)) err(`${iAt}.id duplicated: ${it.id}`);
+      else ids.add(it.id);
+      if (!isStr(it.name)) err(`${iAt}.name missing`);
+      if (!isStr(it.site)) err(`${iAt}.site missing (the gazetteer name of the building)`);
+      else if (index) {
+        const { missing } = resolvePlaceString(it.site, index);
+        if (missing.length) err(`${iAt}.site "${it.site}" is not in ${PLACES_FILE}; add it to cronologia/core data/places.json and run scripts/sync-places.js`);
+      }
+      for (const k of ['where', 'object', 'visibility', 'attested', 'dating', 'church']) {
+        if (it[k] !== undefined && !isStr(it[k])) err(`${iAt}.${k} must be a string`);
+      }
+      checkSources(iAt, it.sources, true);
+      if (it.image !== undefined) {
+        const im = it.image; const mAt = `${iAt}.image`;
+        if (!isStr(im.file) || im.file.includes('/') || im.file.includes('..')) err(`${mAt}.file must be a bare filename in src/img/`);
+        else if (!fs.existsSync(path.join(ROOT, 'src', 'img', im.file))) err(`${mAt}.file src/img/${im.file} does not exist`);
+        if (!isStr(im.license) || !CATALOGUE_LICENSES.test(im.license)) {
+          err(`${mAt}.license "${im.license}" is not a free licence this site may publish (Public domain, CC0, CC BY, CC BY-SA)`);
+        }
+        for (const k of ['credit', 'sourceUrl', 'alt']) if (!isStr(im[k])) err(`${mAt}.${k} missing (attribution is required)`);
+        if (isStr(im.sourceUrl) && !/^https:\/\//.test(im.sourceUrl)) err(`${mAt}.sourceUrl must be an https URL`);
+        if (/BY/.test(im.license || '') && !isStr(im.licenseUrl)) err(`${mAt}.licenseUrl missing (CC BY licences require a link to the licence)`);
+        for (const k of ['width', 'height']) if (im[k] !== undefined && !isNum(im[k])) err(`${mAt}.${k} must be a number`);
+      }
+    });
+  }
+}
+
 // ---- map (country tier map — core#3) ---------------------------------------
 if (d.map !== undefined) {
   const m = d.map;
@@ -437,117 +496,6 @@ if (d.disambiguation !== undefined) {
     if (!isStr(it.text)) err(`${at}.text missing`);
     checkSources(at, it.sources, false);
   });
-}
-
-// ---- pages (documentary subpages) ------------------------------------------
-// Optional. Each entry becomes /<locale>/<id>/ and reproduces a text — here the
-// prayers of the chaplet, which are the OBJECT of the imprimaturs the
-// chronology dates. Two rules carry the sourcing discipline onto a page that
-// prints devotional text:
-//
-//   1. Every section says where it comes from. `sources[]` when someone else
-//      transmits it; `basis` when it is this site's own composition. A section
-//      with neither is refused — an arrangement that names no author reads as
-//      tradition, and on this subject that is precisely the confusion the whole
-//      dataset exists to undo.
-//   2. A block of kind "prayer" must carry `original` — the text in the
-//      language its publishers print it in. A prayer that exists on the page
-//      only as an English rendering is a paraphrase presented as a prayer.
-if (d.pages !== undefined) {
-  if (!isArr(d.pages) || d.pages.length === 0) {
-    err('pages must be a non-empty array (omit the key entirely to declare none)');
-  } else {
-    const pageIds = new Set();
-    const sectionKind = new Set(['prayer', 'meditation', 'note']);
-    // Every block that CAN be referenced, keyed "<page-id>#<block-id>", built
-    // before the walk so a `sameAs` may point forward as well as back.
-    const blocks = new Map();
-    for (const p of d.pages) {
-      for (const s of (isArr(p.sections) ? p.sections : [])) {
-        for (const b of (isArr(s.blocks) ? s.blocks : [])) {
-          if (isStr(p.id) && isStr(b.id)) blocks.set(`${p.id}#${b.id}`, b);
-        }
-      }
-    }
-    d.pages.forEach((p, i) => {
-      const at = `pages[${i}]`;
-      if (!isStr(p.id)) err(`${at}.id missing`);
-      else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.id)) err(`${at}.id must be kebab-case (it is a URL segment), got "${p.id}"`);
-      else if (pageIds.has(p.id)) err(`${at}.id duplicated: ${p.id}`);
-      else pageIds.add(p.id);
-      for (const k of ['title', 'subtitle', 'description', 'intro']) {
-        if (!isStr(p[k])) err(`${at}.${k} missing`);
-      }
-      if (!isStr(p.note)) {
-        err(`${at}.note missing — the banner at the top of the page saying what it is and is not (a text reproduced is not a claim endorsed)`);
-      }
-      if (p.navLabel !== undefined && !isStr(p.navLabel)) err(`${at}.navLabel must be a string`);
-      if (p.originalLang !== undefined && !/^[a-z]{2}$/.test(p.originalLang)) {
-        err(`${at}.originalLang must be a two-letter language code`);
-      }
-      checkSources(at, p.sources, true);
-      if (!isArr(p.sections) || p.sections.length === 0) {
-        return err(`${at}.sections must be a non-empty array`);
-      }
-      const sectionIds = new Set();
-      p.sections.forEach((s, j) => {
-        const sAt = `${at}.sections[${j}]`;
-        if (!isStr(s.id)) err(`${sAt}.id missing`);
-        else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.id)) err(`${sAt}.id must be kebab-case (it is an anchor), got "${s.id}"`);
-        else if (sectionIds.has(s.id)) err(`${sAt}.id duplicated: ${s.id}`);
-        else sectionIds.add(s.id);
-        if (!isStr(s.heading)) err(`${sAt}.heading missing`);
-        if (s.navLabel !== undefined && !isStr(s.navLabel)) err(`${sAt}.navLabel must be a string`);
-        if (s.note !== undefined && !isStr(s.note)) err(`${sAt}.note must be a string`);
-        checkSources(sAt, s.sources, false);
-        const cited = isArr(s.sources) && s.sources.length > 0;
-        if (!cited && !isStr(s.basis)) {
-          err(`${sAt}: needs sources[] (someone else transmits this) or basis (prose saying this is the site's own composition and what it was composed from). A section that claims neither reads as tradition.`);
-        }
-        if (!isArr(s.blocks) || s.blocks.length === 0) {
-          return err(`${sAt}.blocks must be a non-empty array`);
-        }
-        const blockIds = new Set();
-        s.blocks.forEach((b, k) => {
-          const bAt = `${sAt}.blocks[${k}]`;
-          if (b.id !== undefined) {
-            if (!isStr(b.id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(b.id)) err(`${bAt}.id must be kebab-case, got "${b.id}"`);
-            else if (blockIds.has(b.id)) err(`${bAt}.id duplicated on this page: ${b.id}`);
-            else blockIds.add(b.id);
-          }
-          if (b.label !== undefined && !isStr(b.label)) err(`${bAt}.label must be a string`);
-          // A reference to text declared elsewhere. It carries nothing of its
-          // own but a label: the point is that the words, and the citations
-          // that vouch for them, have exactly one home in the dataset.
-          if (b.sameAs !== undefined) {
-            if (!isStr(b.sameAs)) return err(`${bAt}.sameAs must be a string`);
-            const key = b.sameAs.includes('#') ? b.sameAs : `${p.id}#${b.sameAs}`;
-            const target = blocks.get(key);
-            if (!target) return err(`${bAt}.sameAs: no block "${key}" (use "block-id" on this page, or "page-id#block-id")`);
-            if (!isStr(target.original)) err(`${bAt}.sameAs points at "${key}", which reproduces no text of its own`);
-            for (const own of ['original', 'text', 'sources', 'kind']) {
-              if (b[own] !== undefined) err(`${bAt}.${own} must not be set beside sameAs — the referenced block owns the text, its translation, its kind and its citations`);
-            }
-            return;
-          }
-          const kind = b.kind === undefined ? 'note' : b.kind;
-          if (!sectionKind.has(kind)) err(`${bAt}.kind must be one of ${[...sectionKind].join(', ')}, got "${b.kind}"`);
-          if (kind === 'prayer' || kind === 'meditation') {
-            if (!isStr(b.original)) err(`${bAt}.original missing — a ${kind} block reproduces the text in the language it is written in; a translation alone is a paraphrase presented as the thing itself`);
-            // A meditation may be the site's own composition, and then it has
-            // no source to cite: the section's `basis` is what accounts for it,
-            // and the section rule above already requires one of the two.
-            checkSources(bAt, b.sources, kind === 'prayer');
-          } else {
-            if (b.original !== undefined) err(`${bAt}.original is only for kind "prayer" or "meditation"`);
-            if (!isStr(b.text)) err(`${bAt}.text missing`);
-            checkSources(bAt, b.sources, false);
-          }
-          if (b.text !== undefined && !isStr(b.text)) err(`${bAt}.text must be a string`);
-        });
-      });
-    });
-  }
 }
 
 // ---- glossary cross-links -------------------------------------------------
