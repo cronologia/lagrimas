@@ -11,15 +11,21 @@
     },
     "renderReference": {
       "reason": "an explicitValue option: a subpage lists only the sources it cites, numbered with their site-wide numbers",
-      "base": "ba68630a935f"
+      "base": "08cd5974ef60"
     },
     "renderPage": {
       "reason": "stylesheet and river.js paths by route depth; links to the declared subpages at the end of the nav",
-      "base": "45fda29b9eea"
+      "base": "ad7f7a46fe89"
     },
     "main": {
       "reason": "writes the subpages (the `pages` key: chaplet, novena) for each locale and adds their routes to the sitemap",
-      "base": "7d2f6fde8121"
+      "base": "5a146fdd98fb"
+    }
+  },
+  "tests": {
+    "data-invariants.test.js": {
+      "reason": "lagrimas publishes the chaplet and novena subpages; its sitemap check includes their routes",
+      "base": "274d14a6a81b"
     }
   }
 }
